@@ -1,0 +1,8 @@
+*.class
+bin/
+.DS_Store
+.checkstyle
+.svn/
+xtend-gen/
+target/
+**/.antlr-generator
