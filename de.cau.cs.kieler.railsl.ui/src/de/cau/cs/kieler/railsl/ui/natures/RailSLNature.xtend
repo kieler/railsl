@@ -12,10 +12,10 @@
  */
 package de.cau.cs.kieler.railsl.ui.natures
 
+import de.cau.cs.kieler.prom.build.KielerModelingNature
+import org.eclipse.core.resources.IProject
 import org.eclipse.core.resources.IProjectNature
 import org.eclipse.core.runtime.CoreException
-import org.eclipse.core.resources.IProject
-import de.cau.cs.kieler.prom.build.KielerModelingNature
 
 /**
  * @author stu121235
