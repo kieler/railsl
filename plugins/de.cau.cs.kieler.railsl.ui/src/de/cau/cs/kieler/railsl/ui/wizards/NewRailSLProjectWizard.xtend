@@ -20,7 +20,6 @@ import org.eclipse.ui.dialogs.WizardNewProjectCreationPage
 import java.net.URI
 import org.eclipse.core.resources.IProject
 import org.eclipse.core.runtime.CoreException
-import de.cau.cs.kieler.railsl.ui.natures.RailSLNature
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.resources.IFolder
 
@@ -70,8 +69,6 @@ class NewRailSLProjectWizard extends Wizard implements INewWizard {
         var IProject project = createBaseProject(projectName, location)
         
         try {
-            addNature(project)
-            
             addToProjectStructure(project, FOLDERS)
             
             
@@ -121,22 +118,6 @@ class NewRailSLProjectWizard extends Wizard implements INewWizard {
         }
         
         newProject
-    }
-    
-    static def void addNature(IProject project) {
-        if (!project.hasNature(RailSLNature::NATURE_ID)) {
-            val description = project.description
-            val prevNatures = description.natureIds
-            val numOfNatures = prevNatures.length
-            
-            val String[] newNatures = ArrayLiterals.newArrayOfSize(numOfNatures + 1)
-            
-            System.arraycopy(prevNatures, 0, newNatures, 0, numOfNatures)
-            newNatures.set(numOfNatures, RailSLNature::NATURE_ID)
-            description.natureIds = newNatures
-            
-            project.setDescription(description, null)
-        }
     }
     
 }
