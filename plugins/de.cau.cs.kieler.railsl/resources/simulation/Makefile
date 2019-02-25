@@ -26,7 +26,7 @@ CC = gcc
 # removed -O2
 COPTS = -IInclude
 SIMUOPTS = -I$(FOLDERSIMU)
-LIBS = -pthread
+LIBS = -pthread -fPIC
 ### !!! use -mno-cygwin for older cygwin installations !!! ### i686-pc-cygwin
 DLL32 = -mno-cygwin -D_REENTRANT -D_GNU_SOURCE -D__int64="long long" -D_JNI_IMPLEMENTATION -shared -Wl,--kill-at -L /lib/mingw64
 DLL64 = -mno-cygwin -m64 -D_REENTRANT -D_GNU_SOURCE -D__int64="long long" -D_JNI_IMPLEMENTATION -D_UNICODE:::MINGW64:-lws2_32 -lgdi32 -shared -Wl,--kill-at -L /lib/mingw
@@ -132,11 +132,11 @@ Executables/RailwayControllerSample: RailwayInterfaceTCP/linuxconio.o $(SCADEFIL
 
 SampleController.bin: Executables/SampleController
 Executables/SampleController: RailwayControllerC/Controller.c 
-Executables/SampleController: RailwayControllerC/SampleController.c RailwayInterfaceTCP/linuxconio.o $(SCADEFILESO) $(SIMUFILESO)
+Executables/SampleController: RailwayControllerC/SampleController.c RailwayInterfaceTCP/linuxconio.o $(SCADEFILESO) $(SIMUFILESO) RailwayControllerC/Controller.c RailwayControllerC/Controller.h
 	@echo "+--------------------------------------------+"
 	@echo "| LINKING SAMPLE CONTROLLER C SAMPLE NOW ... |"
 	@echo "+--------------------------------------------+"
-	$(CC) $(COPTS) $(LIBS) -s -o Executables/SampleController RailwayControllerC/SampleController.c RailwayInterfaceTCP/linuxconio.o $(SCADEFILESO) $(SIMUFILESO)
+	$(CC) $(COPTS) $(LIBS) -s -o Executables/SampleController RailwayControllerC/SampleController.c RailwayInterfaceTCP/linuxconio.o $(SCADEFILESO) $(SIMUFILESO) RailwayControllerC/Controller.c RailwayControllerC/Controller.h
 
 APIDemo.bin: Executables/APIDemo
 Executables/APIDemo: RailwayInterfaceTCP/linuxconio.o $(SCADEFILESO) $(SIMUFILESO)
