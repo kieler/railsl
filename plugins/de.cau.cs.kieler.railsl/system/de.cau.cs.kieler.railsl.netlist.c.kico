@@ -1,0 +1,5 @@
+system de.cau.cs.kieler.railsl.netlist.c.kico
+    label "RaiLSL"  
+    
+de.cau.cs.kieler.railsl.railsl
+system de.cau.cs.kieler.sccharts.netlist

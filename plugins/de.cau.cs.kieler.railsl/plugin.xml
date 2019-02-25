@@ -16,7 +16,7 @@
  <extension
        point="de.cau.cs.kieler.kicool.system">
     <TransformationSystem
-          system="compilation/de/cau/cs/kieler/railsl/compilation/railSLSystem.kico">
+          system="system/de.cau.cs.kieler.railsl.netlist.c.kico">
     </TransformationSystem>
  </extension>
 </plugin>
