@@ -9,9 +9,6 @@ de.cau.cs.kieler.kicool.deploy.setup config {
         "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "resources"
     }
 }
-
-de.cau.cs.kieler.kicool.deploy.compiler.c config {
-    "de.cau.cs.kieler.kicool.deploy.compiler.sources": ["Controller.c", "Controller.h", "resources"],
-    "de.cau.cs.kieler.kicool.deploy.compiler.c.result": "RailController.exe"
+de.cau.cs.kieler.railsl.deploy.command config {
+    "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make"
 }
-
