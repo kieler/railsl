@@ -1,7 +1,7 @@
 LIBS	=-pthread
 ODIR	=build
 CC	=/usr/bin/gcc
-CFLAGS	=-Wall -Wextra
+CFLAGS	=-Wall -Wextra 
 DEPS	=$(ODIR)/parson.o $(ODIR)/addressing.o $(ODIR)/railPi.o
 
 .PHONY: clean all
@@ -21,6 +21,6 @@ $(ODIR)/%.o: %.c %.h | $(ODIR)
 $(ODIR):
 	mkdir -p $(ODIR)
 
-RailController: RailController.c $(ODIR)/railway.o $(DEPS) Controller.c 
-	gcc -o $@ RailController.c $(ODIR)/railway.o $(DEPS) $(CFLAGS) $(LIBS)
+RailController: RailController.c $(ODIR)/railway.o $(DEPS) ../Controller.c ../Controller.h
+	gcc -o $@ RailController.c $(ODIR)/railway.o $(DEPS)  Controller.c Controller.h $(CFLAGS) $(LIBS)
 

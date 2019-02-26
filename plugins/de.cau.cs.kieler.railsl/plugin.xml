@@ -19,4 +19,10 @@
           system="system/de.cau.cs.kieler.railsl.netlist.c.kico">
     </TransformationSystem>
  </extension>
+ <extension
+       point="de.cau.cs.kieler.kicool.system">
+    <TransformationSystem
+          system="system/de.cau.cs.kieler.railsl.netlist.deploy.kico">
+    </TransformationSystem>
+ </extension>
 </plugin>
