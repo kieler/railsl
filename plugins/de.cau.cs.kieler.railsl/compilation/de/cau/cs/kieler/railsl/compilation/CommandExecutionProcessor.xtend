@@ -16,6 +16,7 @@ import de.cau.cs.kieler.kicool.deploy.processor.AbstractSystemCompilerProcessor
 import de.cau.cs.kieler.kicool.deploy.ProjectInfrastructure
 import de.cau.cs.kieler.core.properties.IProperty
 import de.cau.cs.kieler.core.properties.Property
+import java.util.List
 
 /**
  * @author stu121235
@@ -24,7 +25,7 @@ import de.cau.cs.kieler.core.properties.Property
 class CommandExecutionProcessor extends AbstractSystemCompilerProcessor<Object, Object> {
     
     public static val IProperty<String> command = 
-        new Property<String>("de.cau.cs.kieler.railsl.command.com", "make -f resources/Makefile.make")
+        new Property<String>("de.cau.cs.kieler.railsl.command.com", "")
     
     override getId() {
         return "de.cau.cs.kieler.railsl.deploy.command"
@@ -43,11 +44,11 @@ class CommandExecutionProcessor extends AbstractSystemCompilerProcessor<Object, 
         } else {
             infra.log(logger)
         }
-        val com = newArrayList(environment.getProperty(command)?:command.^default)
+        val List<String> com = command.^default.split(" ").toList
         logger.println(com)
         com.invoke(infra.generatedCodeFolder)
         
-        logger.closeLog("railsl-command-execution.log")
+        logger.closeLog("railsl-command-execution.log").snapshot
         infra.refresh
         
     }

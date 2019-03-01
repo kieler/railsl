@@ -21,6 +21,6 @@ $(ODIR)/%.o: %.c %.h | $(ODIR)
 $(ODIR):
 	mkdir -p $(ODIR)
 
-RailController: RailController.c $(ODIR)/railway.o $(DEPS) ../Controller.c ../Controller.h
-	gcc -o $@ RailController.c $(ODIR)/railway.o $(DEPS)  Controller.c Controller.h $(CFLAGS) $(LIBS)
+RailController: RailController.c $(ODIR)/railway.o $(DEPS) Controller.c Controller.h
+	gcc -o $@ RailController.c $(ODIR)/railway.o $(DEPS)  Controller.h $(CFLAGS) $(LIBS)
 

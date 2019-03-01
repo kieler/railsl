@@ -6,9 +6,9 @@ system de.cau.cs.kieler.railsl.netlist.c
 de.cau.cs.kieler.kicool.deploy.setup config {
     "de.cau.cs.kieler.kicool.deploy.setup.clear": ["resources"],
     "de.cau.cs.kieler.kicool.deploy.setup.copy": {
-        "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "resources"
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "/"
     }
 }
 de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make"
+    "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make RailController"
 }
