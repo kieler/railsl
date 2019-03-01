@@ -12,3 +12,7 @@ de.cau.cs.kieler.kicool.deploy.setup config {
 de.cau.cs.kieler.railsl.deploy.command config {
     "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make RailController"
 }
+
+de.cau.cs.kieler.railsl.deploy.command config {
+    "de.cau.cs.kieler.railsl.command.com": "./RailController"
+}
