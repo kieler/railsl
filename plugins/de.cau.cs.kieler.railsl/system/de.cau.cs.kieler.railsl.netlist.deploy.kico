@@ -2,17 +2,16 @@ system de.cau.cs.kieler.railsl.netlist.deploy
     label "Deploy RailSL to railway"
 
 system de.cau.cs.kieler.railsl.netlist.c
-
 de.cau.cs.kieler.kicool.deploy.setup config {
-    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["resources"],
+    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["/resources"],
     "de.cau.cs.kieler.kicool.deploy.setup.copy": {
-        "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "/"
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "/resources"
     }
 }
-de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make RailController"
+de.cau.cs.kieler.railsl.deploy.codeMover config {
+    "de.cau.cs.kieler.railsl.mover.target": "/resources/"
 }
-
 de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "./RailController"
+    "de.cau.cs.kieler.railsl.command.com": "make -f Makefile.make RailController",
+    "de.cau.cs.kieler.railsl.command.dir": "/resources"
 }

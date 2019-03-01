@@ -15,6 +15,9 @@
     <Processor
           class="de.cau.cs.kieler.railsl.compilation.CommandExecutionProcessor">
     </Processor>
+    <Processor
+          class="de.cau.cs.kieler.railsl.compilation.CodeMoverProcessor">
+    </Processor>
  </extension>
  <extension
        point="de.cau.cs.kieler.kicool.system">
@@ -23,6 +26,9 @@
     </TransformationSystem>
     <TransformationSystem
           system="system/de.cau.cs.kieler.railsl.netlist.deploy.kico">
+    </TransformationSystem>
+    <TransformationSystem
+          system="system/de.cau.cs.kieler.railsl.netlist.sim.kico">
     </TransformationSystem>
  </extension>
 </plugin>

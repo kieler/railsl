@@ -1,0 +1,16 @@
+system de.cau.cs.kieler.railsl.netlist.sim
+    label "Deploy RailSL to simulation"
+
+system de.cau.cs.kieler.railsl.netlist.c
+
+de.cau.cs.kieler.kicool.deploy.setup config {
+    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["/"],
+    "de.cau.cs.kieler.kicool.deploy.setup.copy": {
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/simulation": "/",
+        "/Controller.c" : "/RailwayControllerC/Controller.c",
+        "/Controller.h" : "/RailwayControllerC/Controller.h"
+    }
+}
+de.cau.cs.kieler.railsl.deploy.command config {
+    "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make resources/RailController"
+}
