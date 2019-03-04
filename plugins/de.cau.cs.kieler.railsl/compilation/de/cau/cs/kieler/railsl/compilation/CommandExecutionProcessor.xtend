@@ -31,6 +31,9 @@ class CommandExecutionProcessor extends AbstractSystemCompilerProcessor<Object, 
     public static val IProperty<String> dir =
         new Property<String>("de.cau.cs.kieler.railsl.command.dir", "")
     
+    public static val IProperty<Boolean> waitForTerm =
+        new Property<Boolean>("de.cau.cs.kieler.railsl.command.waitForTerm", true)
+    
     override getId() {
         return "de.cau.cs.kieler.railsl.deploy.command"
     }
@@ -50,13 +53,29 @@ class CommandExecutionProcessor extends AbstractSystemCompilerProcessor<Object, 
         }
         val comString = environment.getProperty(command)?:""
         val List<String> com = comString.split(" ").toList
-        logger.println(com)
         val path = infra.generatedCodeFolder.absolutePath
-        com.invoke(new File(path + environment.getProperty(dir)?:""))
+        val file = new File(path + environment.getProperty(dir)?:"")
+        if (environment.getProperty(waitForTerm)?:waitForTerm.^default) {
+            com.invoke(file)        
+        } else {
+            com.invokeAsync(file)
+        }
         
         logger.closeLog("railsl-command-execution.log").snapshot
         infra.refresh
         
+    }
+    
+    def invokeAsync(List<String> command, File directory) {
+        logger.println("Invoking command asynchronously: " + command.join(" "))
+        val pb = createProcessBuilder(command, directory)
+        
+        try {
+            pb.start
+        } catch (Exception e) {
+            logger.println("Error while invoking command")
+            environment.errors.add("Error while invoking command")
+        }
     }
     
 }

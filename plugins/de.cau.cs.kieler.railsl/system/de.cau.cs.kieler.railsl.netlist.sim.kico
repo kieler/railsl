@@ -4,13 +4,29 @@ system de.cau.cs.kieler.railsl.netlist.sim
 system de.cau.cs.kieler.railsl.netlist.c
 
 de.cau.cs.kieler.kicool.deploy.setup config {
-    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["/"],
+    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["/resources/RailwayControllerC", "/resources/Executables"],
     "de.cau.cs.kieler.kicool.deploy.setup.copy": {
-        "platform:/plugin/de.cau.cs.kieler.railsl/resources/simulation": "/",
-        "/Controller.c" : "/RailwayControllerC/Controller.c",
-        "/Controller.h" : "/RailwayControllerC/Controller.h"
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/simulation": "/resources"
     }
 }
+
+de.cau.cs.kieler.railsl.deploy.codeMover config {
+    "de.cau.cs.kieler.railsl.mover.target": "/resources/RailwayControllerC/"
+}
+
 de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "make -f resources/Makefile.make resources/RailController"
+    "de.cau.cs.kieler.railsl.command.com": "make -f Makefile.make Executables/SampleController",
+    "de.cau.cs.kieler.railsl.command.dir": "/resources"
+}
+
+de.cau.cs.kieler.railsl.deploy.command config {
+    "de.cau.cs.kieler.railsl.command.com": "java -jar Executables/modelgui-6b1.jar &",
+    "de.cau.cs.kieler.railsl.command.waitForTerm" : false,
+    "de.cau.cs.kieler.railsl.command.dir": "/resources"
+}
+
+de.cau.cs.kieler.railsl.deploy.command config {
+    "de.cau.cs.kieler.railsl.command.com": "Executables/SampleController &",
+    "de.cau.cs.kieler.railsl.command.waitForTerm" : false,
+    "de.cau.cs.kieler.railsl.command.dir": "/resources"
 }
