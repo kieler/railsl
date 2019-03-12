@@ -12,7 +12,6 @@
  */
 package de.cau.cs.kieler.railsl.compilation
 
-import de.cau.cs.kieler.kicool.deploy.processor.AbstractSystemCompilerProcessor
 import de.cau.cs.kieler.kicool.deploy.ProjectInfrastructure
 import de.cau.cs.kieler.core.properties.IProperty
 import de.cau.cs.kieler.core.properties.Property
@@ -23,7 +22,7 @@ import java.io.File
  * @author stu121235
  *
  */
-class CommandExecutionProcessor extends AbstractSystemCompilerProcessor<Object, Object> {
+class CommandExecutionProcessor extends AbstractRailSLExecutionProcessor {
     
     public static val IProperty<String> command = 
         new Property<String>("de.cau.cs.kieler.railsl.command.com", "")
@@ -65,17 +64,6 @@ class CommandExecutionProcessor extends AbstractSystemCompilerProcessor<Object, 
         infra.refresh
         
     }
-    
-    def invokeAsync(List<String> command, File directory) {
-        logger.println("Invoking command asynchronously: " + command.join(" "))
-        val pb = createProcessBuilder(command, directory)
-        
-        try {
-            pb.start
-        } catch (Exception e) {
-            logger.println("Error while invoking command")
-            environment.errors.add("Error while invoking command")
-        }
-    }
+
     
 }

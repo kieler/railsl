@@ -19,14 +19,4 @@ de.cau.cs.kieler.railsl.deploy.command config {
     "de.cau.cs.kieler.railsl.command.dir": "/resources"
 }
 
-de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "java -jar Executables/modelgui-6b1.jar &",
-    "de.cau.cs.kieler.railsl.command.waitForTerm" : false,
-    "de.cau.cs.kieler.railsl.command.dir": "/resources"
-}
-
-de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "Executables/SampleController &",
-    "de.cau.cs.kieler.railsl.command.waitForTerm" : false,
-    "de.cau.cs.kieler.railsl.command.dir": "/resources"
-}
+de.cau.cs.kieler.railsl.deploy.invokeSim

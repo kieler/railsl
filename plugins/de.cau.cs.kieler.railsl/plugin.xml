@@ -18,6 +18,9 @@
     <Processor
           class="de.cau.cs.kieler.railsl.compilation.CodeMoverProcessor">
     </Processor>
+    <Processor
+          class="de.cau.cs.kieler.railsl.compilation.SimulationInvocationProcessor">
+    </Processor>
  </extension>
  <extension
        point="de.cau.cs.kieler.kicool.system">
