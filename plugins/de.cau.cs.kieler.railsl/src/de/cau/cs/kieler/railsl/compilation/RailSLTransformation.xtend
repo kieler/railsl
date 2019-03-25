@@ -26,13 +26,16 @@ import de.cau.cs.kieler.kicool.compilation.ProcessorType
 import de.cau.cs.kieler.kicool.kitt.tracing.Traceable
 import de.cau.cs.kieler.railsl.extensions.RailSLExtensions
 import de.cau.cs.kieler.railsl.railSL.Block
+import de.cau.cs.kieler.railsl.railSL.BlockEnd
 import de.cau.cs.kieler.railsl.railSL.ConditionalStatement
+import de.cau.cs.kieler.railsl.railSL.ContactEvent
 import de.cau.cs.kieler.railsl.railSL.ContactWaitStatement
 import de.cau.cs.kieler.railsl.railSL.CrossingStatement
 import de.cau.cs.kieler.railsl.railSL.LightStatement
 import de.cau.cs.kieler.railsl.railSL.ParallelStatement
 import de.cau.cs.kieler.railsl.railSL.PointStatement
 import de.cau.cs.kieler.railsl.railSL.RailProgram
+import de.cau.cs.kieler.railsl.railSL.RailSegment
 import de.cau.cs.kieler.railsl.railSL.Statement
 import de.cau.cs.kieler.railsl.railSL.TimeWaitStatement
 import de.cau.cs.kieler.railsl.railSL.TrackStatement
@@ -46,8 +49,6 @@ import de.cau.cs.kieler.sccharts.extensions.SCChartsStateExtensions
 import de.cau.cs.kieler.sccharts.extensions.SCChartsTransitionExtensions
 import java.util.ArrayList
 import java.util.HashMap
-import de.cau.cs.kieler.railsl.railSL.RailSegment
-import de.cau.cs.kieler.railsl.railSL.ContactEvent
 
 /**
  * Transforms a RailSL model to an SCChart.
@@ -411,7 +412,7 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
             currentState = state
         }
 
-        if (block.end.equals("End.")) {
+        if (block.end.equals(BlockEnd.END)) {
             // Create final state
             val done = region.createFinalState("done")
             currentState.createImmediateTransitionTo(done).setTypeTermination
