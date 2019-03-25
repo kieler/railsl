@@ -6,7 +6,6 @@ package de.cau.cs.kieler.railsl;
 import com.google.inject.Binder;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
-import de.cau.cs.kieler.railsl.generator.RailSLGenerator;
 import de.cau.cs.kieler.railsl.parser.antlr.RailSLAntlrTokenFileProvider;
 import de.cau.cs.kieler.railsl.parser.antlr.RailSLParser;
 import de.cau.cs.kieler.railsl.parser.antlr.internal.InternalRailSLLexer;
@@ -18,7 +17,6 @@ import de.cau.cs.kieler.railsl.validation.RailSLValidator;
 import java.util.Properties;
 import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.IGrammarAccess;
-import org.eclipse.xtext.generator.IGenerator2;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.parser.IParser;
@@ -184,11 +182,6 @@ public abstract class AbstractRailSLRuntimeModule extends DefaultRuntimeModule {
 	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
 	public void configureIResourceDescriptionsPersisted(Binder binder) {
 		binder.bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(ResourceSetBasedResourceDescriptions.class);
-	}
-	
-	// contributed by org.eclipse.xtext.xtext.generator.generator.GeneratorFragment2
-	public Class<? extends IGenerator2> bindIGenerator2() {
-		return RailSLGenerator.class;
 	}
 	
 }

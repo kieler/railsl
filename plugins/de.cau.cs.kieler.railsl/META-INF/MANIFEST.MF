@@ -23,7 +23,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.cau.cs.kieler.railsl,
  de.cau.cs.kieler.railsl.compilation,
  de.cau.cs.kieler.railsl.extensions,
- de.cau.cs.kieler.railsl.generator,
  de.cau.cs.kieler.railsl.parser.antlr,
  de.cau.cs.kieler.railsl.parser.antlr.internal,
  de.cau.cs.kieler.railsl.railSL,
