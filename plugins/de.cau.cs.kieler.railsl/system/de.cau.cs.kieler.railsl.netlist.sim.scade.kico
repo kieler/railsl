@@ -1,0 +1,23 @@
+system de.cau.cs.kieler.railsl.netlist.sim.scade
+    label "RailSL SCADE Simulation"
+
+system de.cau.cs.kieler.railsl.netlist.c
+
+de.cau.cs.kieler.kicool.deploy.setup config {
+    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["/simulation/RailwayControllerC", "/simulation/Executables"],
+    "de.cau.cs.kieler.kicool.deploy.setup.copy": {
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/simulation/scade": "/simulation",
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/templates/rail-controller.ftl": "templates/rail-controller.ftl"
+    }
+}
+
+de.cau.cs.kieler.kicool.deploy.templates config {
+    "de.cau.cs.kieler.kicool.deploy.templates": {
+        "templates/rail-controller.ftl": "RailController.c"
+    }
+}
+
+de.cau.cs.kieler.railsl.compile.sim.scade config {
+    "de.cau.cs.kieler.railsl.compile.sim.scade.dir": "/simulation",
+    "de.cau.cs.kieler.railsl.compile.sim.scade.controller": "RailController.c"
+}

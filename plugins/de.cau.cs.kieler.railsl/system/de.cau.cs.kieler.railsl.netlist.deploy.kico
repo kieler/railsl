@@ -1,22 +1,28 @@
 system de.cau.cs.kieler.railsl.netlist.deploy
-    label "Deploy RailSL to railway"
+    label "RailSL Deploy"
 
 system de.cau.cs.kieler.railsl.netlist.c
+
 de.cau.cs.kieler.kicool.deploy.setup config {
-    "de.cau.cs.kieler.kicool.deploy.setup.clear": ["/resources"],
     "de.cau.cs.kieler.kicool.deploy.setup.copy": {
-        "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "/resources"
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/railway": "/railway",
+        "platform:/plugin/de.cau.cs.kieler.railsl/resources/templates/rail-controller.ftl": "templates/rail-controller.ftl"
     }
 }
-de.cau.cs.kieler.railsl.deploy.codeMover config {
-    "de.cau.cs.kieler.railsl.mover.target": "/resources/"
-}
-de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "make -f Makefile.make RailController",
-    "de.cau.cs.kieler.railsl.command.dir": "/resources"
+
+de.cau.cs.kieler.kicool.deploy.templates config {
+    "de.cau.cs.kieler.kicool.deploy.templates": {
+        "templates/rail-controller.ftl": "RailController.c"
+    }
 }
 
-de.cau.cs.kieler.railsl.deploy.command config {
-    "de.cau.cs.kieler.railsl.command.com": "./RailController",
-    "de.cau.cs.kieler.railsl.command.dir": "/resources"
+de.cau.cs.kieler.railsl.railway.api config {
+    "de.cau.cs.kieler.railsl.deploy.dir": "/railway"
+}
+
+de.cau.cs.kieler.kicool.deploy.compiler.c config {
+    "de.cau.cs.kieler.kicool.deploy.compiler.sources": ["RailController.c", "railway/include", "railway/parson", "railway/libraries/libparson.a", "railway/libraries/librailway.a"],
+    "de.cau.cs.kieler.kicool.deploy.compiler.sources.include-generated": false,
+    "de.cau.cs.kieler.kicool.deploy.compiler.options": "-pthread -fPIC",
+    "de.cau.cs.kieler.kicool.deploy.compiler.c.result": "RailController.exe"
 }

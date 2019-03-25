@@ -1,4 +1,0 @@
-Mar 04, 2019 1:08:10 PM modelgui.SVGApplication$11$1 managerStopped
-INFO: Average update time during animations: 53 ms
-Mar 04, 2019 1:08:10 PM modelgui.SCADEControlAnimationClient close
-WARNING: Error closing the connection to model server: Initialization failed! port out of range:-1

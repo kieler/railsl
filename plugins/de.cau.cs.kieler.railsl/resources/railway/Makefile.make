@@ -1,26 +1,70 @@
-LIBS	=-pthread
-ODIR	=build
-CC	=/usr/bin/gcc
-CFLAGS	=-Wall -Wextra 
-DEPS	=$(ODIR)/parson.o $(ODIR)/addressing.o $(ODIR)/railPi.o
+# ============================================================================
+#
+#   Makefile for railway interface
+#
+#   This file creates all libraries and applications needed to operate the
+#   railway system. Some variables control the compilations.
+#
+# ============================================================================
 
-.PHONY: clean all
+# target configuration
+PROGRAMS=$(patsubst %.c,%,$(wildcard *.c))
+LIBDIR?=$(shell pwd)/libraries
+INCDIRS=include parson
 
-all:
+# LAYOUTS=oval kicking
+LAYOUTS=kicking oval
+
+CC=gcc
+CPP=g++
+AR=ar
+CFLAGS:=-Wall -O2 $(addprefix -I,$(INCDIRS)) -L$(LIBDIR) -fPIC -DPIC
+CPPFLAGS:=-Wall -O2 $(addprefix -I,$(INCDIRS)) -L$(LIBDIR) -DLINUX -fPIC -DPIC
+
+
+OBJECTS=$(sort $(patsubst %.c,%.o,$(wildcard modules/*.c)) \
+	$(foreach EXT,$(LAYOUTS),modules/$(EXT).o))
+LIBA=$(foreach EXT,parson railway,$(LIBDIR)/lib$(EXT).a)
+LIBRARIES=$(LIBA)
+
+# default targets
+
+.PHONY: all clean
+
+all:	$(LIBRARIES) $(PROGRAMS)
 
 clean:
-	rm -f $(ODIR)/*.o
-	rm -f RailController
+	rm -f $(PROGRAMS)
+	rm -f $(OBJECTS)
+	rm -f parson/parson.o
+	rm -f $(LIBRARIES)	
+	rm -f *~ */*~
 
-$(ODIR)/railway.o: railway.c railway.h $(DEPS) | $(ODIR)
-	$(CC) -c -o $@ $< $(CFLAGS)
+# implicit rules
 
-$(ODIR)/%.o: %.c %.h | $(ODIR)
-	$(CC) -c -o $@ $< $(CFLAGS)
+modules/%.o: modules/%.c include/%.h
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(ODIR):
-	mkdir -p $(ODIR)
+%: %.c $(LIBRARIES)
+	$(CC) $(CFLAGS) -Wl,--rpath,$(LIBDIR) -o $@ $< -lrailway -lparson -lpthread -lm
 
-RailController: RailController.c $(ODIR)/railway.o $(DEPS) Controller.c Controller.h
-	gcc -o $@ RailController.c $(ODIR)/railway.o $(DEPS)  Controller.h $(CFLAGS) $(LIBS)
+# module dependencies
 
+modules/tcpProtocol.o: parson/parson.h
+modules/railPi.o: include/tcpProtocol.h
+modules/railway.o: include/railPi.h
+$(foreach EXT,$(LAYOUTS),Modules/$(EXT).o): include/railway.h
+
+# parson
+
+parson/parson.o: parson/parson.c parson/parson.h
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(LIBDIR)/libparson.a: parson/parson.o
+	$(AR) rcs $@ $(filter %.o,$+)
+
+# librailway
+
+$(LIBDIR)/librailway.a: $(OBJECTS) $(foreach EXT,$(LAYOUTS), \
+		include/$(EXT).h modules/$(EXT).c)
+	$(AR) rcs $@ $(filter %.o,$+)
