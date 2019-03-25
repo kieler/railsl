@@ -47,6 +47,7 @@ import de.cau.cs.kieler.sccharts.extensions.SCChartsTransitionExtensions
 import java.util.ArrayList
 import java.util.HashMap
 import de.cau.cs.kieler.railsl.railSL.RailSegment
+import de.cau.cs.kieler.railsl.railSL.ContactEvent
 
 /**
  * Transforms a RailSL model to an SCChart.
@@ -656,7 +657,7 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
         
         // Parse information from statement object 
         val contactIndex = cwStatement.parseContactIndex
-        val delay = (if(cwStatement.event.equals("Reach")) 1 else 2)
+        val delay = (if(cwStatement.event.equals(ContactEvent.REACH)) 1 else 2)
 
         // Create all required states
         var region = state.createControlflowRegion(cwStatement.event + "_contact_" + contactIndex + "_" + 
