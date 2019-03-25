@@ -1,57 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="railSL" nsURI="http://www.cau.de/cs/kieler/railsl/RailSL" nsPrefix="railSL">
-  <eClassifiers xsi:type="ecore:EClass" name="Program">
+  <eClassifiers xsi:type="ecore:EClass" name="RailProgram">
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//BlockEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BlockEnd">
+    <eLiterals name="END" literal="End."/>
+    <eLiterals name="LOOP" value="1" literal="Loop."/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SetStatement" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TrackStatement" eSuperTypes="#//SetStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="segments" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        upperBound="-1" eType="#//RailSegment"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="#//TrackSpeed"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reverse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TrackSpeed">
+    <eLiterals name="STOP" literal="stop"/>
+    <eLiterals name="FULL" value="1" literal="full"/>
+    <eLiterals name="SLOW" value="2" literal="slow"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PointStatement" eSuperTypes="#//SetStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="points" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//PointOrinetation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PointOrinetation">
+    <eLiterals name="STRAIGHT" literal="straight"/>
+    <eLiterals name="BRANCH" value="1" literal="branch"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WaitStatement" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimeWaitStatement" eSuperTypes="#//WaitStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContactWaitStatement" eSuperTypes="#//WaitStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="segName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="#//ContactEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="#//ContactPosition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="segment" eType="#//RailSegment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContactEvent">
+    <eLiterals name="REACH" literal="Reach"/>
+    <eLiterals name="PASS" value="1" literal="Pass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContactPosition">
+    <eLiterals name="FIRST" literal="first"/>
+    <eLiterals name="SECOND" value="1" literal="second"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpStatement" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="CrossingStatement" eSuperTypes="#//OpStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//CrossingMode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CrossingMode">
+    <eLiterals name="OPEN" literal="Open"/>
+    <eLiterals name="CLOSE" value="1" literal="Close"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LightStatement" eSuperTypes="#//OpStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lights" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LightMode">
+    <eLiterals name="ON" literal="on"/>
+    <eLiterals name="OFF" value="1" literal="off"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
         eType="#//ConditionalLine" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalLine">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="segName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact" eType="#//ContactPosition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="segment" eType="#//RailSegment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParallelStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" upperBound="-1"
         eType="#//Block" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RailSegment">
+    <eLiterals name="KH_ST_0" literal="KH_ST_0"/>
+    <eLiterals name="KH_ST_1" value="1" literal="KH_ST_1"/>
+    <eLiterals name="KH_ST_2" value="2" literal="KH_ST_2"/>
+    <eLiterals name="KH_ST_3" value="3" literal="KH_ST_3"/>
+    <eLiterals name="KH_ST_4" value="4" literal="KH_ST_4"/>
+    <eLiterals name="KH_ST_5" value="5" literal="KH_ST_5"/>
+    <eLiterals name="KH_ST_6" value="6" literal="KH_ST_6"/>
+    <eLiterals name="KH_LN_0" value="7" literal="KH_LN_0"/>
+    <eLiterals name="KH_LN_1" value="8" literal="KH_LN_1"/>
+    <eLiterals name="KH_LN_2" value="9" literal="KH_LN_2"/>
+    <eLiterals name="KH_LN_3" value="10" literal="KH_LN_3"/>
+    <eLiterals name="KH_LN_4" value="11" literal="KH_LN_4"/>
+    <eLiterals name="KH_LN_5" value="12" literal="KH_LN_5"/>
+    <eLiterals name="KH_LN_6" value="13" literal="KH_LN_6"/>
+    <eLiterals name="KH_LN_7" value="14" literal="KH_LN_7"/>
+    <eLiterals name="KH_LN_8" value="15" literal="KH_LN_8"/>
+    <eLiterals name="KIO_LN_0" value="16" literal="KIO_LN_0"/>
+    <eLiterals name="KIO_LN_1" value="17" literal="KIO_LN_1"/>
+    <eLiterals name="OC_ST_0" value="18" literal="OC_ST_0"/>
+    <eLiterals name="OC_ST_1" value="19" literal="OC_ST_1"/>
+    <eLiterals name="OC_ST_2" value="20" literal="OC_ST_2"/>
+    <eLiterals name="OC_ST_3" value="21" literal="OC_ST_3"/>
+    <eLiterals name="OC_ST_4" value="22" literal="OC_ST_4"/>
+    <eLiterals name="OC_LN_0" value="23" literal="OC_LN_0"/>
+    <eLiterals name="OC_LN_1" value="24" literal="OC_LN_1"/>
+    <eLiterals name="OC_LN_2" value="25" literal="OC_LN_2"/>
+    <eLiterals name="OC_LN_3" value="26" literal="OC_LN_3"/>
+    <eLiterals name="OC_LN_4" value="27" literal="OC_LN_4"/>
+    <eLiterals name="OC_LN_5" value="28" literal="OC_LN_5"/>
+    <eLiterals name="IC_ST_0" value="29" literal="IC_ST_0"/>
+    <eLiterals name="IC_ST_1" value="30" literal="IC_ST_1"/>
+    <eLiterals name="IC_ST_2" value="31" literal="IC_ST_2"/>
+    <eLiterals name="IC_ST_3" value="32" literal="IC_ST_3"/>
+    <eLiterals name="IC_ST_4" value="33" literal="IC_ST_4"/>
+    <eLiterals name="IC_LN_0" value="34" literal="IC_LN_0"/>
+    <eLiterals name="IC_LN_1" value="35" literal="IC_LN_1"/>
+    <eLiterals name="IC_LN_2" value="36" literal="IC_LN_2"/>
+    <eLiterals name="IC_LN_3" value="37" literal="IC_LN_3"/>
+    <eLiterals name="IC_LN_4" value="38" literal="IC_LN_4"/>
+    <eLiterals name="IC_LN_5" value="39" literal="IC_LN_5"/>
+    <eLiterals name="OC_JCT_0" value="40" literal="OC_JCT_0"/>
+    <eLiterals name="IC_JCT_0" value="41" literal="IC_JCT_0"/>
+    <eLiterals name="OI_LN_0" value="42" literal="OI_LN_0"/>
+    <eLiterals name="OI_LN_1" value="43" literal="OI_LN_1"/>
+    <eLiterals name="OI_LN_2" value="44" literal="OI_LN_2"/>
+    <eLiterals name="IO_LN_0" value="45" literal="IO_LN_0"/>
+    <eLiterals name="IO_LN_1" value="46" literal="IO_LN_1"/>
+    <eLiterals name="IO_LN_2" value="47" literal="IO_LN_2"/>
   </eClassifiers>
 </ecore:EPackage>
