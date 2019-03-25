@@ -11,14 +11,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Point Orinetation</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Point Orientation</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see de.cau.cs.kieler.railsl.railSL.RailSLPackage#getPointOrinetation()
+ * @see de.cau.cs.kieler.railsl.railSL.RailSLPackage#getPointOrientation()
  * @model
  * @generated
  */
-public enum PointOrinetation implements Enumerator
+public enum PointOrientation implements Enumerator
 {
   /**
    * The '<em><b>STRAIGHT</b></em>' literal object.
@@ -71,39 +71,39 @@ public enum PointOrinetation implements Enumerator
   public static final int BRANCH_VALUE = 1;
 
   /**
-   * An array of all the '<em><b>Point Orinetation</b></em>' enumerators.
+   * An array of all the '<em><b>Point Orientation</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final PointOrinetation[] VALUES_ARRAY =
-    new PointOrinetation[]
+  private static final PointOrientation[] VALUES_ARRAY =
+    new PointOrientation[]
     {
       STRAIGHT,
       BRANCH,
     };
 
   /**
-   * A public read-only list of all the '<em><b>Point Orinetation</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Point Orientation</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<PointOrinetation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<PointOrientation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Point Orinetation</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Point Orientation</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static PointOrinetation get(String literal)
+  public static PointOrientation get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      PointOrinetation result = VALUES_ARRAY[i];
+      PointOrientation result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -113,18 +113,18 @@ public enum PointOrinetation implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Point Orinetation</b></em>' literal with the specified name.
+   * Returns the '<em><b>Point Orientation</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static PointOrinetation getByName(String name)
+  public static PointOrientation getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      PointOrinetation result = VALUES_ARRAY[i];
+      PointOrientation result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -134,14 +134,14 @@ public enum PointOrinetation implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Point Orinetation</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Point Orientation</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static PointOrinetation get(int value)
+  public static PointOrientation get(int value)
   {
     switch (value)
     {
@@ -178,7 +178,7 @@ public enum PointOrinetation implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private PointOrinetation(int value, String name, String literal)
+  private PointOrientation(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -227,4 +227,4 @@ public enum PointOrinetation implements Enumerator
     return literal;
   }
   
-} //PointOrinetation
+} //PointOrientation

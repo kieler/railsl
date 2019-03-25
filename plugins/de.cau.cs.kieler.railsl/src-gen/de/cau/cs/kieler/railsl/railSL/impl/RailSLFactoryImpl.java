@@ -100,8 +100,8 @@ public class RailSLFactoryImpl extends EFactoryImpl implements RailSLFactory
         return createBlockEndFromString(eDataType, initialValue);
       case RailSLPackage.TRACK_SPEED:
         return createTrackSpeedFromString(eDataType, initialValue);
-      case RailSLPackage.POINT_ORINETATION:
-        return createPointOrinetationFromString(eDataType, initialValue);
+      case RailSLPackage.POINT_ORIENTATION:
+        return createPointOrientationFromString(eDataType, initialValue);
       case RailSLPackage.CONTACT_EVENT:
         return createContactEventFromString(eDataType, initialValue);
       case RailSLPackage.CONTACT_POSITION:
@@ -131,8 +131,8 @@ public class RailSLFactoryImpl extends EFactoryImpl implements RailSLFactory
         return convertBlockEndToString(eDataType, instanceValue);
       case RailSLPackage.TRACK_SPEED:
         return convertTrackSpeedToString(eDataType, instanceValue);
-      case RailSLPackage.POINT_ORINETATION:
-        return convertPointOrinetationToString(eDataType, instanceValue);
+      case RailSLPackage.POINT_ORIENTATION:
+        return convertPointOrientationToString(eDataType, instanceValue);
       case RailSLPackage.CONTACT_EVENT:
         return convertContactEventToString(eDataType, instanceValue);
       case RailSLPackage.CONTACT_POSITION:
@@ -362,9 +362,9 @@ public class RailSLFactoryImpl extends EFactoryImpl implements RailSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PointOrinetation createPointOrinetationFromString(EDataType eDataType, String initialValue)
+  public PointOrientation createPointOrientationFromString(EDataType eDataType, String initialValue)
   {
-    PointOrinetation result = PointOrinetation.get(initialValue);
+    PointOrientation result = PointOrientation.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -374,7 +374,7 @@ public class RailSLFactoryImpl extends EFactoryImpl implements RailSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertPointOrinetationToString(EDataType eDataType, Object instanceValue)
+  public String convertPointOrientationToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

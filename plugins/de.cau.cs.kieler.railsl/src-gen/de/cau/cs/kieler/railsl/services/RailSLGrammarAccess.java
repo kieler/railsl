@@ -264,16 +264,16 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPointsINTTerminalRuleCall_3_1_0 = (RuleCall)cPointsAssignment_3_1.eContents().get(0);
 		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cOrientationAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cOrientationPointOrinetationEnumRuleCall_5_0 = (RuleCall)cOrientationAssignment_5.eContents().get(0);
+		private final RuleCall cOrientationPointOrientationEnumRuleCall_5_0 = (RuleCall)cOrientationAssignment_5.eContents().get(0);
 		private final Keyword cFullStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//PointStatement:
 		//	('Set' | 'set') 'point'
 		//	points+=INT ((',' | 'and' | ',' 'and') points+=INT)*
-		//	'to' orientation=PointOrinetation '.';
+		//	'to' orientation=PointOrientation '.';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Set' | 'set') 'point' points+=INT ((',' | 'and' | ',' 'and') points+=INT)* 'to' orientation=PointOrinetation '.'
+		//('Set' | 'set') 'point' points+=INT ((',' | 'and' | ',' 'and') points+=INT)* 'to' orientation=PointOrientation '.'
 		public Group getGroup() { return cGroup; }
 		
 		//'Set' | 'set'
@@ -324,11 +324,11 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'to'
 		public Keyword getToKeyword_4() { return cToKeyword_4; }
 		
-		//orientation=PointOrinetation
+		//orientation=PointOrientation
 		public Assignment getOrientationAssignment_5() { return cOrientationAssignment_5; }
 		
-		//PointOrinetation
-		public RuleCall getOrientationPointOrinetationEnumRuleCall_5_0() { return cOrientationPointOrinetationEnumRuleCall_5_0; }
+		//PointOrientation
+		public RuleCall getOrientationPointOrientationEnumRuleCall_5_0() { return cOrientationPointOrientationEnumRuleCall_5_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_6() { return cFullStopKeyword_6; }
@@ -504,19 +504,17 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLightsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cLightsINTTerminalRuleCall_3_1_0 = (RuleCall)cLightsAssignment_3_1.eContents().get(0);
 		private final Assignment cStateAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final Alternatives cStateAlternatives_4_0 = (Alternatives)cStateAssignment_4.eContents().get(0);
-		private final Keyword cStateOnKeyword_4_0_0 = (Keyword)cStateAlternatives_4_0.eContents().get(0);
-		private final Keyword cStateOffKeyword_4_0_1 = (Keyword)cStateAlternatives_4_0.eContents().get(1);
+		private final RuleCall cStateLightModeEnumRuleCall_4_0 = (RuleCall)cStateAssignment_4.eContents().get(0);
 		private final Keyword cFullStopKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//LightStatement:
 		//	('Turn' | 'turn') 'light'
 		//	lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)*
-		//	state=('on' | 'off')
+		//	state=LightMode
 		//	'.';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Turn' | 'turn') 'light' lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)* state=('on' | 'off') '.'
+		//('Turn' | 'turn') 'light' lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)* state=LightMode '.'
 		public Group getGroup() { return cGroup; }
 		
 		//'Turn' | 'turn'
@@ -564,17 +562,11 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getLightsINTTerminalRuleCall_3_1_0() { return cLightsINTTerminalRuleCall_3_1_0; }
 		
-		//state=('on' | 'off')
+		//state=LightMode
 		public Assignment getStateAssignment_4() { return cStateAssignment_4; }
 		
-		//('on' | 'off')
-		public Alternatives getStateAlternatives_4_0() { return cStateAlternatives_4_0; }
-		
-		//'on'
-		public Keyword getStateOnKeyword_4_0_0() { return cStateOnKeyword_4_0_0; }
-		
-		//'off'
-		public Keyword getStateOffKeyword_4_0_1() { return cStateOffKeyword_4_0_1; }
+		//LightMode
+		public RuleCall getStateLightModeEnumRuleCall_4_0() { return cStateLightModeEnumRuleCall_4_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_5() { return cFullStopKeyword_5; }
@@ -828,15 +820,15 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'slow'
 		public Keyword getSLOWSlowKeyword_1_0() { return cSLOWSlowKeyword_1_0; }
 	}
-	public class PointOrinetationElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.cau.cs.kieler.railsl.RailSL.PointOrinetation");
+	public class PointOrientationElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.cau.cs.kieler.railsl.RailSL.PointOrientation");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSTRAIGHTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSTRAIGHTStraightKeyword_0_0 = (Keyword)cSTRAIGHTEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cBRANCHEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cBRANCHBranchKeyword_1_0 = (Keyword)cBRANCHEnumLiteralDeclaration_1.eContents().get(0);
 		
-		//enum PointOrinetation:
+		//enum PointOrientation:
 		//	STRAIGHT='straight' | BRANCH='branch';
 		public EnumRule getRule() { return rule; }
 		
@@ -1000,408 +992,448 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class RailSegmentElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.cau.cs.kieler.railsl.RailSL.RailSegment");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cKH_ST_0EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cKH_ST_0KH_ST_0Keyword_0_0 = (Keyword)cKH_ST_0EnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_ST_1EnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cKH_ST_1KH_ST_1Keyword_1_0 = (Keyword)cKH_ST_1EnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_ST_2EnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cKH_ST_2KH_ST_2Keyword_2_0 = (Keyword)cKH_ST_2EnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_ST_3EnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cKH_ST_3KH_ST_3Keyword_3_0 = (Keyword)cKH_ST_3EnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_ST_4EnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cKH_ST_4KH_ST_4Keyword_4_0 = (Keyword)cKH_ST_4EnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_ST_5EnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cKH_ST_5KH_ST_5Keyword_5_0 = (Keyword)cKH_ST_5EnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_ST_6EnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cKH_ST_6KH_ST_6Keyword_6_0 = (Keyword)cKH_ST_6EnumLiteralDeclaration_6.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_0EnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cKH_LN_0KH_LN_0Keyword_7_0 = (Keyword)cKH_LN_0EnumLiteralDeclaration_7.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_1EnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
-		private final Keyword cKH_LN_1KH_LN_1Keyword_8_0 = (Keyword)cKH_LN_1EnumLiteralDeclaration_8.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_2EnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
-		private final Keyword cKH_LN_2KH_LN_2Keyword_9_0 = (Keyword)cKH_LN_2EnumLiteralDeclaration_9.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_3EnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
-		private final Keyword cKH_LN_3KH_LN_3Keyword_10_0 = (Keyword)cKH_LN_3EnumLiteralDeclaration_10.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_4EnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
-		private final Keyword cKH_LN_4KH_LN_4Keyword_11_0 = (Keyword)cKH_LN_4EnumLiteralDeclaration_11.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_5EnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
-		private final Keyword cKH_LN_5KH_LN_5Keyword_12_0 = (Keyword)cKH_LN_5EnumLiteralDeclaration_12.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_6EnumLiteralDeclaration_13 = (EnumLiteralDeclaration)cAlternatives.eContents().get(13);
-		private final Keyword cKH_LN_6KH_LN_6Keyword_13_0 = (Keyword)cKH_LN_6EnumLiteralDeclaration_13.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_7EnumLiteralDeclaration_14 = (EnumLiteralDeclaration)cAlternatives.eContents().get(14);
-		private final Keyword cKH_LN_7KH_LN_7Keyword_14_0 = (Keyword)cKH_LN_7EnumLiteralDeclaration_14.eContents().get(0);
-		private final EnumLiteralDeclaration cKH_LN_8EnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
-		private final Keyword cKH_LN_8KH_LN_8Keyword_15_0 = (Keyword)cKH_LN_8EnumLiteralDeclaration_15.eContents().get(0);
-		private final EnumLiteralDeclaration cKIO_LN_0EnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
-		private final Keyword cKIO_LN_0KIO_LN_0Keyword_16_0 = (Keyword)cKIO_LN_0EnumLiteralDeclaration_16.eContents().get(0);
-		private final EnumLiteralDeclaration cKIO_LN_1EnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
-		private final Keyword cKIO_LN_1KIO_LN_1Keyword_17_0 = (Keyword)cKIO_LN_1EnumLiteralDeclaration_17.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_ST_0EnumLiteralDeclaration_18 = (EnumLiteralDeclaration)cAlternatives.eContents().get(18);
-		private final Keyword cOC_ST_0OC_ST_0Keyword_18_0 = (Keyword)cOC_ST_0EnumLiteralDeclaration_18.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_ST_1EnumLiteralDeclaration_19 = (EnumLiteralDeclaration)cAlternatives.eContents().get(19);
-		private final Keyword cOC_ST_1OC_ST_1Keyword_19_0 = (Keyword)cOC_ST_1EnumLiteralDeclaration_19.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_ST_2EnumLiteralDeclaration_20 = (EnumLiteralDeclaration)cAlternatives.eContents().get(20);
-		private final Keyword cOC_ST_2OC_ST_2Keyword_20_0 = (Keyword)cOC_ST_2EnumLiteralDeclaration_20.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_ST_3EnumLiteralDeclaration_21 = (EnumLiteralDeclaration)cAlternatives.eContents().get(21);
-		private final Keyword cOC_ST_3OC_ST_3Keyword_21_0 = (Keyword)cOC_ST_3EnumLiteralDeclaration_21.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_ST_4EnumLiteralDeclaration_22 = (EnumLiteralDeclaration)cAlternatives.eContents().get(22);
-		private final Keyword cOC_ST_4OC_ST_4Keyword_22_0 = (Keyword)cOC_ST_4EnumLiteralDeclaration_22.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_LN_0EnumLiteralDeclaration_23 = (EnumLiteralDeclaration)cAlternatives.eContents().get(23);
-		private final Keyword cOC_LN_0OC_LN_0Keyword_23_0 = (Keyword)cOC_LN_0EnumLiteralDeclaration_23.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_LN_1EnumLiteralDeclaration_24 = (EnumLiteralDeclaration)cAlternatives.eContents().get(24);
-		private final Keyword cOC_LN_1OC_LN_1Keyword_24_0 = (Keyword)cOC_LN_1EnumLiteralDeclaration_24.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_LN_2EnumLiteralDeclaration_25 = (EnumLiteralDeclaration)cAlternatives.eContents().get(25);
-		private final Keyword cOC_LN_2OC_LN_2Keyword_25_0 = (Keyword)cOC_LN_2EnumLiteralDeclaration_25.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_LN_3EnumLiteralDeclaration_26 = (EnumLiteralDeclaration)cAlternatives.eContents().get(26);
-		private final Keyword cOC_LN_3OC_LN_3Keyword_26_0 = (Keyword)cOC_LN_3EnumLiteralDeclaration_26.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_LN_4EnumLiteralDeclaration_27 = (EnumLiteralDeclaration)cAlternatives.eContents().get(27);
-		private final Keyword cOC_LN_4OC_LN_4Keyword_27_0 = (Keyword)cOC_LN_4EnumLiteralDeclaration_27.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_LN_5EnumLiteralDeclaration_28 = (EnumLiteralDeclaration)cAlternatives.eContents().get(28);
-		private final Keyword cOC_LN_5OC_LN_5Keyword_28_0 = (Keyword)cOC_LN_5EnumLiteralDeclaration_28.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_ST_0EnumLiteralDeclaration_29 = (EnumLiteralDeclaration)cAlternatives.eContents().get(29);
-		private final Keyword cIC_ST_0IC_ST_0Keyword_29_0 = (Keyword)cIC_ST_0EnumLiteralDeclaration_29.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_ST_1EnumLiteralDeclaration_30 = (EnumLiteralDeclaration)cAlternatives.eContents().get(30);
-		private final Keyword cIC_ST_1IC_ST_1Keyword_30_0 = (Keyword)cIC_ST_1EnumLiteralDeclaration_30.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_ST_2EnumLiteralDeclaration_31 = (EnumLiteralDeclaration)cAlternatives.eContents().get(31);
-		private final Keyword cIC_ST_2IC_ST_2Keyword_31_0 = (Keyword)cIC_ST_2EnumLiteralDeclaration_31.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_ST_3EnumLiteralDeclaration_32 = (EnumLiteralDeclaration)cAlternatives.eContents().get(32);
-		private final Keyword cIC_ST_3IC_ST_3Keyword_32_0 = (Keyword)cIC_ST_3EnumLiteralDeclaration_32.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_ST_4EnumLiteralDeclaration_33 = (EnumLiteralDeclaration)cAlternatives.eContents().get(33);
-		private final Keyword cIC_ST_4IC_ST_4Keyword_33_0 = (Keyword)cIC_ST_4EnumLiteralDeclaration_33.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_LN_0EnumLiteralDeclaration_34 = (EnumLiteralDeclaration)cAlternatives.eContents().get(34);
-		private final Keyword cIC_LN_0IC_LN_0Keyword_34_0 = (Keyword)cIC_LN_0EnumLiteralDeclaration_34.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_LN_1EnumLiteralDeclaration_35 = (EnumLiteralDeclaration)cAlternatives.eContents().get(35);
-		private final Keyword cIC_LN_1IC_LN_1Keyword_35_0 = (Keyword)cIC_LN_1EnumLiteralDeclaration_35.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_LN_2EnumLiteralDeclaration_36 = (EnumLiteralDeclaration)cAlternatives.eContents().get(36);
-		private final Keyword cIC_LN_2IC_LN_2Keyword_36_0 = (Keyword)cIC_LN_2EnumLiteralDeclaration_36.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_LN_3EnumLiteralDeclaration_37 = (EnumLiteralDeclaration)cAlternatives.eContents().get(37);
-		private final Keyword cIC_LN_3IC_LN_3Keyword_37_0 = (Keyword)cIC_LN_3EnumLiteralDeclaration_37.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_LN_4EnumLiteralDeclaration_38 = (EnumLiteralDeclaration)cAlternatives.eContents().get(38);
-		private final Keyword cIC_LN_4IC_LN_4Keyword_38_0 = (Keyword)cIC_LN_4EnumLiteralDeclaration_38.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_LN_5EnumLiteralDeclaration_39 = (EnumLiteralDeclaration)cAlternatives.eContents().get(39);
-		private final Keyword cIC_LN_5IC_LN_5Keyword_39_0 = (Keyword)cIC_LN_5EnumLiteralDeclaration_39.eContents().get(0);
-		private final EnumLiteralDeclaration cOC_JCT_0EnumLiteralDeclaration_40 = (EnumLiteralDeclaration)cAlternatives.eContents().get(40);
-		private final Keyword cOC_JCT_0OC_JCT_0Keyword_40_0 = (Keyword)cOC_JCT_0EnumLiteralDeclaration_40.eContents().get(0);
-		private final EnumLiteralDeclaration cIC_JCT_0EnumLiteralDeclaration_41 = (EnumLiteralDeclaration)cAlternatives.eContents().get(41);
-		private final Keyword cIC_JCT_0IC_JCT_0Keyword_41_0 = (Keyword)cIC_JCT_0EnumLiteralDeclaration_41.eContents().get(0);
-		private final EnumLiteralDeclaration cOI_LN_0EnumLiteralDeclaration_42 = (EnumLiteralDeclaration)cAlternatives.eContents().get(42);
-		private final Keyword cOI_LN_0OI_LN_0Keyword_42_0 = (Keyword)cOI_LN_0EnumLiteralDeclaration_42.eContents().get(0);
-		private final EnumLiteralDeclaration cOI_LN_1EnumLiteralDeclaration_43 = (EnumLiteralDeclaration)cAlternatives.eContents().get(43);
-		private final Keyword cOI_LN_1OI_LN_1Keyword_43_0 = (Keyword)cOI_LN_1EnumLiteralDeclaration_43.eContents().get(0);
-		private final EnumLiteralDeclaration cOI_LN_2EnumLiteralDeclaration_44 = (EnumLiteralDeclaration)cAlternatives.eContents().get(44);
-		private final Keyword cOI_LN_2OI_LN_2Keyword_44_0 = (Keyword)cOI_LN_2EnumLiteralDeclaration_44.eContents().get(0);
-		private final EnumLiteralDeclaration cIO_LN_0EnumLiteralDeclaration_45 = (EnumLiteralDeclaration)cAlternatives.eContents().get(45);
-		private final Keyword cIO_LN_0IO_LN_0Keyword_45_0 = (Keyword)cIO_LN_0EnumLiteralDeclaration_45.eContents().get(0);
-		private final EnumLiteralDeclaration cIO_LN_1EnumLiteralDeclaration_46 = (EnumLiteralDeclaration)cAlternatives.eContents().get(46);
-		private final Keyword cIO_LN_1IO_LN_1Keyword_46_0 = (Keyword)cIO_LN_1EnumLiteralDeclaration_46.eContents().get(0);
-		private final EnumLiteralDeclaration cIO_LN_2EnumLiteralDeclaration_47 = (EnumLiteralDeclaration)cAlternatives.eContents().get(47);
-		private final Keyword cIO_LN_2IO_LN_2Keyword_47_0 = (Keyword)cIO_LN_2EnumLiteralDeclaration_47.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_JCT_0EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cIC_JCT_0IC_JCT_0Keyword_0_0 = (Keyword)cIC_JCT_0EnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_LN_0EnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cIC_LN_0IC_LN_0Keyword_1_0 = (Keyword)cIC_LN_0EnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_LN_1EnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cIC_LN_1IC_LN_1Keyword_2_0 = (Keyword)cIC_LN_1EnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_LN_2EnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cIC_LN_2IC_LN_2Keyword_3_0 = (Keyword)cIC_LN_2EnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_LN_3EnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cIC_LN_3IC_LN_3Keyword_4_0 = (Keyword)cIC_LN_3EnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_LN_4EnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cIC_LN_4IC_LN_4Keyword_5_0 = (Keyword)cIC_LN_4EnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_LN_5EnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cIC_LN_5IC_LN_5Keyword_6_0 = (Keyword)cIC_LN_5EnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_ST_0EnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cIC_ST_0IC_ST_0Keyword_7_0 = (Keyword)cIC_ST_0EnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_ST_1EnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cIC_ST_1IC_ST_1Keyword_8_0 = (Keyword)cIC_ST_1EnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_ST_2EnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cIC_ST_2IC_ST_2Keyword_9_0 = (Keyword)cIC_ST_2EnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_ST_3EnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cIC_ST_3IC_ST_3Keyword_10_0 = (Keyword)cIC_ST_3EnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cIC_ST_4EnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cIC_ST_4IC_ST_4Keyword_11_0 = (Keyword)cIC_ST_4EnumLiteralDeclaration_11.eContents().get(0);
+		private final EnumLiteralDeclaration cIO_LN_0EnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
+		private final Keyword cIO_LN_0IO_LN_0Keyword_12_0 = (Keyword)cIO_LN_0EnumLiteralDeclaration_12.eContents().get(0);
+		private final EnumLiteralDeclaration cIO_LN_1EnumLiteralDeclaration_13 = (EnumLiteralDeclaration)cAlternatives.eContents().get(13);
+		private final Keyword cIO_LN_1IO_LN_1Keyword_13_0 = (Keyword)cIO_LN_1EnumLiteralDeclaration_13.eContents().get(0);
+		private final EnumLiteralDeclaration cIO_LN_2EnumLiteralDeclaration_14 = (EnumLiteralDeclaration)cAlternatives.eContents().get(14);
+		private final Keyword cIO_LN_2IO_LN_2Keyword_14_0 = (Keyword)cIO_LN_2EnumLiteralDeclaration_14.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_0EnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
+		private final Keyword cKH_LN_0KH_LN_0Keyword_15_0 = (Keyword)cKH_LN_0EnumLiteralDeclaration_15.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_1EnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
+		private final Keyword cKH_LN_1KH_LN_1Keyword_16_0 = (Keyword)cKH_LN_1EnumLiteralDeclaration_16.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_2EnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
+		private final Keyword cKH_LN_2KH_LN_2Keyword_17_0 = (Keyword)cKH_LN_2EnumLiteralDeclaration_17.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_3EnumLiteralDeclaration_18 = (EnumLiteralDeclaration)cAlternatives.eContents().get(18);
+		private final Keyword cKH_LN_3KH_LN_3Keyword_18_0 = (Keyword)cKH_LN_3EnumLiteralDeclaration_18.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_4EnumLiteralDeclaration_19 = (EnumLiteralDeclaration)cAlternatives.eContents().get(19);
+		private final Keyword cKH_LN_4KH_LN_4Keyword_19_0 = (Keyword)cKH_LN_4EnumLiteralDeclaration_19.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_5EnumLiteralDeclaration_20 = (EnumLiteralDeclaration)cAlternatives.eContents().get(20);
+		private final Keyword cKH_LN_5KH_LN_5Keyword_20_0 = (Keyword)cKH_LN_5EnumLiteralDeclaration_20.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_6EnumLiteralDeclaration_21 = (EnumLiteralDeclaration)cAlternatives.eContents().get(21);
+		private final Keyword cKH_LN_6KH_LN_6Keyword_21_0 = (Keyword)cKH_LN_6EnumLiteralDeclaration_21.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_7EnumLiteralDeclaration_22 = (EnumLiteralDeclaration)cAlternatives.eContents().get(22);
+		private final Keyword cKH_LN_7KH_LN_7Keyword_22_0 = (Keyword)cKH_LN_7EnumLiteralDeclaration_22.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_LN_8EnumLiteralDeclaration_23 = (EnumLiteralDeclaration)cAlternatives.eContents().get(23);
+		private final Keyword cKH_LN_8KH_LN_8Keyword_23_0 = (Keyword)cKH_LN_8EnumLiteralDeclaration_23.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_0EnumLiteralDeclaration_24 = (EnumLiteralDeclaration)cAlternatives.eContents().get(24);
+		private final Keyword cKH_ST_0KH_ST_0Keyword_24_0 = (Keyword)cKH_ST_0EnumLiteralDeclaration_24.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_1EnumLiteralDeclaration_25 = (EnumLiteralDeclaration)cAlternatives.eContents().get(25);
+		private final Keyword cKH_ST_1KH_ST_1Keyword_25_0 = (Keyword)cKH_ST_1EnumLiteralDeclaration_25.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_2EnumLiteralDeclaration_26 = (EnumLiteralDeclaration)cAlternatives.eContents().get(26);
+		private final Keyword cKH_ST_2KH_ST_2Keyword_26_0 = (Keyword)cKH_ST_2EnumLiteralDeclaration_26.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_3EnumLiteralDeclaration_27 = (EnumLiteralDeclaration)cAlternatives.eContents().get(27);
+		private final Keyword cKH_ST_3KH_ST_3Keyword_27_0 = (Keyword)cKH_ST_3EnumLiteralDeclaration_27.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_4EnumLiteralDeclaration_28 = (EnumLiteralDeclaration)cAlternatives.eContents().get(28);
+		private final Keyword cKH_ST_4KH_ST_4Keyword_28_0 = (Keyword)cKH_ST_4EnumLiteralDeclaration_28.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_5EnumLiteralDeclaration_29 = (EnumLiteralDeclaration)cAlternatives.eContents().get(29);
+		private final Keyword cKH_ST_5KH_ST_5Keyword_29_0 = (Keyword)cKH_ST_5EnumLiteralDeclaration_29.eContents().get(0);
+		private final EnumLiteralDeclaration cKH_ST_6EnumLiteralDeclaration_30 = (EnumLiteralDeclaration)cAlternatives.eContents().get(30);
+		private final Keyword cKH_ST_6KH_ST_6Keyword_30_0 = (Keyword)cKH_ST_6EnumLiteralDeclaration_30.eContents().get(0);
+		private final EnumLiteralDeclaration cKIO_LN_0EnumLiteralDeclaration_31 = (EnumLiteralDeclaration)cAlternatives.eContents().get(31);
+		private final Keyword cKIO_LN_0KIO_LN_0Keyword_31_0 = (Keyword)cKIO_LN_0EnumLiteralDeclaration_31.eContents().get(0);
+		private final EnumLiteralDeclaration cKIO_LN_1EnumLiteralDeclaration_32 = (EnumLiteralDeclaration)cAlternatives.eContents().get(32);
+		private final Keyword cKIO_LN_1KIO_LN_1Keyword_32_0 = (Keyword)cKIO_LN_1EnumLiteralDeclaration_32.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_JCT_0EnumLiteralDeclaration_33 = (EnumLiteralDeclaration)cAlternatives.eContents().get(33);
+		private final Keyword cOC_JCT_0OC_JCT_0Keyword_33_0 = (Keyword)cOC_JCT_0EnumLiteralDeclaration_33.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_LN_0EnumLiteralDeclaration_34 = (EnumLiteralDeclaration)cAlternatives.eContents().get(34);
+		private final Keyword cOC_LN_0OC_LN_0Keyword_34_0 = (Keyword)cOC_LN_0EnumLiteralDeclaration_34.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_LN_1EnumLiteralDeclaration_35 = (EnumLiteralDeclaration)cAlternatives.eContents().get(35);
+		private final Keyword cOC_LN_1OC_LN_1Keyword_35_0 = (Keyword)cOC_LN_1EnumLiteralDeclaration_35.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_LN_2EnumLiteralDeclaration_36 = (EnumLiteralDeclaration)cAlternatives.eContents().get(36);
+		private final Keyword cOC_LN_2OC_LN_2Keyword_36_0 = (Keyword)cOC_LN_2EnumLiteralDeclaration_36.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_LN_3EnumLiteralDeclaration_37 = (EnumLiteralDeclaration)cAlternatives.eContents().get(37);
+		private final Keyword cOC_LN_3OC_LN_3Keyword_37_0 = (Keyword)cOC_LN_3EnumLiteralDeclaration_37.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_LN_4EnumLiteralDeclaration_38 = (EnumLiteralDeclaration)cAlternatives.eContents().get(38);
+		private final Keyword cOC_LN_4OC_LN_4Keyword_38_0 = (Keyword)cOC_LN_4EnumLiteralDeclaration_38.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_LN_5EnumLiteralDeclaration_39 = (EnumLiteralDeclaration)cAlternatives.eContents().get(39);
+		private final Keyword cOC_LN_5OC_LN_5Keyword_39_0 = (Keyword)cOC_LN_5EnumLiteralDeclaration_39.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_ST_0EnumLiteralDeclaration_40 = (EnumLiteralDeclaration)cAlternatives.eContents().get(40);
+		private final Keyword cOC_ST_0OC_ST_0Keyword_40_0 = (Keyword)cOC_ST_0EnumLiteralDeclaration_40.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_ST_1EnumLiteralDeclaration_41 = (EnumLiteralDeclaration)cAlternatives.eContents().get(41);
+		private final Keyword cOC_ST_1OC_ST_1Keyword_41_0 = (Keyword)cOC_ST_1EnumLiteralDeclaration_41.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_ST_2EnumLiteralDeclaration_42 = (EnumLiteralDeclaration)cAlternatives.eContents().get(42);
+		private final Keyword cOC_ST_2OC_ST_2Keyword_42_0 = (Keyword)cOC_ST_2EnumLiteralDeclaration_42.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_ST_3EnumLiteralDeclaration_43 = (EnumLiteralDeclaration)cAlternatives.eContents().get(43);
+		private final Keyword cOC_ST_3OC_ST_3Keyword_43_0 = (Keyword)cOC_ST_3EnumLiteralDeclaration_43.eContents().get(0);
+		private final EnumLiteralDeclaration cOC_ST_4EnumLiteralDeclaration_44 = (EnumLiteralDeclaration)cAlternatives.eContents().get(44);
+		private final Keyword cOC_ST_4OC_ST_4Keyword_44_0 = (Keyword)cOC_ST_4EnumLiteralDeclaration_44.eContents().get(0);
+		private final EnumLiteralDeclaration cOI_LN_0EnumLiteralDeclaration_45 = (EnumLiteralDeclaration)cAlternatives.eContents().get(45);
+		private final Keyword cOI_LN_0OI_LN_0Keyword_45_0 = (Keyword)cOI_LN_0EnumLiteralDeclaration_45.eContents().get(0);
+		private final EnumLiteralDeclaration cOI_LN_1EnumLiteralDeclaration_46 = (EnumLiteralDeclaration)cAlternatives.eContents().get(46);
+		private final Keyword cOI_LN_1OI_LN_1Keyword_46_0 = (Keyword)cOI_LN_1EnumLiteralDeclaration_46.eContents().get(0);
+		private final EnumLiteralDeclaration cOI_LN_2EnumLiteralDeclaration_47 = (EnumLiteralDeclaration)cAlternatives.eContents().get(47);
+		private final Keyword cOI_LN_2OI_LN_2Keyword_47_0 = (Keyword)cOI_LN_2EnumLiteralDeclaration_47.eContents().get(0);
 		
 		//enum RailSegment:
-		//	KH_ST_0 | KH_ST_1 | KH_ST_2 | KH_ST_3 | KH_ST_4 | KH_ST_5 | KH_ST_6 |
-		//	KH_LN_0 | KH_LN_1 | KH_LN_2 | KH_LN_3 | KH_LN_4 | KH_LN_5 | KH_LN_6 | KH_LN_7 | KH_LN_8 |
-		//	KIO_LN_0 | KIO_LN_1 | OC_ST_0 | OC_ST_1 | OC_ST_2 | OC_ST_3 | OC_ST_4 |
-		//	OC_LN_0 | OC_LN_1 | OC_LN_2 | OC_LN_3 | OC_LN_4 | OC_LN_5 |
-		//	IC_ST_0 | IC_ST_1 | IC_ST_2 | IC_ST_3 | IC_ST_4 |
-		//	IC_LN_0 | IC_LN_1 | IC_LN_2 | IC_LN_3 | IC_LN_4 | IC_LN_5 |
-		//	OC_JCT_0 | IC_JCT_0 | OI_LN_0 | OI_LN_1 | OI_LN_2 |
-		//	IO_LN_0 | IO_LN_1 | IO_LN_2;
+		//	IC_JCT_0 |
+		//	IC_LN_0 |
+		//	IC_LN_1 |
+		//	IC_LN_2 |
+		//	IC_LN_3 |
+		//	IC_LN_4 |
+		//	IC_LN_5 |
+		//	IC_ST_0 |
+		//	IC_ST_1 |
+		//	IC_ST_2 |
+		//	IC_ST_3 |
+		//	IC_ST_4 |
+		//	IO_LN_0 |
+		//	IO_LN_1 |
+		//	IO_LN_2 |
+		//	KH_LN_0 |
+		//	KH_LN_1 |
+		//	KH_LN_2 |
+		//	KH_LN_3 |
+		//	KH_LN_4 |
+		//	KH_LN_5 |
+		//	KH_LN_6 |
+		//	KH_LN_7 |
+		//	KH_LN_8 |
+		//	KH_ST_0 |
+		//	KH_ST_1 |
+		//	KH_ST_2 |
+		//	KH_ST_3 |
+		//	KH_ST_4 |
+		//	KH_ST_5 |
+		//	KH_ST_6 |
+		//	KIO_LN_0 |
+		//	KIO_LN_1 |
+		//	OC_JCT_0 |
+		//	OC_LN_0 |
+		//	OC_LN_1 |
+		//	OC_LN_2 |
+		//	OC_LN_3 |
+		//	OC_LN_4 |
+		//	OC_LN_5 |
+		//	OC_ST_0 |
+		//	OC_ST_1 |
+		//	OC_ST_2 |
+		//	OC_ST_3 |
+		//	OC_ST_4 |
+		//	OI_LN_0 |
+		//	OI_LN_1 |
+		//	OI_LN_2;
 		public EnumRule getRule() { return rule; }
 		
-		//KH_ST_0 | KH_ST_1 | KH_ST_2 | KH_ST_3 | KH_ST_4 | KH_ST_5 | KH_ST_6 | KH_LN_0 | KH_LN_1 | KH_LN_2 | KH_LN_3 | KH_LN_4 |
-		//KH_LN_5 | KH_LN_6 | KH_LN_7 | KH_LN_8 | KIO_LN_0 | KIO_LN_1 | OC_ST_0 | OC_ST_1 | OC_ST_2 | OC_ST_3 | OC_ST_4 | OC_LN_0
-		//| OC_LN_1 | OC_LN_2 | OC_LN_3 | OC_LN_4 | OC_LN_5 | IC_ST_0 | IC_ST_1 | IC_ST_2 | IC_ST_3 | IC_ST_4 | IC_LN_0 | IC_LN_1
-		//| IC_LN_2 | IC_LN_3 | IC_LN_4 | IC_LN_5 | OC_JCT_0 | IC_JCT_0 | OI_LN_0 | OI_LN_1 | OI_LN_2 | IO_LN_0 | IO_LN_1 |
-		//IO_LN_2
+		//IC_JCT_0 | IC_LN_0 | IC_LN_1 | IC_LN_2 | IC_LN_3 | IC_LN_4 | IC_LN_5 | IC_ST_0 | IC_ST_1 | IC_ST_2 | IC_ST_3 | IC_ST_4 |
+		//IO_LN_0 | IO_LN_1 | IO_LN_2 | KH_LN_0 | KH_LN_1 | KH_LN_2 | KH_LN_3 | KH_LN_4 | KH_LN_5 | KH_LN_6 | KH_LN_7 | KH_LN_8 |
+		//KH_ST_0 | KH_ST_1 | KH_ST_2 | KH_ST_3 | KH_ST_4 | KH_ST_5 | KH_ST_6 | KIO_LN_0 | KIO_LN_1 | OC_JCT_0 | OC_LN_0 |
+		//OC_LN_1 | OC_LN_2 | OC_LN_3 | OC_LN_4 | OC_LN_5 | OC_ST_0 | OC_ST_1 | OC_ST_2 | OC_ST_3 | OC_ST_4 | OI_LN_0 | OI_LN_1 |
+		//OI_LN_2
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//KH_ST_0
-		public EnumLiteralDeclaration getKH_ST_0EnumLiteralDeclaration_0() { return cKH_ST_0EnumLiteralDeclaration_0; }
-		
-		//"KH_ST_0"
-		public Keyword getKH_ST_0KH_ST_0Keyword_0_0() { return cKH_ST_0KH_ST_0Keyword_0_0; }
-		
-		//KH_ST_1
-		public EnumLiteralDeclaration getKH_ST_1EnumLiteralDeclaration_1() { return cKH_ST_1EnumLiteralDeclaration_1; }
-		
-		//"KH_ST_1"
-		public Keyword getKH_ST_1KH_ST_1Keyword_1_0() { return cKH_ST_1KH_ST_1Keyword_1_0; }
-		
-		//KH_ST_2
-		public EnumLiteralDeclaration getKH_ST_2EnumLiteralDeclaration_2() { return cKH_ST_2EnumLiteralDeclaration_2; }
-		
-		//"KH_ST_2"
-		public Keyword getKH_ST_2KH_ST_2Keyword_2_0() { return cKH_ST_2KH_ST_2Keyword_2_0; }
-		
-		//KH_ST_3
-		public EnumLiteralDeclaration getKH_ST_3EnumLiteralDeclaration_3() { return cKH_ST_3EnumLiteralDeclaration_3; }
-		
-		//"KH_ST_3"
-		public Keyword getKH_ST_3KH_ST_3Keyword_3_0() { return cKH_ST_3KH_ST_3Keyword_3_0; }
-		
-		//KH_ST_4
-		public EnumLiteralDeclaration getKH_ST_4EnumLiteralDeclaration_4() { return cKH_ST_4EnumLiteralDeclaration_4; }
-		
-		//"KH_ST_4"
-		public Keyword getKH_ST_4KH_ST_4Keyword_4_0() { return cKH_ST_4KH_ST_4Keyword_4_0; }
-		
-		//KH_ST_5
-		public EnumLiteralDeclaration getKH_ST_5EnumLiteralDeclaration_5() { return cKH_ST_5EnumLiteralDeclaration_5; }
-		
-		//"KH_ST_5"
-		public Keyword getKH_ST_5KH_ST_5Keyword_5_0() { return cKH_ST_5KH_ST_5Keyword_5_0; }
-		
-		//KH_ST_6
-		public EnumLiteralDeclaration getKH_ST_6EnumLiteralDeclaration_6() { return cKH_ST_6EnumLiteralDeclaration_6; }
-		
-		//"KH_ST_6"
-		public Keyword getKH_ST_6KH_ST_6Keyword_6_0() { return cKH_ST_6KH_ST_6Keyword_6_0; }
-		
-		//KH_LN_0
-		public EnumLiteralDeclaration getKH_LN_0EnumLiteralDeclaration_7() { return cKH_LN_0EnumLiteralDeclaration_7; }
-		
-		//"KH_LN_0"
-		public Keyword getKH_LN_0KH_LN_0Keyword_7_0() { return cKH_LN_0KH_LN_0Keyword_7_0; }
-		
-		//KH_LN_1
-		public EnumLiteralDeclaration getKH_LN_1EnumLiteralDeclaration_8() { return cKH_LN_1EnumLiteralDeclaration_8; }
-		
-		//"KH_LN_1"
-		public Keyword getKH_LN_1KH_LN_1Keyword_8_0() { return cKH_LN_1KH_LN_1Keyword_8_0; }
-		
-		//KH_LN_2
-		public EnumLiteralDeclaration getKH_LN_2EnumLiteralDeclaration_9() { return cKH_LN_2EnumLiteralDeclaration_9; }
-		
-		//"KH_LN_2"
-		public Keyword getKH_LN_2KH_LN_2Keyword_9_0() { return cKH_LN_2KH_LN_2Keyword_9_0; }
-		
-		//KH_LN_3
-		public EnumLiteralDeclaration getKH_LN_3EnumLiteralDeclaration_10() { return cKH_LN_3EnumLiteralDeclaration_10; }
-		
-		//"KH_LN_3"
-		public Keyword getKH_LN_3KH_LN_3Keyword_10_0() { return cKH_LN_3KH_LN_3Keyword_10_0; }
-		
-		//KH_LN_4
-		public EnumLiteralDeclaration getKH_LN_4EnumLiteralDeclaration_11() { return cKH_LN_4EnumLiteralDeclaration_11; }
-		
-		//"KH_LN_4"
-		public Keyword getKH_LN_4KH_LN_4Keyword_11_0() { return cKH_LN_4KH_LN_4Keyword_11_0; }
-		
-		//KH_LN_5
-		public EnumLiteralDeclaration getKH_LN_5EnumLiteralDeclaration_12() { return cKH_LN_5EnumLiteralDeclaration_12; }
-		
-		//"KH_LN_5"
-		public Keyword getKH_LN_5KH_LN_5Keyword_12_0() { return cKH_LN_5KH_LN_5Keyword_12_0; }
-		
-		//KH_LN_6
-		public EnumLiteralDeclaration getKH_LN_6EnumLiteralDeclaration_13() { return cKH_LN_6EnumLiteralDeclaration_13; }
-		
-		//"KH_LN_6"
-		public Keyword getKH_LN_6KH_LN_6Keyword_13_0() { return cKH_LN_6KH_LN_6Keyword_13_0; }
-		
-		//KH_LN_7
-		public EnumLiteralDeclaration getKH_LN_7EnumLiteralDeclaration_14() { return cKH_LN_7EnumLiteralDeclaration_14; }
-		
-		//"KH_LN_7"
-		public Keyword getKH_LN_7KH_LN_7Keyword_14_0() { return cKH_LN_7KH_LN_7Keyword_14_0; }
-		
-		//KH_LN_8
-		public EnumLiteralDeclaration getKH_LN_8EnumLiteralDeclaration_15() { return cKH_LN_8EnumLiteralDeclaration_15; }
-		
-		//"KH_LN_8"
-		public Keyword getKH_LN_8KH_LN_8Keyword_15_0() { return cKH_LN_8KH_LN_8Keyword_15_0; }
-		
-		//KIO_LN_0
-		public EnumLiteralDeclaration getKIO_LN_0EnumLiteralDeclaration_16() { return cKIO_LN_0EnumLiteralDeclaration_16; }
-		
-		//"KIO_LN_0"
-		public Keyword getKIO_LN_0KIO_LN_0Keyword_16_0() { return cKIO_LN_0KIO_LN_0Keyword_16_0; }
-		
-		//KIO_LN_1
-		public EnumLiteralDeclaration getKIO_LN_1EnumLiteralDeclaration_17() { return cKIO_LN_1EnumLiteralDeclaration_17; }
-		
-		//"KIO_LN_1"
-		public Keyword getKIO_LN_1KIO_LN_1Keyword_17_0() { return cKIO_LN_1KIO_LN_1Keyword_17_0; }
-		
-		//OC_ST_0
-		public EnumLiteralDeclaration getOC_ST_0EnumLiteralDeclaration_18() { return cOC_ST_0EnumLiteralDeclaration_18; }
-		
-		//"OC_ST_0"
-		public Keyword getOC_ST_0OC_ST_0Keyword_18_0() { return cOC_ST_0OC_ST_0Keyword_18_0; }
-		
-		//OC_ST_1
-		public EnumLiteralDeclaration getOC_ST_1EnumLiteralDeclaration_19() { return cOC_ST_1EnumLiteralDeclaration_19; }
-		
-		//"OC_ST_1"
-		public Keyword getOC_ST_1OC_ST_1Keyword_19_0() { return cOC_ST_1OC_ST_1Keyword_19_0; }
-		
-		//OC_ST_2
-		public EnumLiteralDeclaration getOC_ST_2EnumLiteralDeclaration_20() { return cOC_ST_2EnumLiteralDeclaration_20; }
-		
-		//"OC_ST_2"
-		public Keyword getOC_ST_2OC_ST_2Keyword_20_0() { return cOC_ST_2OC_ST_2Keyword_20_0; }
-		
-		//OC_ST_3
-		public EnumLiteralDeclaration getOC_ST_3EnumLiteralDeclaration_21() { return cOC_ST_3EnumLiteralDeclaration_21; }
-		
-		//"OC_ST_3"
-		public Keyword getOC_ST_3OC_ST_3Keyword_21_0() { return cOC_ST_3OC_ST_3Keyword_21_0; }
-		
-		//OC_ST_4
-		public EnumLiteralDeclaration getOC_ST_4EnumLiteralDeclaration_22() { return cOC_ST_4EnumLiteralDeclaration_22; }
-		
-		//"OC_ST_4"
-		public Keyword getOC_ST_4OC_ST_4Keyword_22_0() { return cOC_ST_4OC_ST_4Keyword_22_0; }
-		
-		//OC_LN_0
-		public EnumLiteralDeclaration getOC_LN_0EnumLiteralDeclaration_23() { return cOC_LN_0EnumLiteralDeclaration_23; }
-		
-		//"OC_LN_0"
-		public Keyword getOC_LN_0OC_LN_0Keyword_23_0() { return cOC_LN_0OC_LN_0Keyword_23_0; }
-		
-		//OC_LN_1
-		public EnumLiteralDeclaration getOC_LN_1EnumLiteralDeclaration_24() { return cOC_LN_1EnumLiteralDeclaration_24; }
-		
-		//"OC_LN_1"
-		public Keyword getOC_LN_1OC_LN_1Keyword_24_0() { return cOC_LN_1OC_LN_1Keyword_24_0; }
-		
-		//OC_LN_2
-		public EnumLiteralDeclaration getOC_LN_2EnumLiteralDeclaration_25() { return cOC_LN_2EnumLiteralDeclaration_25; }
-		
-		//"OC_LN_2"
-		public Keyword getOC_LN_2OC_LN_2Keyword_25_0() { return cOC_LN_2OC_LN_2Keyword_25_0; }
-		
-		//OC_LN_3
-		public EnumLiteralDeclaration getOC_LN_3EnumLiteralDeclaration_26() { return cOC_LN_3EnumLiteralDeclaration_26; }
-		
-		//"OC_LN_3"
-		public Keyword getOC_LN_3OC_LN_3Keyword_26_0() { return cOC_LN_3OC_LN_3Keyword_26_0; }
-		
-		//OC_LN_4
-		public EnumLiteralDeclaration getOC_LN_4EnumLiteralDeclaration_27() { return cOC_LN_4EnumLiteralDeclaration_27; }
-		
-		//"OC_LN_4"
-		public Keyword getOC_LN_4OC_LN_4Keyword_27_0() { return cOC_LN_4OC_LN_4Keyword_27_0; }
-		
-		//OC_LN_5
-		public EnumLiteralDeclaration getOC_LN_5EnumLiteralDeclaration_28() { return cOC_LN_5EnumLiteralDeclaration_28; }
-		
-		//"OC_LN_5"
-		public Keyword getOC_LN_5OC_LN_5Keyword_28_0() { return cOC_LN_5OC_LN_5Keyword_28_0; }
-		
-		//IC_ST_0
-		public EnumLiteralDeclaration getIC_ST_0EnumLiteralDeclaration_29() { return cIC_ST_0EnumLiteralDeclaration_29; }
-		
-		//"IC_ST_0"
-		public Keyword getIC_ST_0IC_ST_0Keyword_29_0() { return cIC_ST_0IC_ST_0Keyword_29_0; }
-		
-		//IC_ST_1
-		public EnumLiteralDeclaration getIC_ST_1EnumLiteralDeclaration_30() { return cIC_ST_1EnumLiteralDeclaration_30; }
-		
-		//"IC_ST_1"
-		public Keyword getIC_ST_1IC_ST_1Keyword_30_0() { return cIC_ST_1IC_ST_1Keyword_30_0; }
-		
-		//IC_ST_2
-		public EnumLiteralDeclaration getIC_ST_2EnumLiteralDeclaration_31() { return cIC_ST_2EnumLiteralDeclaration_31; }
-		
-		//"IC_ST_2"
-		public Keyword getIC_ST_2IC_ST_2Keyword_31_0() { return cIC_ST_2IC_ST_2Keyword_31_0; }
-		
-		//IC_ST_3
-		public EnumLiteralDeclaration getIC_ST_3EnumLiteralDeclaration_32() { return cIC_ST_3EnumLiteralDeclaration_32; }
-		
-		//"IC_ST_3"
-		public Keyword getIC_ST_3IC_ST_3Keyword_32_0() { return cIC_ST_3IC_ST_3Keyword_32_0; }
-		
-		//IC_ST_4
-		public EnumLiteralDeclaration getIC_ST_4EnumLiteralDeclaration_33() { return cIC_ST_4EnumLiteralDeclaration_33; }
-		
-		//"IC_ST_4"
-		public Keyword getIC_ST_4IC_ST_4Keyword_33_0() { return cIC_ST_4IC_ST_4Keyword_33_0; }
-		
-		//IC_LN_0
-		public EnumLiteralDeclaration getIC_LN_0EnumLiteralDeclaration_34() { return cIC_LN_0EnumLiteralDeclaration_34; }
-		
-		//"IC_LN_0"
-		public Keyword getIC_LN_0IC_LN_0Keyword_34_0() { return cIC_LN_0IC_LN_0Keyword_34_0; }
-		
-		//IC_LN_1
-		public EnumLiteralDeclaration getIC_LN_1EnumLiteralDeclaration_35() { return cIC_LN_1EnumLiteralDeclaration_35; }
-		
-		//"IC_LN_1"
-		public Keyword getIC_LN_1IC_LN_1Keyword_35_0() { return cIC_LN_1IC_LN_1Keyword_35_0; }
-		
-		//IC_LN_2
-		public EnumLiteralDeclaration getIC_LN_2EnumLiteralDeclaration_36() { return cIC_LN_2EnumLiteralDeclaration_36; }
-		
-		//"IC_LN_2"
-		public Keyword getIC_LN_2IC_LN_2Keyword_36_0() { return cIC_LN_2IC_LN_2Keyword_36_0; }
-		
-		//IC_LN_3
-		public EnumLiteralDeclaration getIC_LN_3EnumLiteralDeclaration_37() { return cIC_LN_3EnumLiteralDeclaration_37; }
-		
-		//"IC_LN_3"
-		public Keyword getIC_LN_3IC_LN_3Keyword_37_0() { return cIC_LN_3IC_LN_3Keyword_37_0; }
-		
-		//IC_LN_4
-		public EnumLiteralDeclaration getIC_LN_4EnumLiteralDeclaration_38() { return cIC_LN_4EnumLiteralDeclaration_38; }
-		
-		//"IC_LN_4"
-		public Keyword getIC_LN_4IC_LN_4Keyword_38_0() { return cIC_LN_4IC_LN_4Keyword_38_0; }
-		
-		//IC_LN_5
-		public EnumLiteralDeclaration getIC_LN_5EnumLiteralDeclaration_39() { return cIC_LN_5EnumLiteralDeclaration_39; }
-		
-		//"IC_LN_5"
-		public Keyword getIC_LN_5IC_LN_5Keyword_39_0() { return cIC_LN_5IC_LN_5Keyword_39_0; }
-		
-		//OC_JCT_0
-		public EnumLiteralDeclaration getOC_JCT_0EnumLiteralDeclaration_40() { return cOC_JCT_0EnumLiteralDeclaration_40; }
-		
-		//"OC_JCT_0"
-		public Keyword getOC_JCT_0OC_JCT_0Keyword_40_0() { return cOC_JCT_0OC_JCT_0Keyword_40_0; }
-		
 		//IC_JCT_0
-		public EnumLiteralDeclaration getIC_JCT_0EnumLiteralDeclaration_41() { return cIC_JCT_0EnumLiteralDeclaration_41; }
+		public EnumLiteralDeclaration getIC_JCT_0EnumLiteralDeclaration_0() { return cIC_JCT_0EnumLiteralDeclaration_0; }
 		
 		//"IC_JCT_0"
-		public Keyword getIC_JCT_0IC_JCT_0Keyword_41_0() { return cIC_JCT_0IC_JCT_0Keyword_41_0; }
+		public Keyword getIC_JCT_0IC_JCT_0Keyword_0_0() { return cIC_JCT_0IC_JCT_0Keyword_0_0; }
 		
-		//OI_LN_0
-		public EnumLiteralDeclaration getOI_LN_0EnumLiteralDeclaration_42() { return cOI_LN_0EnumLiteralDeclaration_42; }
+		//IC_LN_0
+		public EnumLiteralDeclaration getIC_LN_0EnumLiteralDeclaration_1() { return cIC_LN_0EnumLiteralDeclaration_1; }
 		
-		//"OI_LN_0"
-		public Keyword getOI_LN_0OI_LN_0Keyword_42_0() { return cOI_LN_0OI_LN_0Keyword_42_0; }
+		//"IC_LN_0"
+		public Keyword getIC_LN_0IC_LN_0Keyword_1_0() { return cIC_LN_0IC_LN_0Keyword_1_0; }
 		
-		//OI_LN_1
-		public EnumLiteralDeclaration getOI_LN_1EnumLiteralDeclaration_43() { return cOI_LN_1EnumLiteralDeclaration_43; }
+		//IC_LN_1
+		public EnumLiteralDeclaration getIC_LN_1EnumLiteralDeclaration_2() { return cIC_LN_1EnumLiteralDeclaration_2; }
 		
-		//"OI_LN_1"
-		public Keyword getOI_LN_1OI_LN_1Keyword_43_0() { return cOI_LN_1OI_LN_1Keyword_43_0; }
+		//"IC_LN_1"
+		public Keyword getIC_LN_1IC_LN_1Keyword_2_0() { return cIC_LN_1IC_LN_1Keyword_2_0; }
 		
-		//OI_LN_2
-		public EnumLiteralDeclaration getOI_LN_2EnumLiteralDeclaration_44() { return cOI_LN_2EnumLiteralDeclaration_44; }
+		//IC_LN_2
+		public EnumLiteralDeclaration getIC_LN_2EnumLiteralDeclaration_3() { return cIC_LN_2EnumLiteralDeclaration_3; }
 		
-		//"OI_LN_2"
-		public Keyword getOI_LN_2OI_LN_2Keyword_44_0() { return cOI_LN_2OI_LN_2Keyword_44_0; }
+		//"IC_LN_2"
+		public Keyword getIC_LN_2IC_LN_2Keyword_3_0() { return cIC_LN_2IC_LN_2Keyword_3_0; }
+		
+		//IC_LN_3
+		public EnumLiteralDeclaration getIC_LN_3EnumLiteralDeclaration_4() { return cIC_LN_3EnumLiteralDeclaration_4; }
+		
+		//"IC_LN_3"
+		public Keyword getIC_LN_3IC_LN_3Keyword_4_0() { return cIC_LN_3IC_LN_3Keyword_4_0; }
+		
+		//IC_LN_4
+		public EnumLiteralDeclaration getIC_LN_4EnumLiteralDeclaration_5() { return cIC_LN_4EnumLiteralDeclaration_5; }
+		
+		//"IC_LN_4"
+		public Keyword getIC_LN_4IC_LN_4Keyword_5_0() { return cIC_LN_4IC_LN_4Keyword_5_0; }
+		
+		//IC_LN_5
+		public EnumLiteralDeclaration getIC_LN_5EnumLiteralDeclaration_6() { return cIC_LN_5EnumLiteralDeclaration_6; }
+		
+		//"IC_LN_5"
+		public Keyword getIC_LN_5IC_LN_5Keyword_6_0() { return cIC_LN_5IC_LN_5Keyword_6_0; }
+		
+		//IC_ST_0
+		public EnumLiteralDeclaration getIC_ST_0EnumLiteralDeclaration_7() { return cIC_ST_0EnumLiteralDeclaration_7; }
+		
+		//"IC_ST_0"
+		public Keyword getIC_ST_0IC_ST_0Keyword_7_0() { return cIC_ST_0IC_ST_0Keyword_7_0; }
+		
+		//IC_ST_1
+		public EnumLiteralDeclaration getIC_ST_1EnumLiteralDeclaration_8() { return cIC_ST_1EnumLiteralDeclaration_8; }
+		
+		//"IC_ST_1"
+		public Keyword getIC_ST_1IC_ST_1Keyword_8_0() { return cIC_ST_1IC_ST_1Keyword_8_0; }
+		
+		//IC_ST_2
+		public EnumLiteralDeclaration getIC_ST_2EnumLiteralDeclaration_9() { return cIC_ST_2EnumLiteralDeclaration_9; }
+		
+		//"IC_ST_2"
+		public Keyword getIC_ST_2IC_ST_2Keyword_9_0() { return cIC_ST_2IC_ST_2Keyword_9_0; }
+		
+		//IC_ST_3
+		public EnumLiteralDeclaration getIC_ST_3EnumLiteralDeclaration_10() { return cIC_ST_3EnumLiteralDeclaration_10; }
+		
+		//"IC_ST_3"
+		public Keyword getIC_ST_3IC_ST_3Keyword_10_0() { return cIC_ST_3IC_ST_3Keyword_10_0; }
+		
+		//IC_ST_4
+		public EnumLiteralDeclaration getIC_ST_4EnumLiteralDeclaration_11() { return cIC_ST_4EnumLiteralDeclaration_11; }
+		
+		//"IC_ST_4"
+		public Keyword getIC_ST_4IC_ST_4Keyword_11_0() { return cIC_ST_4IC_ST_4Keyword_11_0; }
 		
 		//IO_LN_0
-		public EnumLiteralDeclaration getIO_LN_0EnumLiteralDeclaration_45() { return cIO_LN_0EnumLiteralDeclaration_45; }
+		public EnumLiteralDeclaration getIO_LN_0EnumLiteralDeclaration_12() { return cIO_LN_0EnumLiteralDeclaration_12; }
 		
 		//"IO_LN_0"
-		public Keyword getIO_LN_0IO_LN_0Keyword_45_0() { return cIO_LN_0IO_LN_0Keyword_45_0; }
+		public Keyword getIO_LN_0IO_LN_0Keyword_12_0() { return cIO_LN_0IO_LN_0Keyword_12_0; }
 		
 		//IO_LN_1
-		public EnumLiteralDeclaration getIO_LN_1EnumLiteralDeclaration_46() { return cIO_LN_1EnumLiteralDeclaration_46; }
+		public EnumLiteralDeclaration getIO_LN_1EnumLiteralDeclaration_13() { return cIO_LN_1EnumLiteralDeclaration_13; }
 		
 		//"IO_LN_1"
-		public Keyword getIO_LN_1IO_LN_1Keyword_46_0() { return cIO_LN_1IO_LN_1Keyword_46_0; }
+		public Keyword getIO_LN_1IO_LN_1Keyword_13_0() { return cIO_LN_1IO_LN_1Keyword_13_0; }
 		
 		//IO_LN_2
-		public EnumLiteralDeclaration getIO_LN_2EnumLiteralDeclaration_47() { return cIO_LN_2EnumLiteralDeclaration_47; }
+		public EnumLiteralDeclaration getIO_LN_2EnumLiteralDeclaration_14() { return cIO_LN_2EnumLiteralDeclaration_14; }
 		
 		//"IO_LN_2"
-		public Keyword getIO_LN_2IO_LN_2Keyword_47_0() { return cIO_LN_2IO_LN_2Keyword_47_0; }
+		public Keyword getIO_LN_2IO_LN_2Keyword_14_0() { return cIO_LN_2IO_LN_2Keyword_14_0; }
+		
+		//KH_LN_0
+		public EnumLiteralDeclaration getKH_LN_0EnumLiteralDeclaration_15() { return cKH_LN_0EnumLiteralDeclaration_15; }
+		
+		//"KH_LN_0"
+		public Keyword getKH_LN_0KH_LN_0Keyword_15_0() { return cKH_LN_0KH_LN_0Keyword_15_0; }
+		
+		//KH_LN_1
+		public EnumLiteralDeclaration getKH_LN_1EnumLiteralDeclaration_16() { return cKH_LN_1EnumLiteralDeclaration_16; }
+		
+		//"KH_LN_1"
+		public Keyword getKH_LN_1KH_LN_1Keyword_16_0() { return cKH_LN_1KH_LN_1Keyword_16_0; }
+		
+		//KH_LN_2
+		public EnumLiteralDeclaration getKH_LN_2EnumLiteralDeclaration_17() { return cKH_LN_2EnumLiteralDeclaration_17; }
+		
+		//"KH_LN_2"
+		public Keyword getKH_LN_2KH_LN_2Keyword_17_0() { return cKH_LN_2KH_LN_2Keyword_17_0; }
+		
+		//KH_LN_3
+		public EnumLiteralDeclaration getKH_LN_3EnumLiteralDeclaration_18() { return cKH_LN_3EnumLiteralDeclaration_18; }
+		
+		//"KH_LN_3"
+		public Keyword getKH_LN_3KH_LN_3Keyword_18_0() { return cKH_LN_3KH_LN_3Keyword_18_0; }
+		
+		//KH_LN_4
+		public EnumLiteralDeclaration getKH_LN_4EnumLiteralDeclaration_19() { return cKH_LN_4EnumLiteralDeclaration_19; }
+		
+		//"KH_LN_4"
+		public Keyword getKH_LN_4KH_LN_4Keyword_19_0() { return cKH_LN_4KH_LN_4Keyword_19_0; }
+		
+		//KH_LN_5
+		public EnumLiteralDeclaration getKH_LN_5EnumLiteralDeclaration_20() { return cKH_LN_5EnumLiteralDeclaration_20; }
+		
+		//"KH_LN_5"
+		public Keyword getKH_LN_5KH_LN_5Keyword_20_0() { return cKH_LN_5KH_LN_5Keyword_20_0; }
+		
+		//KH_LN_6
+		public EnumLiteralDeclaration getKH_LN_6EnumLiteralDeclaration_21() { return cKH_LN_6EnumLiteralDeclaration_21; }
+		
+		//"KH_LN_6"
+		public Keyword getKH_LN_6KH_LN_6Keyword_21_0() { return cKH_LN_6KH_LN_6Keyword_21_0; }
+		
+		//KH_LN_7
+		public EnumLiteralDeclaration getKH_LN_7EnumLiteralDeclaration_22() { return cKH_LN_7EnumLiteralDeclaration_22; }
+		
+		//"KH_LN_7"
+		public Keyword getKH_LN_7KH_LN_7Keyword_22_0() { return cKH_LN_7KH_LN_7Keyword_22_0; }
+		
+		//KH_LN_8
+		public EnumLiteralDeclaration getKH_LN_8EnumLiteralDeclaration_23() { return cKH_LN_8EnumLiteralDeclaration_23; }
+		
+		//"KH_LN_8"
+		public Keyword getKH_LN_8KH_LN_8Keyword_23_0() { return cKH_LN_8KH_LN_8Keyword_23_0; }
+		
+		//KH_ST_0
+		public EnumLiteralDeclaration getKH_ST_0EnumLiteralDeclaration_24() { return cKH_ST_0EnumLiteralDeclaration_24; }
+		
+		//"KH_ST_0"
+		public Keyword getKH_ST_0KH_ST_0Keyword_24_0() { return cKH_ST_0KH_ST_0Keyword_24_0; }
+		
+		//KH_ST_1
+		public EnumLiteralDeclaration getKH_ST_1EnumLiteralDeclaration_25() { return cKH_ST_1EnumLiteralDeclaration_25; }
+		
+		//"KH_ST_1"
+		public Keyword getKH_ST_1KH_ST_1Keyword_25_0() { return cKH_ST_1KH_ST_1Keyword_25_0; }
+		
+		//KH_ST_2
+		public EnumLiteralDeclaration getKH_ST_2EnumLiteralDeclaration_26() { return cKH_ST_2EnumLiteralDeclaration_26; }
+		
+		//"KH_ST_2"
+		public Keyword getKH_ST_2KH_ST_2Keyword_26_0() { return cKH_ST_2KH_ST_2Keyword_26_0; }
+		
+		//KH_ST_3
+		public EnumLiteralDeclaration getKH_ST_3EnumLiteralDeclaration_27() { return cKH_ST_3EnumLiteralDeclaration_27; }
+		
+		//"KH_ST_3"
+		public Keyword getKH_ST_3KH_ST_3Keyword_27_0() { return cKH_ST_3KH_ST_3Keyword_27_0; }
+		
+		//KH_ST_4
+		public EnumLiteralDeclaration getKH_ST_4EnumLiteralDeclaration_28() { return cKH_ST_4EnumLiteralDeclaration_28; }
+		
+		//"KH_ST_4"
+		public Keyword getKH_ST_4KH_ST_4Keyword_28_0() { return cKH_ST_4KH_ST_4Keyword_28_0; }
+		
+		//KH_ST_5
+		public EnumLiteralDeclaration getKH_ST_5EnumLiteralDeclaration_29() { return cKH_ST_5EnumLiteralDeclaration_29; }
+		
+		//"KH_ST_5"
+		public Keyword getKH_ST_5KH_ST_5Keyword_29_0() { return cKH_ST_5KH_ST_5Keyword_29_0; }
+		
+		//KH_ST_6
+		public EnumLiteralDeclaration getKH_ST_6EnumLiteralDeclaration_30() { return cKH_ST_6EnumLiteralDeclaration_30; }
+		
+		//"KH_ST_6"
+		public Keyword getKH_ST_6KH_ST_6Keyword_30_0() { return cKH_ST_6KH_ST_6Keyword_30_0; }
+		
+		//KIO_LN_0
+		public EnumLiteralDeclaration getKIO_LN_0EnumLiteralDeclaration_31() { return cKIO_LN_0EnumLiteralDeclaration_31; }
+		
+		//"KIO_LN_0"
+		public Keyword getKIO_LN_0KIO_LN_0Keyword_31_0() { return cKIO_LN_0KIO_LN_0Keyword_31_0; }
+		
+		//KIO_LN_1
+		public EnumLiteralDeclaration getKIO_LN_1EnumLiteralDeclaration_32() { return cKIO_LN_1EnumLiteralDeclaration_32; }
+		
+		//"KIO_LN_1"
+		public Keyword getKIO_LN_1KIO_LN_1Keyword_32_0() { return cKIO_LN_1KIO_LN_1Keyword_32_0; }
+		
+		//OC_JCT_0
+		public EnumLiteralDeclaration getOC_JCT_0EnumLiteralDeclaration_33() { return cOC_JCT_0EnumLiteralDeclaration_33; }
+		
+		//"OC_JCT_0"
+		public Keyword getOC_JCT_0OC_JCT_0Keyword_33_0() { return cOC_JCT_0OC_JCT_0Keyword_33_0; }
+		
+		//OC_LN_0
+		public EnumLiteralDeclaration getOC_LN_0EnumLiteralDeclaration_34() { return cOC_LN_0EnumLiteralDeclaration_34; }
+		
+		//"OC_LN_0"
+		public Keyword getOC_LN_0OC_LN_0Keyword_34_0() { return cOC_LN_0OC_LN_0Keyword_34_0; }
+		
+		//OC_LN_1
+		public EnumLiteralDeclaration getOC_LN_1EnumLiteralDeclaration_35() { return cOC_LN_1EnumLiteralDeclaration_35; }
+		
+		//"OC_LN_1"
+		public Keyword getOC_LN_1OC_LN_1Keyword_35_0() { return cOC_LN_1OC_LN_1Keyword_35_0; }
+		
+		//OC_LN_2
+		public EnumLiteralDeclaration getOC_LN_2EnumLiteralDeclaration_36() { return cOC_LN_2EnumLiteralDeclaration_36; }
+		
+		//"OC_LN_2"
+		public Keyword getOC_LN_2OC_LN_2Keyword_36_0() { return cOC_LN_2OC_LN_2Keyword_36_0; }
+		
+		//OC_LN_3
+		public EnumLiteralDeclaration getOC_LN_3EnumLiteralDeclaration_37() { return cOC_LN_3EnumLiteralDeclaration_37; }
+		
+		//"OC_LN_3"
+		public Keyword getOC_LN_3OC_LN_3Keyword_37_0() { return cOC_LN_3OC_LN_3Keyword_37_0; }
+		
+		//OC_LN_4
+		public EnumLiteralDeclaration getOC_LN_4EnumLiteralDeclaration_38() { return cOC_LN_4EnumLiteralDeclaration_38; }
+		
+		//"OC_LN_4"
+		public Keyword getOC_LN_4OC_LN_4Keyword_38_0() { return cOC_LN_4OC_LN_4Keyword_38_0; }
+		
+		//OC_LN_5
+		public EnumLiteralDeclaration getOC_LN_5EnumLiteralDeclaration_39() { return cOC_LN_5EnumLiteralDeclaration_39; }
+		
+		//"OC_LN_5"
+		public Keyword getOC_LN_5OC_LN_5Keyword_39_0() { return cOC_LN_5OC_LN_5Keyword_39_0; }
+		
+		//OC_ST_0
+		public EnumLiteralDeclaration getOC_ST_0EnumLiteralDeclaration_40() { return cOC_ST_0EnumLiteralDeclaration_40; }
+		
+		//"OC_ST_0"
+		public Keyword getOC_ST_0OC_ST_0Keyword_40_0() { return cOC_ST_0OC_ST_0Keyword_40_0; }
+		
+		//OC_ST_1
+		public EnumLiteralDeclaration getOC_ST_1EnumLiteralDeclaration_41() { return cOC_ST_1EnumLiteralDeclaration_41; }
+		
+		//"OC_ST_1"
+		public Keyword getOC_ST_1OC_ST_1Keyword_41_0() { return cOC_ST_1OC_ST_1Keyword_41_0; }
+		
+		//OC_ST_2
+		public EnumLiteralDeclaration getOC_ST_2EnumLiteralDeclaration_42() { return cOC_ST_2EnumLiteralDeclaration_42; }
+		
+		//"OC_ST_2"
+		public Keyword getOC_ST_2OC_ST_2Keyword_42_0() { return cOC_ST_2OC_ST_2Keyword_42_0; }
+		
+		//OC_ST_3
+		public EnumLiteralDeclaration getOC_ST_3EnumLiteralDeclaration_43() { return cOC_ST_3EnumLiteralDeclaration_43; }
+		
+		//"OC_ST_3"
+		public Keyword getOC_ST_3OC_ST_3Keyword_43_0() { return cOC_ST_3OC_ST_3Keyword_43_0; }
+		
+		//OC_ST_4
+		public EnumLiteralDeclaration getOC_ST_4EnumLiteralDeclaration_44() { return cOC_ST_4EnumLiteralDeclaration_44; }
+		
+		//"OC_ST_4"
+		public Keyword getOC_ST_4OC_ST_4Keyword_44_0() { return cOC_ST_4OC_ST_4Keyword_44_0; }
+		
+		//OI_LN_0
+		public EnumLiteralDeclaration getOI_LN_0EnumLiteralDeclaration_45() { return cOI_LN_0EnumLiteralDeclaration_45; }
+		
+		//"OI_LN_0"
+		public Keyword getOI_LN_0OI_LN_0Keyword_45_0() { return cOI_LN_0OI_LN_0Keyword_45_0; }
+		
+		//OI_LN_1
+		public EnumLiteralDeclaration getOI_LN_1EnumLiteralDeclaration_46() { return cOI_LN_1EnumLiteralDeclaration_46; }
+		
+		//"OI_LN_1"
+		public Keyword getOI_LN_1OI_LN_1Keyword_46_0() { return cOI_LN_1OI_LN_1Keyword_46_0; }
+		
+		//OI_LN_2
+		public EnumLiteralDeclaration getOI_LN_2EnumLiteralDeclaration_47() { return cOI_LN_2EnumLiteralDeclaration_47; }
+		
+		//"OI_LN_2"
+		public Keyword getOI_LN_2OI_LN_2Keyword_47_0() { return cOI_LN_2OI_LN_2Keyword_47_0; }
 	}
 	
 	private final RailProgramElements pRailProgram;
@@ -1413,7 +1445,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final TrackSpeedStopElements eTrackSpeedStop;
 	private final TrackSpeedDriveElements eTrackSpeedDrive;
 	private final PointStatementElements pPointStatement;
-	private final PointOrinetationElements ePointOrinetation;
+	private final PointOrientationElements ePointOrientation;
 	private final WaitStatementElements pWaitStatement;
 	private final TimeWaitStatementElements pTimeWaitStatement;
 	private final ContactWaitStatementElements pContactWaitStatement;
@@ -1447,7 +1479,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.eTrackSpeedStop = new TrackSpeedStopElements();
 		this.eTrackSpeedDrive = new TrackSpeedDriveElements();
 		this.pPointStatement = new PointStatementElements();
-		this.ePointOrinetation = new PointOrinetationElements();
+		this.ePointOrientation = new PointOrientationElements();
 		this.pWaitStatement = new WaitStatementElements();
 		this.pTimeWaitStatement = new TimeWaitStatementElements();
 		this.pContactWaitStatement = new ContactWaitStatementElements();
@@ -1578,7 +1610,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	//PointStatement:
 	//	('Set' | 'set') 'point'
 	//	points+=INT ((',' | 'and' | ',' 'and') points+=INT)*
-	//	'to' orientation=PointOrinetation '.';
+	//	'to' orientation=PointOrientation '.';
 	public PointStatementElements getPointStatementAccess() {
 		return pPointStatement;
 	}
@@ -1587,14 +1619,14 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPointStatementAccess().getRule();
 	}
 	
-	//enum PointOrinetation:
+	//enum PointOrientation:
 	//	STRAIGHT='straight' | BRANCH='branch';
-	public PointOrinetationElements getPointOrinetationAccess() {
-		return ePointOrinetation;
+	public PointOrientationElements getPointOrientationAccess() {
+		return ePointOrientation;
 	}
 	
-	public EnumRule getPointOrinetationRule() {
-		return getPointOrinetationAccess().getRule();
+	public EnumRule getPointOrientationRule() {
+		return getPointOrientationAccess().getRule();
 	}
 	
 	//WaitStatement:
@@ -1687,7 +1719,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	//LightStatement:
 	//	('Turn' | 'turn') 'light'
 	//	lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)*
-	//	state=('on' | 'off')
+	//	state=LightMode
 	//	'.';
 	public LightStatementElements getLightStatementAccess() {
 		return pLightStatement;
@@ -1742,14 +1774,54 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum RailSegment:
-	//	KH_ST_0 | KH_ST_1 | KH_ST_2 | KH_ST_3 | KH_ST_4 | KH_ST_5 | KH_ST_6 |
-	//	KH_LN_0 | KH_LN_1 | KH_LN_2 | KH_LN_3 | KH_LN_4 | KH_LN_5 | KH_LN_6 | KH_LN_7 | KH_LN_8 |
-	//	KIO_LN_0 | KIO_LN_1 | OC_ST_0 | OC_ST_1 | OC_ST_2 | OC_ST_3 | OC_ST_4 |
-	//	OC_LN_0 | OC_LN_1 | OC_LN_2 | OC_LN_3 | OC_LN_4 | OC_LN_5 |
-	//	IC_ST_0 | IC_ST_1 | IC_ST_2 | IC_ST_3 | IC_ST_4 |
-	//	IC_LN_0 | IC_LN_1 | IC_LN_2 | IC_LN_3 | IC_LN_4 | IC_LN_5 |
-	//	OC_JCT_0 | IC_JCT_0 | OI_LN_0 | OI_LN_1 | OI_LN_2 |
-	//	IO_LN_0 | IO_LN_1 | IO_LN_2;
+	//	IC_JCT_0 |
+	//	IC_LN_0 |
+	//	IC_LN_1 |
+	//	IC_LN_2 |
+	//	IC_LN_3 |
+	//	IC_LN_4 |
+	//	IC_LN_5 |
+	//	IC_ST_0 |
+	//	IC_ST_1 |
+	//	IC_ST_2 |
+	//	IC_ST_3 |
+	//	IC_ST_4 |
+	//	IO_LN_0 |
+	//	IO_LN_1 |
+	//	IO_LN_2 |
+	//	KH_LN_0 |
+	//	KH_LN_1 |
+	//	KH_LN_2 |
+	//	KH_LN_3 |
+	//	KH_LN_4 |
+	//	KH_LN_5 |
+	//	KH_LN_6 |
+	//	KH_LN_7 |
+	//	KH_LN_8 |
+	//	KH_ST_0 |
+	//	KH_ST_1 |
+	//	KH_ST_2 |
+	//	KH_ST_3 |
+	//	KH_ST_4 |
+	//	KH_ST_5 |
+	//	KH_ST_6 |
+	//	KIO_LN_0 |
+	//	KIO_LN_1 |
+	//	OC_JCT_0 |
+	//	OC_LN_0 |
+	//	OC_LN_1 |
+	//	OC_LN_2 |
+	//	OC_LN_3 |
+	//	OC_LN_4 |
+	//	OC_LN_5 |
+	//	OC_ST_0 |
+	//	OC_ST_1 |
+	//	OC_ST_2 |
+	//	OC_ST_3 |
+	//	OC_ST_4 |
+	//	OI_LN_0 |
+	//	OI_LN_1 |
+	//	OI_LN_2;
 	public RailSegmentElements getRailSegmentAccess() {
 		return eRailSegment;
 	}

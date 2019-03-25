@@ -63,7 +63,7 @@ public class ConditionalLineImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected static final RailSegment SEGMENT_EDEFAULT = RailSegment.KH_ST_0;
+  protected static final RailSegment SEGMENT_EDEFAULT = RailSegment.IC_JCT_0;
 
   /**
    * The cached value of the '{@link #getSegment() <em>Segment</em>}' attribute.

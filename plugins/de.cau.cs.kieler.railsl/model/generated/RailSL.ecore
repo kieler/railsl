@@ -30,9 +30,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="PointStatement" eSuperTypes="#//SetStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="points" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//PointOrinetation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//PointOrientation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PointOrinetation">
+  <eClassifiers xsi:type="ecore:EEnum" name="PointOrientation">
     <eLiterals name="STRAIGHT" literal="straight"/>
     <eLiterals name="BRANCH" value="1" literal="branch"/>
   </eClassifiers>
@@ -64,7 +64,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LightStatement" eSuperTypes="#//OpStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lights" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//LightMode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LightMode">
     <eLiterals name="ON" literal="on"/>
@@ -85,53 +85,53 @@
         eType="#//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RailSegment">
-    <eLiterals name="KH_ST_0" literal="KH_ST_0"/>
-    <eLiterals name="KH_ST_1" value="1" literal="KH_ST_1"/>
-    <eLiterals name="KH_ST_2" value="2" literal="KH_ST_2"/>
-    <eLiterals name="KH_ST_3" value="3" literal="KH_ST_3"/>
-    <eLiterals name="KH_ST_4" value="4" literal="KH_ST_4"/>
-    <eLiterals name="KH_ST_5" value="5" literal="KH_ST_5"/>
-    <eLiterals name="KH_ST_6" value="6" literal="KH_ST_6"/>
-    <eLiterals name="KH_LN_0" value="7" literal="KH_LN_0"/>
-    <eLiterals name="KH_LN_1" value="8" literal="KH_LN_1"/>
-    <eLiterals name="KH_LN_2" value="9" literal="KH_LN_2"/>
-    <eLiterals name="KH_LN_3" value="10" literal="KH_LN_3"/>
-    <eLiterals name="KH_LN_4" value="11" literal="KH_LN_4"/>
-    <eLiterals name="KH_LN_5" value="12" literal="KH_LN_5"/>
-    <eLiterals name="KH_LN_6" value="13" literal="KH_LN_6"/>
-    <eLiterals name="KH_LN_7" value="14" literal="KH_LN_7"/>
-    <eLiterals name="KH_LN_8" value="15" literal="KH_LN_8"/>
-    <eLiterals name="KIO_LN_0" value="16" literal="KIO_LN_0"/>
-    <eLiterals name="KIO_LN_1" value="17" literal="KIO_LN_1"/>
-    <eLiterals name="OC_ST_0" value="18" literal="OC_ST_0"/>
-    <eLiterals name="OC_ST_1" value="19" literal="OC_ST_1"/>
-    <eLiterals name="OC_ST_2" value="20" literal="OC_ST_2"/>
-    <eLiterals name="OC_ST_3" value="21" literal="OC_ST_3"/>
-    <eLiterals name="OC_ST_4" value="22" literal="OC_ST_4"/>
-    <eLiterals name="OC_LN_0" value="23" literal="OC_LN_0"/>
-    <eLiterals name="OC_LN_1" value="24" literal="OC_LN_1"/>
-    <eLiterals name="OC_LN_2" value="25" literal="OC_LN_2"/>
-    <eLiterals name="OC_LN_3" value="26" literal="OC_LN_3"/>
-    <eLiterals name="OC_LN_4" value="27" literal="OC_LN_4"/>
-    <eLiterals name="OC_LN_5" value="28" literal="OC_LN_5"/>
-    <eLiterals name="IC_ST_0" value="29" literal="IC_ST_0"/>
-    <eLiterals name="IC_ST_1" value="30" literal="IC_ST_1"/>
-    <eLiterals name="IC_ST_2" value="31" literal="IC_ST_2"/>
-    <eLiterals name="IC_ST_3" value="32" literal="IC_ST_3"/>
-    <eLiterals name="IC_ST_4" value="33" literal="IC_ST_4"/>
-    <eLiterals name="IC_LN_0" value="34" literal="IC_LN_0"/>
-    <eLiterals name="IC_LN_1" value="35" literal="IC_LN_1"/>
-    <eLiterals name="IC_LN_2" value="36" literal="IC_LN_2"/>
-    <eLiterals name="IC_LN_3" value="37" literal="IC_LN_3"/>
-    <eLiterals name="IC_LN_4" value="38" literal="IC_LN_4"/>
-    <eLiterals name="IC_LN_5" value="39" literal="IC_LN_5"/>
-    <eLiterals name="OC_JCT_0" value="40" literal="OC_JCT_0"/>
-    <eLiterals name="IC_JCT_0" value="41" literal="IC_JCT_0"/>
-    <eLiterals name="OI_LN_0" value="42" literal="OI_LN_0"/>
-    <eLiterals name="OI_LN_1" value="43" literal="OI_LN_1"/>
-    <eLiterals name="OI_LN_2" value="44" literal="OI_LN_2"/>
-    <eLiterals name="IO_LN_0" value="45" literal="IO_LN_0"/>
-    <eLiterals name="IO_LN_1" value="46" literal="IO_LN_1"/>
-    <eLiterals name="IO_LN_2" value="47" literal="IO_LN_2"/>
+    <eLiterals name="IC_JCT_0" literal="IC_JCT_0"/>
+    <eLiterals name="IC_LN_0" value="1" literal="IC_LN_0"/>
+    <eLiterals name="IC_LN_1" value="2" literal="IC_LN_1"/>
+    <eLiterals name="IC_LN_2" value="3" literal="IC_LN_2"/>
+    <eLiterals name="IC_LN_3" value="4" literal="IC_LN_3"/>
+    <eLiterals name="IC_LN_4" value="5" literal="IC_LN_4"/>
+    <eLiterals name="IC_LN_5" value="6" literal="IC_LN_5"/>
+    <eLiterals name="IC_ST_0" value="7" literal="IC_ST_0"/>
+    <eLiterals name="IC_ST_1" value="8" literal="IC_ST_1"/>
+    <eLiterals name="IC_ST_2" value="9" literal="IC_ST_2"/>
+    <eLiterals name="IC_ST_3" value="10" literal="IC_ST_3"/>
+    <eLiterals name="IC_ST_4" value="11" literal="IC_ST_4"/>
+    <eLiterals name="IO_LN_0" value="12" literal="IO_LN_0"/>
+    <eLiterals name="IO_LN_1" value="13" literal="IO_LN_1"/>
+    <eLiterals name="IO_LN_2" value="14" literal="IO_LN_2"/>
+    <eLiterals name="KH_LN_0" value="15" literal="KH_LN_0"/>
+    <eLiterals name="KH_LN_1" value="16" literal="KH_LN_1"/>
+    <eLiterals name="KH_LN_2" value="17" literal="KH_LN_2"/>
+    <eLiterals name="KH_LN_3" value="18" literal="KH_LN_3"/>
+    <eLiterals name="KH_LN_4" value="19" literal="KH_LN_4"/>
+    <eLiterals name="KH_LN_5" value="20" literal="KH_LN_5"/>
+    <eLiterals name="KH_LN_6" value="21" literal="KH_LN_6"/>
+    <eLiterals name="KH_LN_7" value="22" literal="KH_LN_7"/>
+    <eLiterals name="KH_LN_8" value="23" literal="KH_LN_8"/>
+    <eLiterals name="KH_ST_0" value="24" literal="KH_ST_0"/>
+    <eLiterals name="KH_ST_1" value="25" literal="KH_ST_1"/>
+    <eLiterals name="KH_ST_2" value="26" literal="KH_ST_2"/>
+    <eLiterals name="KH_ST_3" value="27" literal="KH_ST_3"/>
+    <eLiterals name="KH_ST_4" value="28" literal="KH_ST_4"/>
+    <eLiterals name="KH_ST_5" value="29" literal="KH_ST_5"/>
+    <eLiterals name="KH_ST_6" value="30" literal="KH_ST_6"/>
+    <eLiterals name="KIO_LN_0" value="31" literal="KIO_LN_0"/>
+    <eLiterals name="KIO_LN_1" value="32" literal="KIO_LN_1"/>
+    <eLiterals name="OC_JCT_0" value="33" literal="OC_JCT_0"/>
+    <eLiterals name="OC_LN_0" value="34" literal="OC_LN_0"/>
+    <eLiterals name="OC_LN_1" value="35" literal="OC_LN_1"/>
+    <eLiterals name="OC_LN_2" value="36" literal="OC_LN_2"/>
+    <eLiterals name="OC_LN_3" value="37" literal="OC_LN_3"/>
+    <eLiterals name="OC_LN_4" value="38" literal="OC_LN_4"/>
+    <eLiterals name="OC_LN_5" value="39" literal="OC_LN_5"/>
+    <eLiterals name="OC_ST_0" value="40" literal="OC_ST_0"/>
+    <eLiterals name="OC_ST_1" value="41" literal="OC_ST_1"/>
+    <eLiterals name="OC_ST_2" value="42" literal="OC_ST_2"/>
+    <eLiterals name="OC_ST_3" value="43" literal="OC_ST_3"/>
+    <eLiterals name="OC_ST_4" value="44" literal="OC_ST_4"/>
+    <eLiterals name="OI_LN_0" value="45" literal="OI_LN_0"/>
+    <eLiterals name="OI_LN_1" value="46" literal="OI_LN_1"/>
+    <eLiterals name="OI_LN_2" value="47" literal="OI_LN_2"/>
   </eClassifiers>
 </ecore:EPackage>

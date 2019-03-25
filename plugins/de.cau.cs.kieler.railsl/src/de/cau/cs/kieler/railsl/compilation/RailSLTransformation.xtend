@@ -32,7 +32,7 @@ import de.cau.cs.kieler.railsl.railSL.CrossingStatement
 import de.cau.cs.kieler.railsl.railSL.LightStatement
 import de.cau.cs.kieler.railsl.railSL.ParallelStatement
 import de.cau.cs.kieler.railsl.railSL.PointStatement
-import de.cau.cs.kieler.railsl.railSL.Program
+import de.cau.cs.kieler.railsl.railSL.RailProgram
 import de.cau.cs.kieler.railsl.railSL.Statement
 import de.cau.cs.kieler.railsl.railSL.TimeWaitStatement
 import de.cau.cs.kieler.railsl.railSL.TrackStatement
@@ -46,7 +46,7 @@ import de.cau.cs.kieler.sccharts.extensions.SCChartsStateExtensions
 import de.cau.cs.kieler.sccharts.extensions.SCChartsTransitionExtensions
 import java.util.ArrayList
 import java.util.HashMap
-import org.eclipse.emf.ecore.EObject
+import de.cau.cs.kieler.railsl.railSL.RailSegment
 
 /**
  * Transforms a RailSL model to an SCChart.
@@ -54,7 +54,7 @@ import org.eclipse.emf.ecore.EObject
  * @author Philip Eumann (peu) - stu121235@mail.uni-kiel.de
  * 
  */
-class RailSLTransformation extends Processor<Program, SCCharts> implements Traceable {
+class RailSLTransformation extends Processor<RailProgram, SCCharts> implements Traceable {
 
     override getId() {
         return "de.cau.cs.kieler.railsl.railsl"
@@ -71,7 +71,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
     override process() {
         val model = getModel
         val state = model.railSLtoSCChart
-        
+        var test = valObjects
         val scc = SCChartsFactory.eINSTANCE.createSCCharts
         scc.rootStates += state
         
@@ -144,7 +144,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
     /**
      * Transforms an instance of the RailSL metamodel to an instance of the SCCharts metamodel.
      */
-    def State railSLtoSCChart(Program model) {
+    def State railSLtoSCChart(RailProgram model) {
         return generateSCChart(model.block)
     }
 
@@ -249,15 +249,15 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
 //            valObjects.put(name, valObject)
 //        }
         var i = 0
-        for (segment: RailSLExtensions::constants) {
+        for (segment: RailSegment.values()) {
             val trackConstantDecl = createIntDeclaration
             trackConstantDecl.const = true
-            val valObject = createValuedObject(segment)
+            val valObject = createValuedObject(segment.toString())
             valObject.initialValue = createIntValue(i)
             trackConstantDecl.attach(valObject)
             
             chart.declarations.add(trackConstantDecl)
-            valObjects.put(segment, valObject)
+            valObjects.put(segment.toString(), valObject)
             i++
         }
         // speed constants
@@ -496,7 +496,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
         // create trigger expressions for each statement
         for (line : cStatement.lines) {
             expressions.add(contacts.reference => [
-                    indices += valObjects.get(line.segName).reference
+                    indices += valObjects.get(line.segment.toString()).reference
                     indices += valObjects.get(line.contact + "Contact").reference
                 ])
             i++
@@ -538,7 +538,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
         for (light : lStatement.lights) {
             var nextState = region.createState("_S" + i)
             var transition = currentState.createImmediateTransitionTo(nextState)
-            transition.addEffect(lights.createAssignment(valObjects.get(lStatement.state).reference) => [
+            transition.addEffect(lights.createAssignment(valObjects.get(lStatement.state.literal).reference) => [
                 indices += createIntValue(light)
             ])
             currentState = nextState
@@ -568,7 +568,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
         for (point : spStatement.points) {
             var nextState = region.createState("_S" + i)
             var transition = currentState.createImmediateTransitionTo(nextState)
-            transition.addEffect(points.createAssignment(valObjects.get(spStatement.orientation).reference) => [
+            transition.addEffect(points.createAssignment(valObjects.get(spStatement.orientation.toString()).reference) => [
                 indices += createIntValue(point)
             ])
             currentState = nextState
@@ -591,17 +591,20 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
         
         var speedString = ""
         var signalString = ""
-        if (stStatement.mode.contains("full")) {
-            speedString = "full"
-            signalString = "green"
-        } else if (stStatement.mode.contains("slow")) {
-            speedString = "slow"
-            signalString = "yellow"
-        } else {
-            speedString = "stop"
-            signalString = "red"
+        switch (stStatement.speed) {
+        	case FULL: {
+                speedString = "full"
+                signalString = "green"
+        	}
+            case SLOW: {
+                speedString = "slow"
+                signalString = "yellow"
+            }
+        	default: {
+                speedString = "stop"
+                signalString = "red"
+        	}
         }
-        
         val direction = parseDirection(stStatement)
         var currentState = region.createInitialState("init")
         var i = 0
@@ -619,21 +622,21 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
             println(segment)
             // Set the track speed and direction
             transition.addEffect(tracks.createAssignment(valObjects.get(speedString).reference) => [
-                indices += valObjects.get(segment).reference
+                indices += valObjects.get(segment.toString()).reference
                 indices += createIntValue(0)
             ])
             transition.addEffect(tracks.createAssignment(createIntValue(direction)) => [
-                indices += valObjects.get(segment).reference
+                indices += valObjects.get(segment.toString()).reference
                 indices += createIntValue(1)
             ])
 
             // Set the signals accordingly
             transition.addEffect(signals.createAssignment(valObjects.get(signalString).reference) => [
-                indices += valObjects.get(segment).reference
+                indices += valObjects.get(segment.toString()).reference
                 indices += createIntValue(if(direction != 0) 1 else 0)
             ])
             transition.addEffect(signals.createAssignment(valObjects.get("red").reference) => [
-                indices += valObjects.get(segment).reference
+                indices += valObjects.get(segment.toString()).reference
                 indices += createIntValue(if(direction == 0) 1 else 0)
             ])
             currentState = nextState
@@ -657,7 +660,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
 
         // Create all required states
         var region = state.createControlflowRegion(cwStatement.event + "_contact_" + contactIndex + "_" + 
-            cwStatement.segName);
+            cwStatement.segment);
         var init = region.createInitialState("init")
         var done = region.createFinalState("done");
         var transition = init.createImmediateTransitionTo(done)
@@ -668,7 +671,7 @@ class RailSLTransformation extends Processor<Program, SCCharts> implements Trace
 
         // Set the transition trigger to check for the contact 
         transition.trigger = contacts.reference => [
-            indices += valObjects.get(cwStatement.segName).reference
+            indices += valObjects.get(cwStatement.segment.toString()).reference
             indices += valObjects.get(cwStatement.contact + "Contact").reference
         ]
     }

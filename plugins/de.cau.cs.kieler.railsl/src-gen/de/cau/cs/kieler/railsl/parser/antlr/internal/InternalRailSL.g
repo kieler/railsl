@@ -523,9 +523,9 @@ rulePointStatement returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPointStatementAccess().getOrientationPointOrinetationEnumRuleCall_5_0());
+					newCompositeNode(grammarAccess.getPointStatementAccess().getOrientationPointOrientationEnumRuleCall_5_0());
 				}
-				lv_orientation_10_0=rulePointOrinetation
+				lv_orientation_10_0=rulePointOrientation
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPointStatementRule());
@@ -534,7 +534,7 @@ rulePointStatement returns [EObject current=null]
 						$current,
 						"orientation",
 						lv_orientation_10_0,
-						"de.cau.cs.kieler.railsl.RailSL.PointOrinetation");
+						"de.cau.cs.kieler.railsl.RailSL.PointOrientation");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -899,29 +899,21 @@ ruleLightStatement returns [EObject current=null]
 		)*
 		(
 			(
-				(
-					lv_state_9_1='on'
-					{
-						newLeafNode(lv_state_9_1, grammarAccess.getLightStatementAccess().getStateOnKeyword_4_0_0());
+				{
+					newCompositeNode(grammarAccess.getLightStatementAccess().getStateLightModeEnumRuleCall_4_0());
+				}
+				lv_state_9_0=ruleLightMode
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLightStatementRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLightStatementRule());
-						}
-						setWithLastConsumed($current, "state", lv_state_9_1, null);
-					}
-					    |
-					lv_state_9_2='off'
-					{
-						newLeafNode(lv_state_9_2, grammarAccess.getLightStatementAccess().getStateOffKeyword_4_0_1());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLightStatementRule());
-						}
-						setWithLastConsumed($current, "state", lv_state_9_2, null);
-					}
-				)
+					set(
+						$current,
+						"state",
+						lv_state_9_0,
+						"de.cau.cs.kieler.railsl.RailSL.LightMode");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		otherlv_10='.'
@@ -1272,8 +1264,8 @@ ruleTrackSpeedDrive returns [Enumerator current=null]
 	)
 ;
 
-// Rule PointOrinetation
-rulePointOrinetation returns [Enumerator current=null]
+// Rule PointOrientation
+rulePointOrientation returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -1284,16 +1276,16 @@ rulePointOrinetation returns [Enumerator current=null]
 		(
 			enumLiteral_0='straight'
 			{
-				$current = grammarAccess.getPointOrinetationAccess().getSTRAIGHTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getPointOrinetationAccess().getSTRAIGHTEnumLiteralDeclaration_0());
+				$current = grammarAccess.getPointOrientationAccess().getSTRAIGHTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getPointOrientationAccess().getSTRAIGHTEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='branch'
 			{
-				$current = grammarAccess.getPointOrinetationAccess().getBRANCHEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getPointOrinetationAccess().getBRANCHEnumLiteralDeclaration_1());
+				$current = grammarAccess.getPointOrientationAccess().getBRANCHEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getPointOrientationAccess().getBRANCHEnumLiteralDeclaration_1());
 			}
 		)
 	)
@@ -1412,6 +1404,33 @@ ruleCrossingMode returns [Enumerator current=null]
 	)
 ;
 
+// Rule LightMode
+ruleLightMode returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='on'
+			{
+				$current = grammarAccess.getLightModeAccess().getONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getLightModeAccess().getONEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='off'
+			{
+				$current = grammarAccess.getLightModeAccess().getOFFEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getLightModeAccess().getOFFEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
 // Rule RailSegment
 ruleRailSegment returns [Enumerator current=null]
 @init {
@@ -1422,386 +1441,386 @@ ruleRailSegment returns [Enumerator current=null]
 }:
 	(
 		(
-			enumLiteral_0='KH_ST_0'
+			enumLiteral_0='IC_JCT_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_0EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getRailSegmentAccess().getKH_ST_0EnumLiteralDeclaration_0());
+				$current = grammarAccess.getRailSegmentAccess().getIC_JCT_0EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getRailSegmentAccess().getIC_JCT_0EnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
-			enumLiteral_1='KH_ST_1'
+			enumLiteral_1='IC_LN_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_1EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getRailSegmentAccess().getKH_ST_1EnumLiteralDeclaration_1());
+				$current = grammarAccess.getRailSegmentAccess().getIC_LN_0EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getRailSegmentAccess().getIC_LN_0EnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
-			enumLiteral_2='KH_ST_2'
+			enumLiteral_2='IC_LN_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_2EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getRailSegmentAccess().getKH_ST_2EnumLiteralDeclaration_2());
+				$current = grammarAccess.getRailSegmentAccess().getIC_LN_1EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getRailSegmentAccess().getIC_LN_1EnumLiteralDeclaration_2());
 			}
 		)
 		    |
 		(
-			enumLiteral_3='KH_ST_3'
+			enumLiteral_3='IC_LN_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_3EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getRailSegmentAccess().getKH_ST_3EnumLiteralDeclaration_3());
+				$current = grammarAccess.getRailSegmentAccess().getIC_LN_2EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getRailSegmentAccess().getIC_LN_2EnumLiteralDeclaration_3());
 			}
 		)
 		    |
 		(
-			enumLiteral_4='KH_ST_4'
+			enumLiteral_4='IC_LN_3'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_4EnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getRailSegmentAccess().getKH_ST_4EnumLiteralDeclaration_4());
+				$current = grammarAccess.getRailSegmentAccess().getIC_LN_3EnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getRailSegmentAccess().getIC_LN_3EnumLiteralDeclaration_4());
 			}
 		)
 		    |
 		(
-			enumLiteral_5='KH_ST_5'
+			enumLiteral_5='IC_LN_4'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_5EnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getRailSegmentAccess().getKH_ST_5EnumLiteralDeclaration_5());
+				$current = grammarAccess.getRailSegmentAccess().getIC_LN_4EnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getRailSegmentAccess().getIC_LN_4EnumLiteralDeclaration_5());
 			}
 		)
 		    |
 		(
-			enumLiteral_6='KH_ST_6'
+			enumLiteral_6='IC_LN_5'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_ST_6EnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_6, grammarAccess.getRailSegmentAccess().getKH_ST_6EnumLiteralDeclaration_6());
+				$current = grammarAccess.getRailSegmentAccess().getIC_LN_5EnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getRailSegmentAccess().getIC_LN_5EnumLiteralDeclaration_6());
 			}
 		)
 		    |
 		(
-			enumLiteral_7='KH_LN_0'
+			enumLiteral_7='IC_ST_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_0EnumLiteralDeclaration_7().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_7, grammarAccess.getRailSegmentAccess().getKH_LN_0EnumLiteralDeclaration_7());
+				$current = grammarAccess.getRailSegmentAccess().getIC_ST_0EnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_7, grammarAccess.getRailSegmentAccess().getIC_ST_0EnumLiteralDeclaration_7());
 			}
 		)
 		    |
 		(
-			enumLiteral_8='KH_LN_1'
+			enumLiteral_8='IC_ST_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_1EnumLiteralDeclaration_8().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_8, grammarAccess.getRailSegmentAccess().getKH_LN_1EnumLiteralDeclaration_8());
+				$current = grammarAccess.getRailSegmentAccess().getIC_ST_1EnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_8, grammarAccess.getRailSegmentAccess().getIC_ST_1EnumLiteralDeclaration_8());
 			}
 		)
 		    |
 		(
-			enumLiteral_9='KH_LN_2'
+			enumLiteral_9='IC_ST_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_2EnumLiteralDeclaration_9().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_9, grammarAccess.getRailSegmentAccess().getKH_LN_2EnumLiteralDeclaration_9());
+				$current = grammarAccess.getRailSegmentAccess().getIC_ST_2EnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_9, grammarAccess.getRailSegmentAccess().getIC_ST_2EnumLiteralDeclaration_9());
 			}
 		)
 		    |
 		(
-			enumLiteral_10='KH_LN_3'
+			enumLiteral_10='IC_ST_3'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_3EnumLiteralDeclaration_10().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_10, grammarAccess.getRailSegmentAccess().getKH_LN_3EnumLiteralDeclaration_10());
+				$current = grammarAccess.getRailSegmentAccess().getIC_ST_3EnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_10, grammarAccess.getRailSegmentAccess().getIC_ST_3EnumLiteralDeclaration_10());
 			}
 		)
 		    |
 		(
-			enumLiteral_11='KH_LN_4'
+			enumLiteral_11='IC_ST_4'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_4EnumLiteralDeclaration_11().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_11, grammarAccess.getRailSegmentAccess().getKH_LN_4EnumLiteralDeclaration_11());
+				$current = grammarAccess.getRailSegmentAccess().getIC_ST_4EnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_11, grammarAccess.getRailSegmentAccess().getIC_ST_4EnumLiteralDeclaration_11());
 			}
 		)
 		    |
 		(
-			enumLiteral_12='KH_LN_5'
+			enumLiteral_12='IO_LN_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_5EnumLiteralDeclaration_12().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_12, grammarAccess.getRailSegmentAccess().getKH_LN_5EnumLiteralDeclaration_12());
+				$current = grammarAccess.getRailSegmentAccess().getIO_LN_0EnumLiteralDeclaration_12().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_12, grammarAccess.getRailSegmentAccess().getIO_LN_0EnumLiteralDeclaration_12());
 			}
 		)
 		    |
 		(
-			enumLiteral_13='KH_LN_6'
+			enumLiteral_13='IO_LN_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_6EnumLiteralDeclaration_13().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_13, grammarAccess.getRailSegmentAccess().getKH_LN_6EnumLiteralDeclaration_13());
+				$current = grammarAccess.getRailSegmentAccess().getIO_LN_1EnumLiteralDeclaration_13().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_13, grammarAccess.getRailSegmentAccess().getIO_LN_1EnumLiteralDeclaration_13());
 			}
 		)
 		    |
 		(
-			enumLiteral_14='KH_LN_7'
+			enumLiteral_14='IO_LN_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_7EnumLiteralDeclaration_14().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_14, grammarAccess.getRailSegmentAccess().getKH_LN_7EnumLiteralDeclaration_14());
+				$current = grammarAccess.getRailSegmentAccess().getIO_LN_2EnumLiteralDeclaration_14().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_14, grammarAccess.getRailSegmentAccess().getIO_LN_2EnumLiteralDeclaration_14());
 			}
 		)
 		    |
 		(
-			enumLiteral_15='KH_LN_8'
+			enumLiteral_15='KH_LN_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKH_LN_8EnumLiteralDeclaration_15().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_15, grammarAccess.getRailSegmentAccess().getKH_LN_8EnumLiteralDeclaration_15());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_0EnumLiteralDeclaration_15().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_15, grammarAccess.getRailSegmentAccess().getKH_LN_0EnumLiteralDeclaration_15());
 			}
 		)
 		    |
 		(
-			enumLiteral_16='KIO_LN_0'
+			enumLiteral_16='KH_LN_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKIO_LN_0EnumLiteralDeclaration_16().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_16, grammarAccess.getRailSegmentAccess().getKIO_LN_0EnumLiteralDeclaration_16());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_1EnumLiteralDeclaration_16().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_16, grammarAccess.getRailSegmentAccess().getKH_LN_1EnumLiteralDeclaration_16());
 			}
 		)
 		    |
 		(
-			enumLiteral_17='KIO_LN_1'
+			enumLiteral_17='KH_LN_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getKIO_LN_1EnumLiteralDeclaration_17().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_17, grammarAccess.getRailSegmentAccess().getKIO_LN_1EnumLiteralDeclaration_17());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_2EnumLiteralDeclaration_17().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_17, grammarAccess.getRailSegmentAccess().getKH_LN_2EnumLiteralDeclaration_17());
 			}
 		)
 		    |
 		(
-			enumLiteral_18='OC_ST_0'
+			enumLiteral_18='KH_LN_3'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_ST_0EnumLiteralDeclaration_18().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_18, grammarAccess.getRailSegmentAccess().getOC_ST_0EnumLiteralDeclaration_18());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_3EnumLiteralDeclaration_18().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_18, grammarAccess.getRailSegmentAccess().getKH_LN_3EnumLiteralDeclaration_18());
 			}
 		)
 		    |
 		(
-			enumLiteral_19='OC_ST_1'
+			enumLiteral_19='KH_LN_4'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_ST_1EnumLiteralDeclaration_19().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_19, grammarAccess.getRailSegmentAccess().getOC_ST_1EnumLiteralDeclaration_19());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_4EnumLiteralDeclaration_19().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_19, grammarAccess.getRailSegmentAccess().getKH_LN_4EnumLiteralDeclaration_19());
 			}
 		)
 		    |
 		(
-			enumLiteral_20='OC_ST_2'
+			enumLiteral_20='KH_LN_5'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_ST_2EnumLiteralDeclaration_20().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_20, grammarAccess.getRailSegmentAccess().getOC_ST_2EnumLiteralDeclaration_20());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_5EnumLiteralDeclaration_20().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_20, grammarAccess.getRailSegmentAccess().getKH_LN_5EnumLiteralDeclaration_20());
 			}
 		)
 		    |
 		(
-			enumLiteral_21='OC_ST_3'
+			enumLiteral_21='KH_LN_6'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_ST_3EnumLiteralDeclaration_21().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_21, grammarAccess.getRailSegmentAccess().getOC_ST_3EnumLiteralDeclaration_21());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_6EnumLiteralDeclaration_21().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_21, grammarAccess.getRailSegmentAccess().getKH_LN_6EnumLiteralDeclaration_21());
 			}
 		)
 		    |
 		(
-			enumLiteral_22='OC_ST_4'
+			enumLiteral_22='KH_LN_7'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_ST_4EnumLiteralDeclaration_22().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_22, grammarAccess.getRailSegmentAccess().getOC_ST_4EnumLiteralDeclaration_22());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_7EnumLiteralDeclaration_22().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_22, grammarAccess.getRailSegmentAccess().getKH_LN_7EnumLiteralDeclaration_22());
 			}
 		)
 		    |
 		(
-			enumLiteral_23='OC_LN_0'
+			enumLiteral_23='KH_LN_8'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_LN_0EnumLiteralDeclaration_23().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_23, grammarAccess.getRailSegmentAccess().getOC_LN_0EnumLiteralDeclaration_23());
+				$current = grammarAccess.getRailSegmentAccess().getKH_LN_8EnumLiteralDeclaration_23().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_23, grammarAccess.getRailSegmentAccess().getKH_LN_8EnumLiteralDeclaration_23());
 			}
 		)
 		    |
 		(
-			enumLiteral_24='OC_LN_1'
+			enumLiteral_24='KH_ST_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_LN_1EnumLiteralDeclaration_24().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_24, grammarAccess.getRailSegmentAccess().getOC_LN_1EnumLiteralDeclaration_24());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_0EnumLiteralDeclaration_24().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_24, grammarAccess.getRailSegmentAccess().getKH_ST_0EnumLiteralDeclaration_24());
 			}
 		)
 		    |
 		(
-			enumLiteral_25='OC_LN_2'
+			enumLiteral_25='KH_ST_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_LN_2EnumLiteralDeclaration_25().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_25, grammarAccess.getRailSegmentAccess().getOC_LN_2EnumLiteralDeclaration_25());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_1EnumLiteralDeclaration_25().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_25, grammarAccess.getRailSegmentAccess().getKH_ST_1EnumLiteralDeclaration_25());
 			}
 		)
 		    |
 		(
-			enumLiteral_26='OC_LN_3'
+			enumLiteral_26='KH_ST_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_LN_3EnumLiteralDeclaration_26().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_26, grammarAccess.getRailSegmentAccess().getOC_LN_3EnumLiteralDeclaration_26());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_2EnumLiteralDeclaration_26().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_26, grammarAccess.getRailSegmentAccess().getKH_ST_2EnumLiteralDeclaration_26());
 			}
 		)
 		    |
 		(
-			enumLiteral_27='OC_LN_4'
+			enumLiteral_27='KH_ST_3'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_LN_4EnumLiteralDeclaration_27().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_27, grammarAccess.getRailSegmentAccess().getOC_LN_4EnumLiteralDeclaration_27());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_3EnumLiteralDeclaration_27().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_27, grammarAccess.getRailSegmentAccess().getKH_ST_3EnumLiteralDeclaration_27());
 			}
 		)
 		    |
 		(
-			enumLiteral_28='OC_LN_5'
+			enumLiteral_28='KH_ST_4'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_LN_5EnumLiteralDeclaration_28().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_28, grammarAccess.getRailSegmentAccess().getOC_LN_5EnumLiteralDeclaration_28());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_4EnumLiteralDeclaration_28().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_28, grammarAccess.getRailSegmentAccess().getKH_ST_4EnumLiteralDeclaration_28());
 			}
 		)
 		    |
 		(
-			enumLiteral_29='IC_ST_0'
+			enumLiteral_29='KH_ST_5'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_ST_0EnumLiteralDeclaration_29().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_29, grammarAccess.getRailSegmentAccess().getIC_ST_0EnumLiteralDeclaration_29());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_5EnumLiteralDeclaration_29().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_29, grammarAccess.getRailSegmentAccess().getKH_ST_5EnumLiteralDeclaration_29());
 			}
 		)
 		    |
 		(
-			enumLiteral_30='IC_ST_1'
+			enumLiteral_30='KH_ST_6'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_ST_1EnumLiteralDeclaration_30().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_30, grammarAccess.getRailSegmentAccess().getIC_ST_1EnumLiteralDeclaration_30());
+				$current = grammarAccess.getRailSegmentAccess().getKH_ST_6EnumLiteralDeclaration_30().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_30, grammarAccess.getRailSegmentAccess().getKH_ST_6EnumLiteralDeclaration_30());
 			}
 		)
 		    |
 		(
-			enumLiteral_31='IC_ST_2'
+			enumLiteral_31='KIO_LN_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_ST_2EnumLiteralDeclaration_31().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_31, grammarAccess.getRailSegmentAccess().getIC_ST_2EnumLiteralDeclaration_31());
+				$current = grammarAccess.getRailSegmentAccess().getKIO_LN_0EnumLiteralDeclaration_31().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_31, grammarAccess.getRailSegmentAccess().getKIO_LN_0EnumLiteralDeclaration_31());
 			}
 		)
 		    |
 		(
-			enumLiteral_32='IC_ST_3'
+			enumLiteral_32='KIO_LN_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_ST_3EnumLiteralDeclaration_32().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_32, grammarAccess.getRailSegmentAccess().getIC_ST_3EnumLiteralDeclaration_32());
+				$current = grammarAccess.getRailSegmentAccess().getKIO_LN_1EnumLiteralDeclaration_32().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_32, grammarAccess.getRailSegmentAccess().getKIO_LN_1EnumLiteralDeclaration_32());
 			}
 		)
 		    |
 		(
-			enumLiteral_33='IC_ST_4'
+			enumLiteral_33='OC_JCT_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_ST_4EnumLiteralDeclaration_33().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_33, grammarAccess.getRailSegmentAccess().getIC_ST_4EnumLiteralDeclaration_33());
+				$current = grammarAccess.getRailSegmentAccess().getOC_JCT_0EnumLiteralDeclaration_33().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_33, grammarAccess.getRailSegmentAccess().getOC_JCT_0EnumLiteralDeclaration_33());
 			}
 		)
 		    |
 		(
-			enumLiteral_34='IC_LN_0'
+			enumLiteral_34='OC_LN_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_LN_0EnumLiteralDeclaration_34().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_34, grammarAccess.getRailSegmentAccess().getIC_LN_0EnumLiteralDeclaration_34());
+				$current = grammarAccess.getRailSegmentAccess().getOC_LN_0EnumLiteralDeclaration_34().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_34, grammarAccess.getRailSegmentAccess().getOC_LN_0EnumLiteralDeclaration_34());
 			}
 		)
 		    |
 		(
-			enumLiteral_35='IC_LN_1'
+			enumLiteral_35='OC_LN_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_LN_1EnumLiteralDeclaration_35().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_35, grammarAccess.getRailSegmentAccess().getIC_LN_1EnumLiteralDeclaration_35());
+				$current = grammarAccess.getRailSegmentAccess().getOC_LN_1EnumLiteralDeclaration_35().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_35, grammarAccess.getRailSegmentAccess().getOC_LN_1EnumLiteralDeclaration_35());
 			}
 		)
 		    |
 		(
-			enumLiteral_36='IC_LN_2'
+			enumLiteral_36='OC_LN_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_LN_2EnumLiteralDeclaration_36().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_36, grammarAccess.getRailSegmentAccess().getIC_LN_2EnumLiteralDeclaration_36());
+				$current = grammarAccess.getRailSegmentAccess().getOC_LN_2EnumLiteralDeclaration_36().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_36, grammarAccess.getRailSegmentAccess().getOC_LN_2EnumLiteralDeclaration_36());
 			}
 		)
 		    |
 		(
-			enumLiteral_37='IC_LN_3'
+			enumLiteral_37='OC_LN_3'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_LN_3EnumLiteralDeclaration_37().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_37, grammarAccess.getRailSegmentAccess().getIC_LN_3EnumLiteralDeclaration_37());
+				$current = grammarAccess.getRailSegmentAccess().getOC_LN_3EnumLiteralDeclaration_37().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_37, grammarAccess.getRailSegmentAccess().getOC_LN_3EnumLiteralDeclaration_37());
 			}
 		)
 		    |
 		(
-			enumLiteral_38='IC_LN_4'
+			enumLiteral_38='OC_LN_4'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_LN_4EnumLiteralDeclaration_38().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_38, grammarAccess.getRailSegmentAccess().getIC_LN_4EnumLiteralDeclaration_38());
+				$current = grammarAccess.getRailSegmentAccess().getOC_LN_4EnumLiteralDeclaration_38().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_38, grammarAccess.getRailSegmentAccess().getOC_LN_4EnumLiteralDeclaration_38());
 			}
 		)
 		    |
 		(
-			enumLiteral_39='IC_LN_5'
+			enumLiteral_39='OC_LN_5'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_LN_5EnumLiteralDeclaration_39().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_39, grammarAccess.getRailSegmentAccess().getIC_LN_5EnumLiteralDeclaration_39());
+				$current = grammarAccess.getRailSegmentAccess().getOC_LN_5EnumLiteralDeclaration_39().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_39, grammarAccess.getRailSegmentAccess().getOC_LN_5EnumLiteralDeclaration_39());
 			}
 		)
 		    |
 		(
-			enumLiteral_40='OC_JCT_0'
+			enumLiteral_40='OC_ST_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOC_JCT_0EnumLiteralDeclaration_40().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_40, grammarAccess.getRailSegmentAccess().getOC_JCT_0EnumLiteralDeclaration_40());
+				$current = grammarAccess.getRailSegmentAccess().getOC_ST_0EnumLiteralDeclaration_40().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_40, grammarAccess.getRailSegmentAccess().getOC_ST_0EnumLiteralDeclaration_40());
 			}
 		)
 		    |
 		(
-			enumLiteral_41='IC_JCT_0'
+			enumLiteral_41='OC_ST_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIC_JCT_0EnumLiteralDeclaration_41().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_41, grammarAccess.getRailSegmentAccess().getIC_JCT_0EnumLiteralDeclaration_41());
+				$current = grammarAccess.getRailSegmentAccess().getOC_ST_1EnumLiteralDeclaration_41().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_41, grammarAccess.getRailSegmentAccess().getOC_ST_1EnumLiteralDeclaration_41());
 			}
 		)
 		    |
 		(
-			enumLiteral_42='OI_LN_0'
+			enumLiteral_42='OC_ST_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOI_LN_0EnumLiteralDeclaration_42().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_42, grammarAccess.getRailSegmentAccess().getOI_LN_0EnumLiteralDeclaration_42());
+				$current = grammarAccess.getRailSegmentAccess().getOC_ST_2EnumLiteralDeclaration_42().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_42, grammarAccess.getRailSegmentAccess().getOC_ST_2EnumLiteralDeclaration_42());
 			}
 		)
 		    |
 		(
-			enumLiteral_43='OI_LN_1'
+			enumLiteral_43='OC_ST_3'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOI_LN_1EnumLiteralDeclaration_43().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_43, grammarAccess.getRailSegmentAccess().getOI_LN_1EnumLiteralDeclaration_43());
+				$current = grammarAccess.getRailSegmentAccess().getOC_ST_3EnumLiteralDeclaration_43().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_43, grammarAccess.getRailSegmentAccess().getOC_ST_3EnumLiteralDeclaration_43());
 			}
 		)
 		    |
 		(
-			enumLiteral_44='OI_LN_2'
+			enumLiteral_44='OC_ST_4'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getOI_LN_2EnumLiteralDeclaration_44().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_44, grammarAccess.getRailSegmentAccess().getOI_LN_2EnumLiteralDeclaration_44());
+				$current = grammarAccess.getRailSegmentAccess().getOC_ST_4EnumLiteralDeclaration_44().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_44, grammarAccess.getRailSegmentAccess().getOC_ST_4EnumLiteralDeclaration_44());
 			}
 		)
 		    |
 		(
-			enumLiteral_45='IO_LN_0'
+			enumLiteral_45='OI_LN_0'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIO_LN_0EnumLiteralDeclaration_45().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_45, grammarAccess.getRailSegmentAccess().getIO_LN_0EnumLiteralDeclaration_45());
+				$current = grammarAccess.getRailSegmentAccess().getOI_LN_0EnumLiteralDeclaration_45().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_45, grammarAccess.getRailSegmentAccess().getOI_LN_0EnumLiteralDeclaration_45());
 			}
 		)
 		    |
 		(
-			enumLiteral_46='IO_LN_1'
+			enumLiteral_46='OI_LN_1'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIO_LN_1EnumLiteralDeclaration_46().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_46, grammarAccess.getRailSegmentAccess().getIO_LN_1EnumLiteralDeclaration_46());
+				$current = grammarAccess.getRailSegmentAccess().getOI_LN_1EnumLiteralDeclaration_46().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_46, grammarAccess.getRailSegmentAccess().getOI_LN_1EnumLiteralDeclaration_46());
 			}
 		)
 		    |
 		(
-			enumLiteral_47='IO_LN_2'
+			enumLiteral_47='OI_LN_2'
 			{
-				$current = grammarAccess.getRailSegmentAccess().getIO_LN_2EnumLiteralDeclaration_47().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_47, grammarAccess.getRailSegmentAccess().getIO_LN_2EnumLiteralDeclaration_47());
+				$current = grammarAccess.getRailSegmentAccess().getOI_LN_2EnumLiteralDeclaration_47().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_47, grammarAccess.getRailSegmentAccess().getOI_LN_2EnumLiteralDeclaration_47());
 			}
 		)
 	)

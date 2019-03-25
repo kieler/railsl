@@ -44,14 +44,13 @@ public class RailSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOpStatementAccess().getAlternatives(), "rule__OpStatement__Alternatives");
 			builder.put(grammarAccess.getLightStatementAccess().getAlternatives_0(), "rule__LightStatement__Alternatives_0");
 			builder.put(grammarAccess.getLightStatementAccess().getAlternatives_3_0(), "rule__LightStatement__Alternatives_3_0");
-			builder.put(grammarAccess.getLightStatementAccess().getStateAlternatives_4_0(), "rule__LightStatement__StateAlternatives_4_0");
 			builder.put(grammarAccess.getConditionalStatementAccess().getAlternatives_0(), "rule__ConditionalStatement__Alternatives_0");
 			builder.put(grammarAccess.getConditionalLineAccess().getAlternatives_0(), "rule__ConditionalLine__Alternatives_0");
 			builder.put(grammarAccess.getConditionalLineAccess().getAlternatives_7(), "rule__ConditionalLine__Alternatives_7");
 			builder.put(grammarAccess.getParallelStatementAccess().getAlternatives_0(), "rule__ParallelStatement__Alternatives_0");
 			builder.put(grammarAccess.getBlockEndAccess().getAlternatives(), "rule__BlockEnd__Alternatives");
 			builder.put(grammarAccess.getTrackSpeedDriveAccess().getAlternatives(), "rule__TrackSpeedDrive__Alternatives");
-			builder.put(grammarAccess.getPointOrinetationAccess().getAlternatives(), "rule__PointOrinetation__Alternatives");
+			builder.put(grammarAccess.getPointOrientationAccess().getAlternatives(), "rule__PointOrientation__Alternatives");
 			builder.put(grammarAccess.getContactEventAccess().getAlternatives(), "rule__ContactEvent__Alternatives");
 			builder.put(grammarAccess.getContactPositionAccess().getAlternatives(), "rule__ContactPosition__Alternatives");
 			builder.put(grammarAccess.getCrossingModeAccess().getAlternatives(), "rule__CrossingMode__Alternatives");

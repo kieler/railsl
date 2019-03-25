@@ -15,9 +15,9 @@
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//TrackSpeed/FULL"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//TrackSpeed/SLOW"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RailSL.ecore#//PointOrinetation">
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//PointOrinetation/STRAIGHT"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//PointOrinetation/BRANCH"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RailSL.ecore#//PointOrientation">
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//PointOrientation/STRAIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//PointOrientation/BRANCH"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RailSL.ecore#//ContactEvent">
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//ContactEvent/REACH"/>
@@ -36,13 +36,21 @@
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//LightMode/OFF"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RailSL.ecore#//RailSegment">
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_0"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_1"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_2"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_3"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_4"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_5"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_6"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_JCT_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_1"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_2"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_3"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_4"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_5"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_1"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_2"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_3"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_4"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IO_LN_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IO_LN_1"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IO_LN_2"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_LN_0"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_LN_1"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_LN_2"/>
@@ -52,38 +60,30 @@
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_LN_6"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_LN_7"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_LN_8"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_1"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_2"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_3"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_4"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_5"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KH_ST_6"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KIO_LN_0"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/KIO_LN_1"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_0"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_1"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_2"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_3"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_4"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_JCT_0"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_LN_0"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_LN_1"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_LN_2"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_LN_3"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_LN_4"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_LN_5"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_0"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_1"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_2"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_3"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_ST_4"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_0"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_1"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_2"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_3"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_4"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_LN_5"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_JCT_0"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IC_JCT_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_0"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_1"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_2"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_3"/>
+      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OC_ST_4"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OI_LN_0"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OI_LN_1"/>
       <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/OI_LN_2"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IO_LN_0"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IO_LN_1"/>
-      <genEnumLiterals ecoreEnumLiteral="RailSL.ecore#//RailSegment/IO_LN_2"/>
     </genEnums>
     <genClasses ecoreClass="RailSL.ecore#//RailProgram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RailSL.ecore#//RailProgram/block"/>

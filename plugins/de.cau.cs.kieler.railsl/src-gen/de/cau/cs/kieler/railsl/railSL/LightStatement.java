@@ -42,6 +42,7 @@ public interface LightStatement extends OpStatement
 
   /**
    * Returns the value of the '<em><b>State</b></em>' attribute.
+   * The literals are from the enumeration {@link de.cau.cs.kieler.railsl.railSL.LightMode}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>State</em>' attribute isn't clear,
@@ -49,21 +50,23 @@ public interface LightStatement extends OpStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>State</em>' attribute.
-   * @see #setState(String)
+   * @see de.cau.cs.kieler.railsl.railSL.LightMode
+   * @see #setState(LightMode)
    * @see de.cau.cs.kieler.railsl.railSL.RailSLPackage#getLightStatement_State()
    * @model
    * @generated
    */
-  String getState();
+  LightMode getState();
 
   /**
    * Sets the value of the '{@link de.cau.cs.kieler.railsl.railSL.LightStatement#getState <em>State</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>State</em>' attribute.
+   * @see de.cau.cs.kieler.railsl.railSL.LightMode
    * @see #getState()
    * @generated
    */
-  void setState(String value);
+  void setState(LightMode value);
 
 } // LightStatement

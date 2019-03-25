@@ -544,14 +544,14 @@ public interface RailSLPackage extends EPackage
   int TRACK_SPEED = 16;
 
   /**
-   * The meta object id for the '{@link de.cau.cs.kieler.railsl.railSL.PointOrinetation <em>Point Orinetation</em>}' enum.
+   * The meta object id for the '{@link de.cau.cs.kieler.railsl.railSL.PointOrientation <em>Point Orientation</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.cau.cs.kieler.railsl.railSL.PointOrinetation
-   * @see de.cau.cs.kieler.railsl.railSL.impl.RailSLPackageImpl#getPointOrinetation()
+   * @see de.cau.cs.kieler.railsl.railSL.PointOrientation
+   * @see de.cau.cs.kieler.railsl.railSL.impl.RailSLPackageImpl#getPointOrientation()
    * @generated
    */
-  int POINT_ORINETATION = 17;
+  int POINT_ORIENTATION = 17;
 
   /**
    * The meta object id for the '{@link de.cau.cs.kieler.railsl.railSL.ContactEvent <em>Contact Event</em>}' enum.
@@ -995,14 +995,14 @@ public interface RailSLPackage extends EPackage
   EEnum getTrackSpeed();
 
   /**
-   * Returns the meta object for enum '{@link de.cau.cs.kieler.railsl.railSL.PointOrinetation <em>Point Orinetation</em>}'.
+   * Returns the meta object for enum '{@link de.cau.cs.kieler.railsl.railSL.PointOrientation <em>Point Orientation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Point Orinetation</em>'.
-   * @see de.cau.cs.kieler.railsl.railSL.PointOrinetation
+   * @return the meta object for enum '<em>Point Orientation</em>'.
+   * @see de.cau.cs.kieler.railsl.railSL.PointOrientation
    * @generated
    */
-  EEnum getPointOrinetation();
+  EEnum getPointOrientation();
 
   /**
    * Returns the meta object for enum '{@link de.cau.cs.kieler.railsl.railSL.ContactEvent <em>Contact Event</em>}'.
@@ -1408,14 +1408,14 @@ public interface RailSLPackage extends EPackage
     EEnum TRACK_SPEED = eINSTANCE.getTrackSpeed();
 
     /**
-     * The meta object literal for the '{@link de.cau.cs.kieler.railsl.railSL.PointOrinetation <em>Point Orinetation</em>}' enum.
+     * The meta object literal for the '{@link de.cau.cs.kieler.railsl.railSL.PointOrientation <em>Point Orientation</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.railsl.railSL.PointOrinetation
-     * @see de.cau.cs.kieler.railsl.railSL.impl.RailSLPackageImpl#getPointOrinetation()
+     * @see de.cau.cs.kieler.railsl.railSL.PointOrientation
+     * @see de.cau.cs.kieler.railsl.railSL.impl.RailSLPackageImpl#getPointOrientation()
      * @generated
      */
-    EEnum POINT_ORINETATION = eINSTANCE.getPointOrinetation();
+    EEnum POINT_ORIENTATION = eINSTANCE.getPointOrientation();
 
     /**
      * The meta object literal for the '{@link de.cau.cs.kieler.railsl.railSL.ContactEvent <em>Contact Event</em>}' enum.

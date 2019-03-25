@@ -16,7 +16,7 @@ import de.cau.cs.kieler.railsl.railSL.LightMode;
 import de.cau.cs.kieler.railsl.railSL.LightStatement;
 import de.cau.cs.kieler.railsl.railSL.OpStatement;
 import de.cau.cs.kieler.railsl.railSL.ParallelStatement;
-import de.cau.cs.kieler.railsl.railSL.PointOrinetation;
+import de.cau.cs.kieler.railsl.railSL.PointOrientation;
 import de.cau.cs.kieler.railsl.railSL.PointStatement;
 import de.cau.cs.kieler.railsl.railSL.RailProgram;
 import de.cau.cs.kieler.railsl.railSL.RailSLFactory;
@@ -169,7 +169,7 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum pointOrinetationEEnum = null;
+  private EEnum pointOrientationEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -644,9 +644,9 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getPointOrinetation()
+  public EEnum getPointOrientation()
   {
-    return pointOrinetationEEnum;
+    return pointOrientationEEnum;
   }
 
   /**
@@ -782,7 +782,7 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
     // Create enums
     blockEndEEnum = createEEnum(BLOCK_END);
     trackSpeedEEnum = createEEnum(TRACK_SPEED);
-    pointOrinetationEEnum = createEEnum(POINT_ORINETATION);
+    pointOrientationEEnum = createEEnum(POINT_ORIENTATION);
     contactEventEEnum = createEEnum(CONTACT_EVENT);
     contactPositionEEnum = createEEnum(CONTACT_POSITION);
     crossingModeEEnum = createEEnum(CROSSING_MODE);
@@ -850,7 +850,7 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
 
     initEClass(pointStatementEClass, PointStatement.class, "PointStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPointStatement_Points(), ecorePackage.getEInt(), "points", null, 0, -1, PointStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPointStatement_Orientation(), this.getPointOrinetation(), "orientation", null, 0, 1, PointStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPointStatement_Orientation(), this.getPointOrientation(), "orientation", null, 0, 1, PointStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(waitStatementEClass, WaitStatement.class, "WaitStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -869,7 +869,7 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
 
     initEClass(lightStatementEClass, LightStatement.class, "LightStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLightStatement_Lights(), ecorePackage.getEInt(), "lights", null, 0, -1, LightStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLightStatement_State(), ecorePackage.getEString(), "state", null, 0, 1, LightStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLightStatement_State(), this.getLightMode(), "state", null, 0, 1, LightStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalStatementEClass, ConditionalStatement.class, "ConditionalStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConditionalStatement_Lines(), this.getConditionalLine(), null, "lines", null, 0, -1, ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -892,9 +892,9 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
     addEEnumLiteral(trackSpeedEEnum, TrackSpeed.FULL);
     addEEnumLiteral(trackSpeedEEnum, TrackSpeed.SLOW);
 
-    initEEnum(pointOrinetationEEnum, PointOrinetation.class, "PointOrinetation");
-    addEEnumLiteral(pointOrinetationEEnum, PointOrinetation.STRAIGHT);
-    addEEnumLiteral(pointOrinetationEEnum, PointOrinetation.BRANCH);
+    initEEnum(pointOrientationEEnum, PointOrientation.class, "PointOrientation");
+    addEEnumLiteral(pointOrientationEEnum, PointOrientation.STRAIGHT);
+    addEEnumLiteral(pointOrientationEEnum, PointOrientation.BRANCH);
 
     initEEnum(contactEventEEnum, ContactEvent.class, "ContactEvent");
     addEEnumLiteral(contactEventEEnum, ContactEvent.REACH);
@@ -913,13 +913,21 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
     addEEnumLiteral(lightModeEEnum, LightMode.OFF);
 
     initEEnum(railSegmentEEnum, RailSegment.class, "RailSegment");
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_0);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_1);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_2);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_3);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_4);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_5);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_6);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_JCT_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_1);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_2);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_3);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_4);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_5);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_1);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_2);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_3);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_4);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IO_LN_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IO_LN_1);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.IO_LN_2);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KH_LN_0);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KH_LN_1);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KH_LN_2);
@@ -929,38 +937,30 @@ public class RailSLPackageImpl extends EPackageImpl implements RailSLPackage
     addEEnumLiteral(railSegmentEEnum, RailSegment.KH_LN_6);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KH_LN_7);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KH_LN_8);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_1);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_2);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_3);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_4);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_5);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.KH_ST_6);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KIO_LN_0);
     addEEnumLiteral(railSegmentEEnum, RailSegment.KIO_LN_1);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_0);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_1);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_2);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_3);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_4);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_JCT_0);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OC_LN_0);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OC_LN_1);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OC_LN_2);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OC_LN_3);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OC_LN_4);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OC_LN_5);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_0);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_1);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_2);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_3);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_ST_4);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_0);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_1);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_2);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_3);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_4);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_LN_5);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_JCT_0);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IC_JCT_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_0);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_1);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_2);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_3);
+    addEEnumLiteral(railSegmentEEnum, RailSegment.OC_ST_4);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OI_LN_0);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OI_LN_1);
     addEEnumLiteral(railSegmentEEnum, RailSegment.OI_LN_2);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IO_LN_0);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IO_LN_1);
-    addEEnumLiteral(railSegmentEEnum, RailSegment.IO_LN_2);
 
     // Create resource
     createResource(eNS_URI);

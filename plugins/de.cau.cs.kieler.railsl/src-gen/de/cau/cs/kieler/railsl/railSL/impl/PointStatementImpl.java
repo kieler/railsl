@@ -3,7 +3,7 @@
  */
 package de.cau.cs.kieler.railsl.railSL.impl;
 
-import de.cau.cs.kieler.railsl.railSL.PointOrinetation;
+import de.cau.cs.kieler.railsl.railSL.PointOrientation;
 import de.cau.cs.kieler.railsl.railSL.PointStatement;
 import de.cau.cs.kieler.railsl.railSL.RailSLPackage;
 
@@ -53,7 +53,7 @@ public class PointStatementImpl extends SetStatementImpl implements PointStateme
    * @generated
    * @ordered
    */
-  protected static final PointOrinetation ORIENTATION_EDEFAULT = PointOrinetation.STRAIGHT;
+  protected static final PointOrientation ORIENTATION_EDEFAULT = PointOrientation.STRAIGHT;
 
   /**
    * The cached value of the '{@link #getOrientation() <em>Orientation</em>}' attribute.
@@ -63,7 +63,7 @@ public class PointStatementImpl extends SetStatementImpl implements PointStateme
    * @generated
    * @ordered
    */
-  protected PointOrinetation orientation = ORIENTATION_EDEFAULT;
+  protected PointOrientation orientation = ORIENTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -105,7 +105,7 @@ public class PointStatementImpl extends SetStatementImpl implements PointStateme
    * <!-- end-user-doc -->
    * @generated
    */
-  public PointOrinetation getOrientation()
+  public PointOrientation getOrientation()
   {
     return orientation;
   }
@@ -115,9 +115,9 @@ public class PointStatementImpl extends SetStatementImpl implements PointStateme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOrientation(PointOrinetation newOrientation)
+  public void setOrientation(PointOrientation newOrientation)
   {
-    PointOrinetation oldOrientation = orientation;
+    PointOrientation oldOrientation = orientation;
     orientation = newOrientation == null ? ORIENTATION_EDEFAULT : newOrientation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RailSLPackage.POINT_STATEMENT__ORIENTATION, oldOrientation, orientation));
@@ -157,7 +157,7 @@ public class PointStatementImpl extends SetStatementImpl implements PointStateme
         getPoints().addAll((Collection<? extends Integer>)newValue);
         return;
       case RailSLPackage.POINT_STATEMENT__ORIENTATION:
-        setOrientation((PointOrinetation)newValue);
+        setOrientation((PointOrientation)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -3,6 +3,7 @@
  */
 package de.cau.cs.kieler.railsl.railSL.impl;
 
+import de.cau.cs.kieler.railsl.railSL.LightMode;
 import de.cau.cs.kieler.railsl.railSL.LightStatement;
 import de.cau.cs.kieler.railsl.railSL.RailSLPackage;
 
@@ -52,7 +53,7 @@ public class LightStatementImpl extends OpStatementImpl implements LightStatemen
    * @generated
    * @ordered
    */
-  protected static final String STATE_EDEFAULT = null;
+  protected static final LightMode STATE_EDEFAULT = LightMode.ON;
 
   /**
    * The cached value of the '{@link #getState() <em>State</em>}' attribute.
@@ -62,7 +63,7 @@ public class LightStatementImpl extends OpStatementImpl implements LightStatemen
    * @generated
    * @ordered
    */
-  protected String state = STATE_EDEFAULT;
+  protected LightMode state = STATE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -104,7 +105,7 @@ public class LightStatementImpl extends OpStatementImpl implements LightStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getState()
+  public LightMode getState()
   {
     return state;
   }
@@ -114,10 +115,10 @@ public class LightStatementImpl extends OpStatementImpl implements LightStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setState(String newState)
+  public void setState(LightMode newState)
   {
-    String oldState = state;
-    state = newState;
+    LightMode oldState = state;
+    state = newState == null ? STATE_EDEFAULT : newState;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RailSLPackage.LIGHT_STATEMENT__STATE, oldState, state));
   }
@@ -156,7 +157,7 @@ public class LightStatementImpl extends OpStatementImpl implements LightStatemen
         getLights().addAll((Collection<? extends Integer>)newValue);
         return;
       case RailSLPackage.LIGHT_STATEMENT__STATE:
-        setState((String)newValue);
+        setState((LightMode)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,7 +196,7 @@ public class LightStatementImpl extends OpStatementImpl implements LightStatemen
       case RailSLPackage.LIGHT_STATEMENT__LIGHTS:
         return lights != null && !lights.isEmpty();
       case RailSLPackage.LIGHT_STATEMENT__STATE:
-        return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
+        return state != STATE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

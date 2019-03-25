@@ -182,7 +182,7 @@ public class RailSLSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     LightStatement returns LightStatement
 	 *
 	 * Constraint:
-	 *     (lights+=INT lights+=INT* (state='on' | state='off'))
+	 *     (lights+=INT lights+=INT* state=LightMode)
 	 */
 	protected void sequence_LightStatement(ISerializationContext context, LightStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -209,7 +209,7 @@ public class RailSLSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     PointStatement returns PointStatement
 	 *
 	 * Constraint:
-	 *     (points+=INT points+=INT* orientation=PointOrinetation)
+	 *     (points+=INT points+=INT* orientation=PointOrientation)
 	 */
 	protected void sequence_PointStatement(ISerializationContext context, PointStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

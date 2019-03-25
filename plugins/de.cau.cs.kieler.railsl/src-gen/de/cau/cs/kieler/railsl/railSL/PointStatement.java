@@ -42,7 +42,7 @@ public interface PointStatement extends SetStatement
 
   /**
    * Returns the value of the '<em><b>Orientation</b></em>' attribute.
-   * The literals are from the enumeration {@link de.cau.cs.kieler.railsl.railSL.PointOrinetation}.
+   * The literals are from the enumeration {@link de.cau.cs.kieler.railsl.railSL.PointOrientation}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Orientation</em>' attribute isn't clear,
@@ -50,23 +50,23 @@ public interface PointStatement extends SetStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Orientation</em>' attribute.
-   * @see de.cau.cs.kieler.railsl.railSL.PointOrinetation
-   * @see #setOrientation(PointOrinetation)
+   * @see de.cau.cs.kieler.railsl.railSL.PointOrientation
+   * @see #setOrientation(PointOrientation)
    * @see de.cau.cs.kieler.railsl.railSL.RailSLPackage#getPointStatement_Orientation()
    * @model
    * @generated
    */
-  PointOrinetation getOrientation();
+  PointOrientation getOrientation();
 
   /**
    * Sets the value of the '{@link de.cau.cs.kieler.railsl.railSL.PointStatement#getOrientation <em>Orientation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Orientation</em>' attribute.
-   * @see de.cau.cs.kieler.railsl.railSL.PointOrinetation
+   * @see de.cau.cs.kieler.railsl.railSL.PointOrientation
    * @see #getOrientation()
    * @generated
    */
-  void setOrientation(PointOrinetation value);
+  void setOrientation(PointOrientation value);
 
 } // PointStatement
