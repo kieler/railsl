@@ -2,4 +2,12 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+   <extension
+         point="de.cau.cs.kieler.klighd.diagramSyntheses">
+      <diagramSynthesis
+            class="de.cau.cs.kieler.klighd.syntheses.GuiceBasedSynthesisFactory:de.cau.cs.kieler.railsl.ide.synthesis.RailSLSynthesis"
+            id="de.cau.cs.kieler.railsl.ide.synthesis.RailSLSynthesis">
+      </diagramSynthesis>
+   </extension>
+   
 </plugin>

@@ -1,4 +1,4 @@
-system de.cau.cs.kieler.railsl.netlist.sim.scade
+public system de.cau.cs.kieler.railsl.netlist.sim.scade
     label "RailSL SCADE Simulation"
 
 system de.cau.cs.kieler.railsl.netlist.c

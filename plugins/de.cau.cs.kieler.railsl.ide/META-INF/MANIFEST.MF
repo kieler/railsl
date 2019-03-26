@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.cau.cs.kieler.railsl.ide
-Bundle-Vendor: My Company
+Bundle-Vendor: Kiel University
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.cau.cs.kieler.railsl.ide;singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -9,7 +9,11 @@ Require-Bundle: de.cau.cs.kieler.railsl,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
  org.eclipse.ui,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ de.cau.cs.kieler.klighd;bundle-version="0.44.1",
+ org.eclipse.elk.core;bundle-version="0.4.0",
+ de.cau.cs.kieler.kicool,
+ de.cau.cs.kieler.sccharts
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.cau.cs.kieler.railsl.ide.contentassist.antlr,
  de.cau.cs.kieler.railsl.ide.contentassist.antlr.internal

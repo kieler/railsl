@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.cau.cs.kieler.railsl.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: Kiel Univeristy
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.cau.cs.kieler.railsl.ui;singleton:=true
 Bundle-ActivationPolicy: lazy; exclude:="de.cau.cs.kieler.railsl.ui.visualizer.Visualizer"
