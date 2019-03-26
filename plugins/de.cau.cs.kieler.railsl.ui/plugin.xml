@@ -343,7 +343,7 @@
         </command>
         <command
               commandId="de.cau.cs.kieler.railsl.ui.commands.RailSimulation"
-              icon="resources/Wrench_font_awesome.svg"
+              icon="resources/wrench.svg"
               label="RailSimulation"
               style="push"
               tooltip="Simuliere Bahnsteuerung">
