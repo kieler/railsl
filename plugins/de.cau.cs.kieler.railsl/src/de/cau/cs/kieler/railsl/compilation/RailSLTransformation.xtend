@@ -312,7 +312,7 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
         val greenDecl = createIntDeclaration
         greenDecl.const = true
         val greenValObject = createValuedObject("green")
-        greenValObject.initialValue = createIntValue(4)
+        greenValObject.initialValue = createIntValue(3)
         greenDecl.attach(greenValObject)
         
         chart.declarations.add(greenDecl)
@@ -635,11 +635,11 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
             // Set the signals accordingly
             transition.addEffect(signals.createAssignment(valObjects.get(signalString).reference) => [
                 indices += valObjects.get(segment.toString()).reference
-                indices += createIntValue(if(direction != 0) 1 else 0)
+                indices += createIntValue(if(direction != 0) 0 else 1)
             ])
             transition.addEffect(signals.createAssignment(valObjects.get("red").reference) => [
                 indices += valObjects.get(segment.toString()).reference
-                indices += createIntValue(if(direction == 0) 1 else 0)
+                indices += createIntValue(if(direction == 0) 0 else 1)
             ])
             currentState = nextState
             i++
