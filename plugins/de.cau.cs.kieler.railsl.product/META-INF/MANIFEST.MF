@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Railway Product
+Bundle-SymbolicName: de.cau.cs.kieler.railsl.product;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kiel University
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.apache.felix.scr,
+ org.eclipse.equinox.util,
+ org.eclipse.equinox.event,
+ de.cau.cs.kieler.railsl;bundle-version="1.0.0",
+ de.cau.cs.kieler.railsl.ui;bundle-version="1.0.0",
+ org.eclipse.ui.ide.application;bundle-version="1.2.100",
+ org.eclipse.rcp;bundle-version="4.8.0"
+Automatic-Module-Name: de.cau.cs.kieler.railsl.product
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
