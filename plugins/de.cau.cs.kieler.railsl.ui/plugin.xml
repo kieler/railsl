@@ -336,14 +336,14 @@
            id="de.cau.cs.kieler.railsl.ui.toolbar.Railsl">
         <command
               commandId="de.cau.cs.kieler.railsl.ui.commands.RailDeploy"
-              icon="resources/train.svg"
+              icon="icons/train.svg"
               label="RailDeploy"
               style="push"
               tooltip="Fuehre auf Modellbahn aus">
         </command>
         <command
               commandId="de.cau.cs.kieler.railsl.ui.commands.RailSimulation"
-              icon="resources/wrench.svg"
+              icon="icons/wrench.svg"
               label="RailSimulation"
               style="push"
               tooltip="Simuliere Bahnsteuerung">
