@@ -329,6 +329,27 @@
 				</visibleWhen>
 			</command>
 		</menuContribution>
+  <menuContribution
+        allPopups="false"
+        locationURI="toolbar:org.eclipse.ui.main.toolbar">
+     <toolbar
+           id="de.cau.cs.kieler.railsl.ui.toolbar.Railsl">
+        <command
+              commandId="de.cau.cs.kieler.railsl.ui.commands.RailDeploy"
+              icon="resources/train.svg"
+              label="RailDeploy"
+              style="push"
+              tooltip="Fuehre auf Modellbahn aus">
+        </command>
+        <command
+              commandId="de.cau.cs.kieler.railsl.ui.commands.RailSimulation"
+              icon="resources/Wrench_font_awesome.svg"
+              label="RailSimulation"
+              style="push"
+              tooltip="Simuliere Bahnsteuerung">
+        </command>
+     </toolbar>
+  </menuContribution>
 	</extension>
 	<!-- quickfix marker resolution generator for de.cau.cs.kieler.railsl.RailSL -->
 	<extension
@@ -473,5 +494,18 @@
              class="de.cau.cs.kieler.railsl.ui.natures.RailSLNature">
        </run>
     </runtime>
+ </extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="de.cau.cs.kieler.railsl.ui.commands.RailslDeployHandler"
+          id="de.cau.cs.kieler.railsl.ui.commands.RailDeploy"
+          name="RailDeploy">
+    </command>
+    <command
+          defaultHandler="de.cau.cs.kieler.railsl.ui.commands.RaillsSimulationhandler"
+          id="de.cau.cs.kieler.railsl.ui.commands.RailSimulation"
+          name="RailSimulation">
+    </command>
  </extension>
 </plugin>
