@@ -38,7 +38,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="de.cau.cs.kieler.railsl.product.Perspective"
-            icon="assests/train.svg"
+            icon="icons/train.svg"
             id="de.cau.cs.kieler.railsl.product.perspective"
             name="Railway">
       </perspective>
