@@ -24,7 +24,8 @@ Require-Bundle: de.cau.cs.kieler.railsl.ide,
  org.eclipse.ui.navigator,
  org.eclipse.ui.navigator.resources,
  de.cau.cs.kieler.kicool,
- de.cau.cs.kieler.kicool.ui
+ de.cau.cs.kieler.kicool.ui,
+ org.eclipse.core.externaltools;bundle-version="1.1.100"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.cau.cs.kieler.railsl.ui.contentassist,

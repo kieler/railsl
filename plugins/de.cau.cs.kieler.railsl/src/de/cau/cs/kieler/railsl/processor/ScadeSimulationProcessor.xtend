@@ -94,14 +94,19 @@ class ScadeSimulationProcessor extends AbstractSystemCompilerProcessor<Object, E
         
         def startGUI() {
             if (gui === null || !gui.alive) {
-                val folder = new File(scade, "GUI")
-                val jar = new File(folder, "modelgui-6b1.jar")
-                var jarPath = jar.toString
-                if (jarPath.contains(" ")) jarPath = "\"" + jarPath + "\""
-                val pb = new ProcessBuilder("java", "-jar", jarPath)
-                pb.directory(folder)
+                val pb = GUIProcessBuilder
                 gui = pb.start
             }
+        }
+        
+        def getGUIProcessBuilder() {
+            val folder = new File(scade, "GUI")
+            val jar = new File(folder, "modelgui-6b1.jar")
+            var jarPath = jar.toString
+            if (jarPath.contains(" ")) jarPath = "\"" + jarPath + "\""
+            val pb = new ProcessBuilder("java", "-jar", jarPath)
+            pb.directory(folder)
+            return pb
         }
         
     }
