@@ -620,8 +620,6 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
         for (segment : stStatement.segments) {
             var nextState = region.createState("_S" + i)
             var transition = currentState.createImmediateTransitionTo(nextState)
-            
-            println(segment)
             // Set the track speed and direction
             transition.addEffect(tracks.createAssignment(valObjects.get(speedString).reference) => [
                 indices += valObjects.get(segment.toString()).reference
