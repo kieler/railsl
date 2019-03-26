@@ -38,7 +38,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="de.cau.cs.kieler.railsl.product.Perspective"
-            name="Perspective"
+            name="Railway"
             id="de.cau.cs.kieler.railsl.product.perspective">
       </perspective>
    </extension>
