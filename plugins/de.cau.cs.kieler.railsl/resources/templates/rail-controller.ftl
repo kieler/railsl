@@ -25,6 +25,9 @@ int main(int argn, char *argv[]) {
     
     (void) argn;
     (void) argv;
+    
+    printf("== The Railway Controller ==\n");
+    printf("Setup...\n");
 
     struct railway_system *railway;
 
@@ -75,6 +78,8 @@ int main(int argn, char *argv[]) {
     }
     
     int secure_contact_check = 0;
+    
+    printf("Start...\n");
 
     sleep(5);
 
