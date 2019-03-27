@@ -3,7 +3,6 @@
 
 <product name="Railway RCA" uid="de.cau.cs.kieler.railsl.product.defnition" id="de.cau.cs.kieler.railsl.product.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -26,7 +25,6 @@
          <bmp/>
       </win>
    </launcher>
-
 
    <vm>
    </vm>
@@ -148,6 +146,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <plugin id="de.cau.cs.kieler.kivis.ide"/>
       <plugin id="de.cau.cs.kieler.kivis.ui"/>
       <plugin id="de.cau.cs.kieler.klighd"/>
+      <plugin id="de.cau.cs.kieler.klighd.incremental"/>
       <plugin id="de.cau.cs.kieler.klighd.kgraph"/>
       <plugin id="de.cau.cs.kieler.klighd.krendering"/>
       <plugin id="de.cau.cs.kieler.klighd.krendering.extensions"/>
@@ -162,8 +161,10 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <plugin id="de.cau.cs.kieler.railsl.ui"/>
       <plugin id="de.cau.cs.kieler.sccharts"/>
       <plugin id="de.cau.cs.kieler.sccharts.ide"/>
+      <plugin id="de.cau.cs.kieler.sccharts.scg"/>
       <plugin id="de.cau.cs.kieler.sccharts.ui"/>
       <plugin id="de.cau.cs.kieler.scg"/>
+      <plugin id="de.cau.cs.kieler.scg.klighd"/>
       <plugin id="de.cau.cs.kieler.simulation"/>
       <plugin id="de.cau.cs.kieler.simulation.ide"/>
       <plugin id="de.cau.cs.kieler.simulation.ui"/>
