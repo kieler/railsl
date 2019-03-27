@@ -14,15 +14,19 @@ package de.cau.cs.kieler.railsl.ui.commands
 
 import de.cau.cs.kieler.kicool.compilation.Compile
 import de.cau.cs.kieler.kicool.compilation.ExecutableContainer
+import de.cau.cs.kieler.kicool.environments.Environment
 import de.cau.cs.kieler.kicool.ui.klighd.ModelReaderUtil
 import org.eclipse.core.commands.AbstractHandler
 import org.eclipse.core.externaltools.internal.IExternalToolConstants
+import org.eclipse.core.runtime.IStatus
 import org.eclipse.core.runtime.NullProgressMonitor
+import org.eclipse.core.runtime.Status
 import org.eclipse.debug.core.DebugPlugin
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy
 import org.eclipse.debug.core.ILaunchManager
 import org.eclipse.debug.ui.DebugUITools
 import org.eclipse.ui.PlatformUI
+import org.eclipse.ui.statushandlers.StatusManager
 
 /**
  * @author als
@@ -38,10 +42,22 @@ abstract class RailStartHandler extends AbstractHandler {
         activeEditor.doSave(monitor)
         
         // compile model
-        val eobject = ModelReaderUtil.readModelFromEditor(activeEditor)
-        val context = Compile.createCompilationContext(system, eobject)
-        var compContext = context.compile
-        return compContext.model as ExecutableContainer
+        var Environment result
+        try {
+            val eobject = ModelReaderUtil.readModelFromEditor(activeEditor)
+            val context = Compile.createCompilationContext(system, eobject)
+            result = context.compile
+            
+            if (context.hasErrors) {
+                val status = new Status(IStatus.ERROR, "de.cau.cs.kieler.railsl", "Error(s) in railway compilation", new Throwable(context.allErrors.map[message].toSet.join("\n")))
+                StatusManager.getManager().handle(status, StatusManager.SHOW.bitwiseOr(StatusManager.LOG))
+            }
+        } catch(Exception e) {
+            val status = new Status(IStatus.ERROR, "de.cau.cs.kieler.railsl", "Exception in railway compilation", e)
+            StatusManager.getManager().handle(status, StatusManager.SHOW.bitwiseOr(StatusManager.LOG))
+        }
+        
+        return result.model as ExecutableContainer
     }
     
     def launch(ExecutableContainer exe) {
