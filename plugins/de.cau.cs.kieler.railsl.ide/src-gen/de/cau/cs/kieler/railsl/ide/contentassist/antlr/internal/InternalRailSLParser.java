@@ -9206,7 +9206,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2740:1: ( rule__ConditionalLine__Group__2__Impl rule__ConditionalLine__Group__3 )
             // InternalRailSL.g:2741:2: rule__ConditionalLine__Group__2__Impl rule__ConditionalLine__Group__3
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_20);
             rule__ConditionalLine__Group__2__Impl();
 
             state._fsp--;
@@ -9281,7 +9281,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2767:1: ( rule__ConditionalLine__Group__3__Impl rule__ConditionalLine__Group__4 )
             // InternalRailSL.g:2768:2: rule__ConditionalLine__Group__3__Impl rule__ConditionalLine__Group__4
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_20);
             rule__ConditionalLine__Group__3__Impl();
 
             state._fsp--;
@@ -9310,20 +9310,37 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalLine__Group__3__Impl"
-    // InternalRailSL.g:2775:1: rule__ConditionalLine__Group__3__Impl : ( 'of' ) ;
+    // InternalRailSL.g:2775:1: rule__ConditionalLine__Group__3__Impl : ( ( 'of' )? ) ;
     public final void rule__ConditionalLine__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRailSL.g:2779:1: ( ( 'of' ) )
-            // InternalRailSL.g:2780:1: ( 'of' )
+            // InternalRailSL.g:2779:1: ( ( ( 'of' )? ) )
+            // InternalRailSL.g:2780:1: ( ( 'of' )? )
             {
-            // InternalRailSL.g:2780:1: ( 'of' )
-            // InternalRailSL.g:2781:2: 'of'
+            // InternalRailSL.g:2780:1: ( ( 'of' )? )
+            // InternalRailSL.g:2781:2: ( 'of' )?
             {
              before(grammarAccess.getConditionalLineAccess().getOfKeyword_3()); 
-            match(input,104,FOLLOW_2); 
+            // InternalRailSL.g:2782:2: ( 'of' )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
+
+            if ( (LA33_0==104) ) {
+                alt33=1;
+            }
+            switch (alt33) {
+                case 1 :
+                    // InternalRailSL.g:2782:3: 'of'
+                    {
+                    match(input,104,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
              after(grammarAccess.getConditionalLineAccess().getOfKeyword_3()); 
 
             }
@@ -9356,7 +9373,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2794:1: ( rule__ConditionalLine__Group__4__Impl rule__ConditionalLine__Group__5 )
             // InternalRailSL.g:2795:2: rule__ConditionalLine__Group__4__Impl rule__ConditionalLine__Group__5
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__ConditionalLine__Group__4__Impl();
 
             state._fsp--;
@@ -9441,7 +9458,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2821:1: ( rule__ConditionalLine__Group__5__Impl rule__ConditionalLine__Group__6 )
             // InternalRailSL.g:2822:2: rule__ConditionalLine__Group__5__Impl rule__ConditionalLine__Group__6
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__ConditionalLine__Group__5__Impl();
 
             state._fsp--;
@@ -9516,7 +9533,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2848:1: ( rule__ConditionalLine__Group__6__Impl rule__ConditionalLine__Group__7 )
             // InternalRailSL.g:2849:2: rule__ConditionalLine__Group__6__Impl rule__ConditionalLine__Group__7
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__ConditionalLine__Group__6__Impl();
 
             state._fsp--;
@@ -9591,7 +9608,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2875:1: ( rule__ConditionalLine__Group__7__Impl rule__ConditionalLine__Group__8 )
             // InternalRailSL.g:2876:2: rule__ConditionalLine__Group__7__Impl rule__ConditionalLine__Group__8
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__ConditionalLine__Group__7__Impl();
 
             state._fsp--;
@@ -9676,7 +9693,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2902:1: ( rule__ConditionalLine__Group__8__Impl rule__ConditionalLine__Group__9 )
             // InternalRailSL.g:2903:2: rule__ConditionalLine__Group__8__Impl rule__ConditionalLine__Group__9
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__ConditionalLine__Group__8__Impl();
 
             state._fsp--;
@@ -9831,7 +9848,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2956:1: ( rule__ParallelStatement__Group__0__Impl rule__ParallelStatement__Group__1 )
             // InternalRailSL.g:2957:2: rule__ParallelStatement__Group__0__Impl rule__ParallelStatement__Group__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__ParallelStatement__Group__0__Impl();
 
             state._fsp--;
@@ -9916,7 +9933,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2983:1: ( rule__ParallelStatement__Group__1__Impl rule__ParallelStatement__Group__2 )
             // InternalRailSL.g:2984:2: rule__ParallelStatement__Group__1__Impl rule__ParallelStatement__Group__2
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__ParallelStatement__Group__1__Impl();
 
             state._fsp--;
@@ -10044,7 +10061,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:3025:3: ( rule__ParallelStatement__BlocksAssignment_2 )
             // InternalRailSL.g:3025:4: rule__ParallelStatement__BlocksAssignment_2
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_31);
             rule__ParallelStatement__BlocksAssignment_2();
 
             state._fsp--;
@@ -10061,21 +10078,21 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getParallelStatementAccess().getBlocksAssignment_2()); 
             // InternalRailSL.g:3030:3: ( rule__ParallelStatement__BlocksAssignment_2 )*
-            loop33:
+            loop34:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( ((LA33_0>=12 && LA33_0<=13)) ) {
-                    alt33=1;
+                if ( ((LA34_0>=12 && LA34_0<=13)) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt34) {
             	case 1 :
             	    // InternalRailSL.g:3030:4: rule__ParallelStatement__BlocksAssignment_2
             	    {
-            	    pushFollow(FOLLOW_32);
+            	    pushFollow(FOLLOW_31);
             	    rule__ParallelStatement__BlocksAssignment_2();
 
             	    state._fsp--;
@@ -10085,7 +10102,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop34;
                 }
             } while (true);
 
@@ -11193,12 +11210,11 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0001800000030000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000003000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x000000000C000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000003002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000003002L});
 
 }

@@ -24,6 +24,7 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Block_StartKeyword_0_0_or_StartKeyword_0_1;
 	protected AbstractElementAlias match_ConditionalLine_FirstKeyword_7_0_or_FirstKeyword_7_1;
 	protected AbstractElementAlias match_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1;
+	protected AbstractElementAlias match_ConditionalLine_OfKeyword_3_q;
 	protected AbstractElementAlias match_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1;
 	protected AbstractElementAlias match_ContactWaitStatement_OfKeyword_3_q;
 	protected AbstractElementAlias match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0;
@@ -41,6 +42,7 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Block_StartKeyword_0_0_or_StartKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBlockAccess().getStartKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getBlockAccess().getStartKeyword_0_1()));
 		match_ConditionalLine_FirstKeyword_7_0_or_FirstKeyword_7_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalLineAccess().getFirstKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getConditionalLineAccess().getFirstKeyword_7_1()));
 		match_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalLineAccess().getIfKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getConditionalLineAccess().getIfKeyword_0_1()));
+		match_ConditionalLine_OfKeyword_3_q = new TokenAlias(false, true, grammarAccess.getConditionalLineAccess().getOfKeyword_3());
 		match_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalStatementAccess().getBranchKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getConditionalStatementAccess().getBranchKeyword_0_1()));
 		match_ContactWaitStatement_OfKeyword_3_q = new TokenAlias(false, true, grammarAccess.getContactWaitStatementAccess().getOfKeyword_3());
 		match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getCommaKeyword_3_0_0()));
@@ -71,6 +73,8 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ConditionalLine_FirstKeyword_7_0_or_FirstKeyword_7_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1.equals(syntax))
 				emit_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConditionalLine_OfKeyword_3_q.equals(syntax))
+				emit_ConditionalLine_OfKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1.equals(syntax))
 				emit_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ContactWaitStatement_OfKeyword_3_q.equals(syntax))
@@ -125,6 +129,17 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) contact=ContactPosition
 	 */
 	protected void emit_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'of'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     contact=ContactPosition 'contact' (ambiguity) segment=RailSegment
+	 */
+	protected void emit_ConditionalLine_OfKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

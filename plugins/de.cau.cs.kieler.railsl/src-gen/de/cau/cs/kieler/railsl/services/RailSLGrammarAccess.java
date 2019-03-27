@@ -598,11 +598,11 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ConditionalLine:
 		//	('If' | 'if') contact=ContactPosition
-		//	'contact' 'of' segment=RailSegment
+		//	'contact' 'of'? segment=RailSegment
 		//	'is' 'reached' ('first' | 'first,') 'do' block=Block;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('If' | 'if') contact=ContactPosition 'contact' 'of' segment=RailSegment 'is' 'reached' ('first' | 'first,') 'do'
+		//('If' | 'if') contact=ContactPosition 'contact' 'of'? segment=RailSegment 'is' 'reached' ('first' | 'first,') 'do'
 		//block=Block
 		public Group getGroup() { return cGroup; }
 		
@@ -624,7 +624,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'contact'
 		public Keyword getContactKeyword_2() { return cContactKeyword_2; }
 		
-		//'of'
+		//'of'?
 		public Keyword getOfKeyword_3() { return cOfKeyword_3; }
 		
 		//segment=RailSegment
@@ -1716,7 +1716,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ConditionalLine:
 	//	('If' | 'if') contact=ContactPosition
-	//	'contact' 'of' segment=RailSegment
+	//	'contact' 'of'? segment=RailSegment
 	//	'is' 'reached' ('first' | 'first,') 'do' block=Block;
 	public ConditionalLineElements getConditionalLineAccess() {
 		return pConditionalLine;

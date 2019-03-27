@@ -1008,10 +1008,12 @@ ruleConditionalLine returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getConditionalLineAccess().getContactKeyword_2());
 		}
-		otherlv_4='of'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getConditionalLineAccess().getOfKeyword_3());
-		}
+		(
+			otherlv_4='of'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getConditionalLineAccess().getOfKeyword_3());
+			}
+		)?
 		(
 			(
 				{

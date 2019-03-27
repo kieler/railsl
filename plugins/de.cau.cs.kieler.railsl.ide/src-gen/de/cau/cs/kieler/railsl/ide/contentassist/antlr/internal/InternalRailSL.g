@@ -2779,7 +2779,7 @@ rule__ConditionalLine__Group__3__Impl
 :
 (
 	{ before(grammarAccess.getConditionalLineAccess().getOfKeyword_3()); }
-	'of'
+	('of')?
 	{ after(grammarAccess.getConditionalLineAccess().getOfKeyword_3()); }
 )
 ;

@@ -90,7 +90,7 @@ ConditionalStatement:
 ConditionalLine:
     ('If' | 'if')
     contact=ContactPosition
-    'contact' 'of' segment=RailSegment
+    'contact' 'of'? segment=RailSegment
     'is' 'reached' ('first' | 'first,') 'do' block=Block;
 
 ParallelStatement:
