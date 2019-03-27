@@ -340,12 +340,12 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSecondsKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//TimeWaitStatement:
-		//	('Wait' | 'wait') 'for'
+		//	('Wait' | 'wait') 'for'?
 		//	time=INT
 		//	'seconds.';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Wait' | 'wait') 'for' time=INT 'seconds.'
+		//('Wait' | 'wait') 'for'? time=INT 'seconds.'
 		public Group getGroup() { return cGroup; }
 		
 		//'Wait' | 'wait'
@@ -357,7 +357,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'wait'
 		public Keyword getWaitKeyword_0_1() { return cWaitKeyword_0_1; }
 		
-		//'for'
+		//'for'?
 		public Keyword getForKeyword_1() { return cForKeyword_1; }
 		
 		//time=INT
@@ -1604,7 +1604,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TimeWaitStatement:
-	//	('Wait' | 'wait') 'for'
+	//	('Wait' | 'wait') 'for'?
 	//	time=INT
 	//	'seconds.';
 	public TimeWaitStatementElements getTimeWaitStatementAccess() {
