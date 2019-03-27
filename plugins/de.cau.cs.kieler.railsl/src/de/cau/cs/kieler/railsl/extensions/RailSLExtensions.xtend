@@ -96,7 +96,8 @@ class RailSLExtensions {
     }
 
     def boolean parseCrossingSetting(CrossingStatement cStatement) {
-        return cStatement.mode.equals(CrossingMode.OPEN)
+        // OPEN is default value, so set settting to false
+        return !cStatement.mode.equals(CrossingMode.OPEN)
     }
 
     def int parseContactIndex(ContactWaitStatement statement) {
