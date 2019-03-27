@@ -2097,7 +2097,7 @@ rule__TimeWaitStatement__Group__1__Impl
 :
 (
 	{ before(grammarAccess.getTimeWaitStatementAccess().getForKeyword_1()); }
-	'for'
+	('for')?
 	{ after(grammarAccess.getTimeWaitStatementAccess().getForKeyword_1()); }
 )
 ;

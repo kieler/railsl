@@ -1702,7 +1702,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeWaitStatement"
-    // InternalRailSL.g:571:1: ruleTimeWaitStatement returns [EObject current=null] : ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) otherlv_2= 'for' ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' ) ;
+    // InternalRailSL.g:571:1: ruleTimeWaitStatement returns [EObject current=null] : ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) (otherlv_2= 'for' )? ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' ) ;
     public final EObject ruleTimeWaitStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1716,11 +1716,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:577:2: ( ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) otherlv_2= 'for' ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' ) )
-            // InternalRailSL.g:578:2: ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) otherlv_2= 'for' ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' )
+            // InternalRailSL.g:577:2: ( ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) (otherlv_2= 'for' )? ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' ) )
+            // InternalRailSL.g:578:2: ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) (otherlv_2= 'for' )? ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' )
             {
-            // InternalRailSL.g:578:2: ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) otherlv_2= 'for' ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' )
-            // InternalRailSL.g:579:3: (otherlv_0= 'Wait' | otherlv_1= 'wait' ) otherlv_2= 'for' ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.'
+            // InternalRailSL.g:578:2: ( (otherlv_0= 'Wait' | otherlv_1= 'wait' ) (otherlv_2= 'for' )? ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.' )
+            // InternalRailSL.g:579:3: (otherlv_0= 'Wait' | otherlv_1= 'wait' ) (otherlv_2= 'for' )? ( (lv_time_3_0= RULE_INT ) ) otherlv_4= 'seconds.'
             {
             // InternalRailSL.g:579:3: (otherlv_0= 'Wait' | otherlv_1= 'wait' )
             int alt14=2;
@@ -1762,15 +1762,32 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,24,FOLLOW_12); 
+            // InternalRailSL.g:590:3: (otherlv_2= 'for' )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            			newLeafNode(otherlv_2, grammarAccess.getTimeWaitStatementAccess().getForKeyword_1());
-            		
-            // InternalRailSL.g:594:3: ( (lv_time_3_0= RULE_INT ) )
-            // InternalRailSL.g:595:4: (lv_time_3_0= RULE_INT )
+            if ( (LA15_0==24) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalRailSL.g:591:4: otherlv_2= 'for'
+                    {
+                    otherlv_2=(Token)match(input,24,FOLLOW_12); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getTimeWaitStatementAccess().getForKeyword_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalRailSL.g:596:3: ( (lv_time_3_0= RULE_INT ) )
+            // InternalRailSL.g:597:4: (lv_time_3_0= RULE_INT )
             {
-            // InternalRailSL.g:595:4: (lv_time_3_0= RULE_INT )
-            // InternalRailSL.g:596:5: lv_time_3_0= RULE_INT
+            // InternalRailSL.g:597:4: (lv_time_3_0= RULE_INT )
+            // InternalRailSL.g:598:5: lv_time_3_0= RULE_INT
             {
             lv_time_3_0=(Token)match(input,RULE_INT,FOLLOW_15); 
 
@@ -1819,7 +1836,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleContactWaitStatement"
-    // InternalRailSL.g:620:1: entryRuleContactWaitStatement returns [EObject current=null] : iv_ruleContactWaitStatement= ruleContactWaitStatement EOF ;
+    // InternalRailSL.g:622:1: entryRuleContactWaitStatement returns [EObject current=null] : iv_ruleContactWaitStatement= ruleContactWaitStatement EOF ;
     public final EObject entryRuleContactWaitStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1827,8 +1844,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:620:61: (iv_ruleContactWaitStatement= ruleContactWaitStatement EOF )
-            // InternalRailSL.g:621:2: iv_ruleContactWaitStatement= ruleContactWaitStatement EOF
+            // InternalRailSL.g:622:61: (iv_ruleContactWaitStatement= ruleContactWaitStatement EOF )
+            // InternalRailSL.g:623:2: iv_ruleContactWaitStatement= ruleContactWaitStatement EOF
             {
              newCompositeNode(grammarAccess.getContactWaitStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -1855,7 +1872,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContactWaitStatement"
-    // InternalRailSL.g:627:1: ruleContactWaitStatement returns [EObject current=null] : ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' ) ;
+    // InternalRailSL.g:629:1: ruleContactWaitStatement returns [EObject current=null] : ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' ) ;
     public final EObject ruleContactWaitStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1873,17 +1890,17 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:633:2: ( ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' ) )
-            // InternalRailSL.g:634:2: ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' )
+            // InternalRailSL.g:635:2: ( ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' ) )
+            // InternalRailSL.g:636:2: ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' )
             {
-            // InternalRailSL.g:634:2: ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' )
-            // InternalRailSL.g:635:3: ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.'
+            // InternalRailSL.g:636:2: ( ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.' )
+            // InternalRailSL.g:637:3: ( (lv_event_0_0= ruleContactEvent ) ) ( (lv_contact_1_0= ruleContactPosition ) ) otherlv_2= 'contact' (otherlv_3= 'of' )? ( (lv_segment_4_0= ruleRailSegment ) ) otherlv_5= '.'
             {
-            // InternalRailSL.g:635:3: ( (lv_event_0_0= ruleContactEvent ) )
-            // InternalRailSL.g:636:4: (lv_event_0_0= ruleContactEvent )
+            // InternalRailSL.g:637:3: ( (lv_event_0_0= ruleContactEvent ) )
+            // InternalRailSL.g:638:4: (lv_event_0_0= ruleContactEvent )
             {
-            // InternalRailSL.g:636:4: (lv_event_0_0= ruleContactEvent )
-            // InternalRailSL.g:637:5: lv_event_0_0= ruleContactEvent
+            // InternalRailSL.g:638:4: (lv_event_0_0= ruleContactEvent )
+            // InternalRailSL.g:639:5: lv_event_0_0= ruleContactEvent
             {
 
             					newCompositeNode(grammarAccess.getContactWaitStatementAccess().getEventContactEventEnumRuleCall_0_0());
@@ -1910,11 +1927,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:654:3: ( (lv_contact_1_0= ruleContactPosition ) )
-            // InternalRailSL.g:655:4: (lv_contact_1_0= ruleContactPosition )
+            // InternalRailSL.g:656:3: ( (lv_contact_1_0= ruleContactPosition ) )
+            // InternalRailSL.g:657:4: (lv_contact_1_0= ruleContactPosition )
             {
-            // InternalRailSL.g:655:4: (lv_contact_1_0= ruleContactPosition )
-            // InternalRailSL.g:656:5: lv_contact_1_0= ruleContactPosition
+            // InternalRailSL.g:657:4: (lv_contact_1_0= ruleContactPosition )
+            // InternalRailSL.g:658:5: lv_contact_1_0= ruleContactPosition
             {
 
             					newCompositeNode(grammarAccess.getContactWaitStatementAccess().getContactContactPositionEnumRuleCall_1_0());
@@ -1945,16 +1962,16 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getContactWaitStatementAccess().getContactKeyword_2());
             		
-            // InternalRailSL.g:677:3: (otherlv_3= 'of' )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalRailSL.g:679:3: (otherlv_3= 'of' )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==27) ) {
-                alt15=1;
+            if ( (LA16_0==27) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalRailSL.g:678:4: otherlv_3= 'of'
+                    // InternalRailSL.g:680:4: otherlv_3= 'of'
                     {
                     otherlv_3=(Token)match(input,27,FOLLOW_6); 
 
@@ -1966,11 +1983,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:683:3: ( (lv_segment_4_0= ruleRailSegment ) )
-            // InternalRailSL.g:684:4: (lv_segment_4_0= ruleRailSegment )
+            // InternalRailSL.g:685:3: ( (lv_segment_4_0= ruleRailSegment ) )
+            // InternalRailSL.g:686:4: (lv_segment_4_0= ruleRailSegment )
             {
-            // InternalRailSL.g:684:4: (lv_segment_4_0= ruleRailSegment )
-            // InternalRailSL.g:685:5: lv_segment_4_0= ruleRailSegment
+            // InternalRailSL.g:686:4: (lv_segment_4_0= ruleRailSegment )
+            // InternalRailSL.g:687:5: lv_segment_4_0= ruleRailSegment
             {
 
             					newCompositeNode(grammarAccess.getContactWaitStatementAccess().getSegmentRailSegmentEnumRuleCall_4_0());
@@ -2024,7 +2041,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpStatement"
-    // InternalRailSL.g:710:1: entryRuleOpStatement returns [EObject current=null] : iv_ruleOpStatement= ruleOpStatement EOF ;
+    // InternalRailSL.g:712:1: entryRuleOpStatement returns [EObject current=null] : iv_ruleOpStatement= ruleOpStatement EOF ;
     public final EObject entryRuleOpStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2032,8 +2049,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:710:52: (iv_ruleOpStatement= ruleOpStatement EOF )
-            // InternalRailSL.g:711:2: iv_ruleOpStatement= ruleOpStatement EOF
+            // InternalRailSL.g:712:52: (iv_ruleOpStatement= ruleOpStatement EOF )
+            // InternalRailSL.g:713:2: iv_ruleOpStatement= ruleOpStatement EOF
             {
              newCompositeNode(grammarAccess.getOpStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -2060,7 +2077,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpStatement"
-    // InternalRailSL.g:717:1: ruleOpStatement returns [EObject current=null] : (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement ) ;
+    // InternalRailSL.g:719:1: ruleOpStatement returns [EObject current=null] : (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement ) ;
     public final EObject ruleOpStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2073,28 +2090,28 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:723:2: ( (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement ) )
-            // InternalRailSL.g:724:2: (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement )
+            // InternalRailSL.g:725:2: ( (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement ) )
+            // InternalRailSL.g:726:2: (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement )
             {
-            // InternalRailSL.g:724:2: (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalRailSL.g:726:2: (this_CrossingStatement_0= ruleCrossingStatement | this_LightStatement_1= ruleLightStatement )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( ((LA16_0>=57 && LA16_0<=60)) ) {
-                alt16=1;
+            if ( ((LA17_0>=57 && LA17_0<=60)) ) {
+                alt17=1;
             }
-            else if ( ((LA16_0>=29 && LA16_0<=30)) ) {
-                alt16=2;
+            else if ( ((LA17_0>=29 && LA17_0<=30)) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalRailSL.g:725:3: this_CrossingStatement_0= ruleCrossingStatement
+                    // InternalRailSL.g:727:3: this_CrossingStatement_0= ruleCrossingStatement
                     {
 
                     			newCompositeNode(grammarAccess.getOpStatementAccess().getCrossingStatementParserRuleCall_0());
@@ -2112,7 +2129,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:734:3: this_LightStatement_1= ruleLightStatement
+                    // InternalRailSL.g:736:3: this_LightStatement_1= ruleLightStatement
                     {
 
                     			newCompositeNode(grammarAccess.getOpStatementAccess().getLightStatementParserRuleCall_1());
@@ -2152,7 +2169,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCrossingStatement"
-    // InternalRailSL.g:746:1: entryRuleCrossingStatement returns [EObject current=null] : iv_ruleCrossingStatement= ruleCrossingStatement EOF ;
+    // InternalRailSL.g:748:1: entryRuleCrossingStatement returns [EObject current=null] : iv_ruleCrossingStatement= ruleCrossingStatement EOF ;
     public final EObject entryRuleCrossingStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2160,8 +2177,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:746:58: (iv_ruleCrossingStatement= ruleCrossingStatement EOF )
-            // InternalRailSL.g:747:2: iv_ruleCrossingStatement= ruleCrossingStatement EOF
+            // InternalRailSL.g:748:58: (iv_ruleCrossingStatement= ruleCrossingStatement EOF )
+            // InternalRailSL.g:749:2: iv_ruleCrossingStatement= ruleCrossingStatement EOF
             {
              newCompositeNode(grammarAccess.getCrossingStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -2188,7 +2205,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCrossingStatement"
-    // InternalRailSL.g:753:1: ruleCrossingStatement returns [EObject current=null] : ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' ) ;
+    // InternalRailSL.g:755:1: ruleCrossingStatement returns [EObject current=null] : ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' ) ;
     public final EObject ruleCrossingStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2200,17 +2217,17 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:759:2: ( ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' ) )
-            // InternalRailSL.g:760:2: ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' )
+            // InternalRailSL.g:761:2: ( ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' ) )
+            // InternalRailSL.g:762:2: ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' )
             {
-            // InternalRailSL.g:760:2: ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' )
-            // InternalRailSL.g:761:3: ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.'
+            // InternalRailSL.g:762:2: ( ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.' )
+            // InternalRailSL.g:763:3: ( (lv_mode_0_0= ruleCrossingMode ) ) otherlv_1= 'crossing.'
             {
-            // InternalRailSL.g:761:3: ( (lv_mode_0_0= ruleCrossingMode ) )
-            // InternalRailSL.g:762:4: (lv_mode_0_0= ruleCrossingMode )
+            // InternalRailSL.g:763:3: ( (lv_mode_0_0= ruleCrossingMode ) )
+            // InternalRailSL.g:764:4: (lv_mode_0_0= ruleCrossingMode )
             {
-            // InternalRailSL.g:762:4: (lv_mode_0_0= ruleCrossingMode )
-            // InternalRailSL.g:763:5: lv_mode_0_0= ruleCrossingMode
+            // InternalRailSL.g:764:4: (lv_mode_0_0= ruleCrossingMode )
+            // InternalRailSL.g:765:5: lv_mode_0_0= ruleCrossingMode
             {
 
             					newCompositeNode(grammarAccess.getCrossingStatementAccess().getModeCrossingModeEnumRuleCall_0_0());
@@ -2264,7 +2281,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLightStatement"
-    // InternalRailSL.g:788:1: entryRuleLightStatement returns [EObject current=null] : iv_ruleLightStatement= ruleLightStatement EOF ;
+    // InternalRailSL.g:790:1: entryRuleLightStatement returns [EObject current=null] : iv_ruleLightStatement= ruleLightStatement EOF ;
     public final EObject entryRuleLightStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2272,8 +2289,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:788:55: (iv_ruleLightStatement= ruleLightStatement EOF )
-            // InternalRailSL.g:789:2: iv_ruleLightStatement= ruleLightStatement EOF
+            // InternalRailSL.g:790:55: (iv_ruleLightStatement= ruleLightStatement EOF )
+            // InternalRailSL.g:791:2: iv_ruleLightStatement= ruleLightStatement EOF
             {
              newCompositeNode(grammarAccess.getLightStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -2300,7 +2317,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLightStatement"
-    // InternalRailSL.g:795:1: ruleLightStatement returns [EObject current=null] : ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' ) ;
+    // InternalRailSL.g:797:1: ruleLightStatement returns [EObject current=null] : ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' ) ;
     public final EObject ruleLightStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2319,31 +2336,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:801:2: ( ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' ) )
-            // InternalRailSL.g:802:2: ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' )
+            // InternalRailSL.g:803:2: ( ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' ) )
+            // InternalRailSL.g:804:2: ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' )
             {
-            // InternalRailSL.g:802:2: ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' )
-            // InternalRailSL.g:803:3: (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.'
+            // InternalRailSL.g:804:2: ( (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.' )
+            // InternalRailSL.g:805:3: (otherlv_0= 'Turn' | otherlv_1= 'turn' ) otherlv_2= 'light' ( (lv_lights_3_0= RULE_INT ) ) ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )* ( (lv_state_7_0= ruleLightMode ) ) otherlv_8= '.'
             {
-            // InternalRailSL.g:803:3: (otherlv_0= 'Turn' | otherlv_1= 'turn' )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalRailSL.g:805:3: (otherlv_0= 'Turn' | otherlv_1= 'turn' )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA17_0==29) ) {
-                alt17=1;
+            if ( (LA18_0==29) ) {
+                alt18=1;
             }
-            else if ( (LA17_0==30) ) {
-                alt17=2;
+            else if ( (LA18_0==30) ) {
+                alt18=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // InternalRailSL.g:804:4: otherlv_0= 'Turn'
+                    // InternalRailSL.g:806:4: otherlv_0= 'Turn'
                     {
                     otherlv_0=(Token)match(input,29,FOLLOW_20); 
 
@@ -2353,7 +2370,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:809:4: otherlv_1= 'turn'
+                    // InternalRailSL.g:811:4: otherlv_1= 'turn'
                     {
                     otherlv_1=(Token)match(input,30,FOLLOW_20); 
 
@@ -2369,11 +2386,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getLightStatementAccess().getLightKeyword_1());
             		
-            // InternalRailSL.g:818:3: ( (lv_lights_3_0= RULE_INT ) )
-            // InternalRailSL.g:819:4: (lv_lights_3_0= RULE_INT )
+            // InternalRailSL.g:820:3: ( (lv_lights_3_0= RULE_INT ) )
+            // InternalRailSL.g:821:4: (lv_lights_3_0= RULE_INT )
             {
-            // InternalRailSL.g:819:4: (lv_lights_3_0= RULE_INT )
-            // InternalRailSL.g:820:5: lv_lights_3_0= RULE_INT
+            // InternalRailSL.g:821:4: (lv_lights_3_0= RULE_INT )
+            // InternalRailSL.g:822:5: lv_lights_3_0= RULE_INT
             {
             lv_lights_3_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
@@ -2395,40 +2412,40 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:836:3: ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )*
-            loop19:
+            // InternalRailSL.g:838:3: ( (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) ) )*
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( ((LA19_0>=16 && LA19_0<=17)) ) {
-                    alt19=1;
+                if ( ((LA20_0>=16 && LA20_0<=17)) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
-            	    // InternalRailSL.g:837:4: (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) )
+            	    // InternalRailSL.g:839:4: (otherlv_4= ',' | otherlv_5= 'and' ) ( (lv_lights_6_0= RULE_INT ) )
             	    {
-            	    // InternalRailSL.g:837:4: (otherlv_4= ',' | otherlv_5= 'and' )
-            	    int alt18=2;
-            	    int LA18_0 = input.LA(1);
+            	    // InternalRailSL.g:839:4: (otherlv_4= ',' | otherlv_5= 'and' )
+            	    int alt19=2;
+            	    int LA19_0 = input.LA(1);
 
-            	    if ( (LA18_0==16) ) {
-            	        alt18=1;
+            	    if ( (LA19_0==16) ) {
+            	        alt19=1;
             	    }
-            	    else if ( (LA18_0==17) ) {
-            	        alt18=2;
+            	    else if ( (LA19_0==17) ) {
+            	        alt19=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 18, 0, input);
+            	            new NoViableAltException("", 19, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt18) {
+            	    switch (alt19) {
             	        case 1 :
-            	            // InternalRailSL.g:838:5: otherlv_4= ','
+            	            // InternalRailSL.g:840:5: otherlv_4= ','
             	            {
             	            otherlv_4=(Token)match(input,16,FOLLOW_12); 
 
@@ -2438,7 +2455,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalRailSL.g:843:5: otherlv_5= 'and'
+            	            // InternalRailSL.g:845:5: otherlv_5= 'and'
             	            {
             	            otherlv_5=(Token)match(input,17,FOLLOW_12); 
 
@@ -2450,11 +2467,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalRailSL.g:848:4: ( (lv_lights_6_0= RULE_INT ) )
-            	    // InternalRailSL.g:849:5: (lv_lights_6_0= RULE_INT )
+            	    // InternalRailSL.g:850:4: ( (lv_lights_6_0= RULE_INT ) )
+            	    // InternalRailSL.g:851:5: (lv_lights_6_0= RULE_INT )
             	    {
-            	    // InternalRailSL.g:849:5: (lv_lights_6_0= RULE_INT )
-            	    // InternalRailSL.g:850:6: lv_lights_6_0= RULE_INT
+            	    // InternalRailSL.g:851:5: (lv_lights_6_0= RULE_INT )
+            	    // InternalRailSL.g:852:6: lv_lights_6_0= RULE_INT
             	    {
             	    lv_lights_6_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
@@ -2481,15 +2498,15 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
-            // InternalRailSL.g:867:3: ( (lv_state_7_0= ruleLightMode ) )
-            // InternalRailSL.g:868:4: (lv_state_7_0= ruleLightMode )
+            // InternalRailSL.g:869:3: ( (lv_state_7_0= ruleLightMode ) )
+            // InternalRailSL.g:870:4: (lv_state_7_0= ruleLightMode )
             {
-            // InternalRailSL.g:868:4: (lv_state_7_0= ruleLightMode )
-            // InternalRailSL.g:869:5: lv_state_7_0= ruleLightMode
+            // InternalRailSL.g:870:4: (lv_state_7_0= ruleLightMode )
+            // InternalRailSL.g:871:5: lv_state_7_0= ruleLightMode
             {
 
             					newCompositeNode(grammarAccess.getLightStatementAccess().getStateLightModeEnumRuleCall_4_0());
@@ -2543,7 +2560,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditionalStatement"
-    // InternalRailSL.g:894:1: entryRuleConditionalStatement returns [EObject current=null] : iv_ruleConditionalStatement= ruleConditionalStatement EOF ;
+    // InternalRailSL.g:896:1: entryRuleConditionalStatement returns [EObject current=null] : iv_ruleConditionalStatement= ruleConditionalStatement EOF ;
     public final EObject entryRuleConditionalStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2551,8 +2568,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:894:61: (iv_ruleConditionalStatement= ruleConditionalStatement EOF )
-            // InternalRailSL.g:895:2: iv_ruleConditionalStatement= ruleConditionalStatement EOF
+            // InternalRailSL.g:896:61: (iv_ruleConditionalStatement= ruleConditionalStatement EOF )
+            // InternalRailSL.g:897:2: iv_ruleConditionalStatement= ruleConditionalStatement EOF
             {
              newCompositeNode(grammarAccess.getConditionalStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -2579,7 +2596,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionalStatement"
-    // InternalRailSL.g:901:1: ruleConditionalStatement returns [EObject current=null] : ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ ) ;
+    // InternalRailSL.g:903:1: ruleConditionalStatement returns [EObject current=null] : ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ ) ;
     public final EObject ruleConditionalStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2594,31 +2611,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:907:2: ( ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ ) )
-            // InternalRailSL.g:908:2: ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ )
+            // InternalRailSL.g:909:2: ( ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ ) )
+            // InternalRailSL.g:910:2: ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ )
             {
-            // InternalRailSL.g:908:2: ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ )
-            // InternalRailSL.g:909:3: (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+
+            // InternalRailSL.g:910:2: ( (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+ )
+            // InternalRailSL.g:911:3: (otherlv_0= 'Branch:' | otherlv_1= 'branch:' ) ( (lv_lines_2_0= ruleConditionalLine ) ) ( (lv_lines_3_0= ruleConditionalLine ) )+
             {
-            // InternalRailSL.g:909:3: (otherlv_0= 'Branch:' | otherlv_1= 'branch:' )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalRailSL.g:911:3: (otherlv_0= 'Branch:' | otherlv_1= 'branch:' )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA20_0==32) ) {
-                alt20=1;
+            if ( (LA21_0==32) ) {
+                alt21=1;
             }
-            else if ( (LA20_0==33) ) {
-                alt20=2;
+            else if ( (LA21_0==33) ) {
+                alt21=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalRailSL.g:910:4: otherlv_0= 'Branch:'
+                    // InternalRailSL.g:912:4: otherlv_0= 'Branch:'
                     {
                     otherlv_0=(Token)match(input,32,FOLLOW_22); 
 
@@ -2628,7 +2645,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:915:4: otherlv_1= 'branch:'
+                    // InternalRailSL.g:917:4: otherlv_1= 'branch:'
                     {
                     otherlv_1=(Token)match(input,33,FOLLOW_22); 
 
@@ -2640,11 +2657,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:920:3: ( (lv_lines_2_0= ruleConditionalLine ) )
-            // InternalRailSL.g:921:4: (lv_lines_2_0= ruleConditionalLine )
+            // InternalRailSL.g:922:3: ( (lv_lines_2_0= ruleConditionalLine ) )
+            // InternalRailSL.g:923:4: (lv_lines_2_0= ruleConditionalLine )
             {
-            // InternalRailSL.g:921:4: (lv_lines_2_0= ruleConditionalLine )
-            // InternalRailSL.g:922:5: lv_lines_2_0= ruleConditionalLine
+            // InternalRailSL.g:923:4: (lv_lines_2_0= ruleConditionalLine )
+            // InternalRailSL.g:924:5: lv_lines_2_0= ruleConditionalLine
             {
 
             					newCompositeNode(grammarAccess.getConditionalStatementAccess().getLinesConditionalLineParserRuleCall_1_0());
@@ -2671,24 +2688,24 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:939:3: ( (lv_lines_3_0= ruleConditionalLine ) )+
-            int cnt21=0;
-            loop21:
+            // InternalRailSL.g:941:3: ( (lv_lines_3_0= ruleConditionalLine ) )+
+            int cnt22=0;
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA21_0>=34 && LA21_0<=35)) ) {
-                    alt21=1;
+                if ( ((LA22_0>=34 && LA22_0<=35)) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
-            	    // InternalRailSL.g:940:4: (lv_lines_3_0= ruleConditionalLine )
+            	    // InternalRailSL.g:942:4: (lv_lines_3_0= ruleConditionalLine )
             	    {
-            	    // InternalRailSL.g:940:4: (lv_lines_3_0= ruleConditionalLine )
-            	    // InternalRailSL.g:941:5: lv_lines_3_0= ruleConditionalLine
+            	    // InternalRailSL.g:942:4: (lv_lines_3_0= ruleConditionalLine )
+            	    // InternalRailSL.g:943:5: lv_lines_3_0= ruleConditionalLine
             	    {
 
             	    					newCompositeNode(grammarAccess.getConditionalStatementAccess().getLinesConditionalLineParserRuleCall_2_0());
@@ -2717,12 +2734,12 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt21 >= 1 ) break loop21;
+            	    if ( cnt22 >= 1 ) break loop22;
                         EarlyExitException eee =
-                            new EarlyExitException(21, input);
+                            new EarlyExitException(22, input);
                         throw eee;
                 }
-                cnt21++;
+                cnt22++;
             } while (true);
 
 
@@ -2748,7 +2765,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditionalLine"
-    // InternalRailSL.g:962:1: entryRuleConditionalLine returns [EObject current=null] : iv_ruleConditionalLine= ruleConditionalLine EOF ;
+    // InternalRailSL.g:964:1: entryRuleConditionalLine returns [EObject current=null] : iv_ruleConditionalLine= ruleConditionalLine EOF ;
     public final EObject entryRuleConditionalLine() throws RecognitionException {
         EObject current = null;
 
@@ -2756,8 +2773,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:962:56: (iv_ruleConditionalLine= ruleConditionalLine EOF )
-            // InternalRailSL.g:963:2: iv_ruleConditionalLine= ruleConditionalLine EOF
+            // InternalRailSL.g:964:56: (iv_ruleConditionalLine= ruleConditionalLine EOF )
+            // InternalRailSL.g:965:2: iv_ruleConditionalLine= ruleConditionalLine EOF
             {
              newCompositeNode(grammarAccess.getConditionalLineRule()); 
             pushFollow(FOLLOW_1);
@@ -2784,7 +2801,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionalLine"
-    // InternalRailSL.g:969:1: ruleConditionalLine returns [EObject current=null] : ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) ) ;
+    // InternalRailSL.g:971:1: ruleConditionalLine returns [EObject current=null] : ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) ) ;
     public final EObject ruleConditionalLine() throws RecognitionException {
         EObject current = null;
 
@@ -2808,31 +2825,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:975:2: ( ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) ) )
-            // InternalRailSL.g:976:2: ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) )
+            // InternalRailSL.g:977:2: ( ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) ) )
+            // InternalRailSL.g:978:2: ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) )
             {
-            // InternalRailSL.g:976:2: ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) )
-            // InternalRailSL.g:977:3: (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) )
+            // InternalRailSL.g:978:2: ( (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) ) )
+            // InternalRailSL.g:979:3: (otherlv_0= 'If' | otherlv_1= 'if' ) ( (lv_contact_2_0= ruleContactPosition ) ) otherlv_3= 'contact' (otherlv_4= 'of' )? ( (lv_segment_5_0= ruleRailSegment ) ) otherlv_6= 'is' otherlv_7= 'reached' (otherlv_8= 'first' | otherlv_9= 'first,' ) otherlv_10= 'do' ( (lv_block_11_0= ruleBlock ) )
             {
-            // InternalRailSL.g:977:3: (otherlv_0= 'If' | otherlv_1= 'if' )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalRailSL.g:979:3: (otherlv_0= 'If' | otherlv_1= 'if' )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==34) ) {
-                alt22=1;
+            if ( (LA23_0==34) ) {
+                alt23=1;
             }
-            else if ( (LA22_0==35) ) {
-                alt22=2;
+            else if ( (LA23_0==35) ) {
+                alt23=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // InternalRailSL.g:978:4: otherlv_0= 'If'
+                    // InternalRailSL.g:980:4: otherlv_0= 'If'
                     {
                     otherlv_0=(Token)match(input,34,FOLLOW_16); 
 
@@ -2842,7 +2859,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:983:4: otherlv_1= 'if'
+                    // InternalRailSL.g:985:4: otherlv_1= 'if'
                     {
                     otherlv_1=(Token)match(input,35,FOLLOW_16); 
 
@@ -2854,11 +2871,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:988:3: ( (lv_contact_2_0= ruleContactPosition ) )
-            // InternalRailSL.g:989:4: (lv_contact_2_0= ruleContactPosition )
+            // InternalRailSL.g:990:3: ( (lv_contact_2_0= ruleContactPosition ) )
+            // InternalRailSL.g:991:4: (lv_contact_2_0= ruleContactPosition )
             {
-            // InternalRailSL.g:989:4: (lv_contact_2_0= ruleContactPosition )
-            // InternalRailSL.g:990:5: lv_contact_2_0= ruleContactPosition
+            // InternalRailSL.g:991:4: (lv_contact_2_0= ruleContactPosition )
+            // InternalRailSL.g:992:5: lv_contact_2_0= ruleContactPosition
             {
 
             					newCompositeNode(grammarAccess.getConditionalLineAccess().getContactContactPositionEnumRuleCall_1_0());
@@ -2889,16 +2906,16 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getConditionalLineAccess().getContactKeyword_2());
             		
-            // InternalRailSL.g:1011:3: (otherlv_4= 'of' )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalRailSL.g:1013:3: (otherlv_4= 'of' )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==27) ) {
-                alt23=1;
+            if ( (LA24_0==27) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // InternalRailSL.g:1012:4: otherlv_4= 'of'
+                    // InternalRailSL.g:1014:4: otherlv_4= 'of'
                     {
                     otherlv_4=(Token)match(input,27,FOLLOW_6); 
 
@@ -2910,11 +2927,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:1017:3: ( (lv_segment_5_0= ruleRailSegment ) )
-            // InternalRailSL.g:1018:4: (lv_segment_5_0= ruleRailSegment )
+            // InternalRailSL.g:1019:3: ( (lv_segment_5_0= ruleRailSegment ) )
+            // InternalRailSL.g:1020:4: (lv_segment_5_0= ruleRailSegment )
             {
-            // InternalRailSL.g:1018:4: (lv_segment_5_0= ruleRailSegment )
-            // InternalRailSL.g:1019:5: lv_segment_5_0= ruleRailSegment
+            // InternalRailSL.g:1020:4: (lv_segment_5_0= ruleRailSegment )
+            // InternalRailSL.g:1021:5: lv_segment_5_0= ruleRailSegment
             {
 
             					newCompositeNode(grammarAccess.getConditionalLineAccess().getSegmentRailSegmentEnumRuleCall_4_0());
@@ -2949,25 +2966,25 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getConditionalLineAccess().getReachedKeyword_6());
             		
-            // InternalRailSL.g:1044:3: (otherlv_8= 'first' | otherlv_9= 'first,' )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalRailSL.g:1046:3: (otherlv_8= 'first' | otherlv_9= 'first,' )
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA24_0==38) ) {
-                alt24=1;
+            if ( (LA25_0==38) ) {
+                alt25=1;
             }
-            else if ( (LA24_0==39) ) {
-                alt24=2;
+            else if ( (LA25_0==39) ) {
+                alt25=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
-                    // InternalRailSL.g:1045:4: otherlv_8= 'first'
+                    // InternalRailSL.g:1047:4: otherlv_8= 'first'
                     {
                     otherlv_8=(Token)match(input,38,FOLLOW_27); 
 
@@ -2977,7 +2994,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1050:4: otherlv_9= 'first,'
+                    // InternalRailSL.g:1052:4: otherlv_9= 'first,'
                     {
                     otherlv_9=(Token)match(input,39,FOLLOW_27); 
 
@@ -2993,11 +3010,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_10, grammarAccess.getConditionalLineAccess().getDoKeyword_8());
             		
-            // InternalRailSL.g:1059:3: ( (lv_block_11_0= ruleBlock ) )
-            // InternalRailSL.g:1060:4: (lv_block_11_0= ruleBlock )
+            // InternalRailSL.g:1061:3: ( (lv_block_11_0= ruleBlock ) )
+            // InternalRailSL.g:1062:4: (lv_block_11_0= ruleBlock )
             {
-            // InternalRailSL.g:1060:4: (lv_block_11_0= ruleBlock )
-            // InternalRailSL.g:1061:5: lv_block_11_0= ruleBlock
+            // InternalRailSL.g:1062:4: (lv_block_11_0= ruleBlock )
+            // InternalRailSL.g:1063:5: lv_block_11_0= ruleBlock
             {
 
             					newCompositeNode(grammarAccess.getConditionalLineAccess().getBlockBlockParserRuleCall_9_0());
@@ -3047,7 +3064,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParallelStatement"
-    // InternalRailSL.g:1082:1: entryRuleParallelStatement returns [EObject current=null] : iv_ruleParallelStatement= ruleParallelStatement EOF ;
+    // InternalRailSL.g:1084:1: entryRuleParallelStatement returns [EObject current=null] : iv_ruleParallelStatement= ruleParallelStatement EOF ;
     public final EObject entryRuleParallelStatement() throws RecognitionException {
         EObject current = null;
 
@@ -3055,8 +3072,8 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRailSL.g:1082:58: (iv_ruleParallelStatement= ruleParallelStatement EOF )
-            // InternalRailSL.g:1083:2: iv_ruleParallelStatement= ruleParallelStatement EOF
+            // InternalRailSL.g:1084:58: (iv_ruleParallelStatement= ruleParallelStatement EOF )
+            // InternalRailSL.g:1085:2: iv_ruleParallelStatement= ruleParallelStatement EOF
             {
              newCompositeNode(grammarAccess.getParallelStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -3083,7 +3100,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParallelStatement"
-    // InternalRailSL.g:1089:1: ruleParallelStatement returns [EObject current=null] : ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ ) ;
+    // InternalRailSL.g:1091:1: ruleParallelStatement returns [EObject current=null] : ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ ) ;
     public final EObject ruleParallelStatement() throws RecognitionException {
         EObject current = null;
 
@@ -3098,31 +3115,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1095:2: ( ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ ) )
-            // InternalRailSL.g:1096:2: ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ )
+            // InternalRailSL.g:1097:2: ( ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ ) )
+            // InternalRailSL.g:1098:2: ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ )
             {
-            // InternalRailSL.g:1096:2: ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ )
-            // InternalRailSL.g:1097:3: (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+
+            // InternalRailSL.g:1098:2: ( (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+ )
+            // InternalRailSL.g:1099:3: (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' ) ( (lv_blocks_2_0= ruleBlock ) ) ( (lv_blocks_3_0= ruleBlock ) )+
             {
-            // InternalRailSL.g:1097:3: (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalRailSL.g:1099:3: (otherlv_0= 'Parallel:' | otherlv_1= 'parallel:' )
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==41) ) {
-                alt25=1;
+            if ( (LA26_0==41) ) {
+                alt26=1;
             }
-            else if ( (LA25_0==42) ) {
-                alt25=2;
+            else if ( (LA26_0==42) ) {
+                alt26=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // InternalRailSL.g:1098:4: otherlv_0= 'Parallel:'
+                    // InternalRailSL.g:1100:4: otherlv_0= 'Parallel:'
                     {
                     otherlv_0=(Token)match(input,41,FOLLOW_28); 
 
@@ -3132,7 +3149,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1103:4: otherlv_1= 'parallel:'
+                    // InternalRailSL.g:1105:4: otherlv_1= 'parallel:'
                     {
                     otherlv_1=(Token)match(input,42,FOLLOW_28); 
 
@@ -3144,11 +3161,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:1108:3: ( (lv_blocks_2_0= ruleBlock ) )
-            // InternalRailSL.g:1109:4: (lv_blocks_2_0= ruleBlock )
+            // InternalRailSL.g:1110:3: ( (lv_blocks_2_0= ruleBlock ) )
+            // InternalRailSL.g:1111:4: (lv_blocks_2_0= ruleBlock )
             {
-            // InternalRailSL.g:1109:4: (lv_blocks_2_0= ruleBlock )
-            // InternalRailSL.g:1110:5: lv_blocks_2_0= ruleBlock
+            // InternalRailSL.g:1111:4: (lv_blocks_2_0= ruleBlock )
+            // InternalRailSL.g:1112:5: lv_blocks_2_0= ruleBlock
             {
 
             					newCompositeNode(grammarAccess.getParallelStatementAccess().getBlocksBlockParserRuleCall_1_0());
@@ -3175,24 +3192,24 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRailSL.g:1127:3: ( (lv_blocks_3_0= ruleBlock ) )+
-            int cnt26=0;
-            loop26:
+            // InternalRailSL.g:1129:3: ( (lv_blocks_3_0= ruleBlock ) )+
+            int cnt27=0;
+            loop27:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( ((LA26_0>=11 && LA26_0<=12)) ) {
-                    alt26=1;
+                if ( ((LA27_0>=11 && LA27_0<=12)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalRailSL.g:1128:4: (lv_blocks_3_0= ruleBlock )
+            	    // InternalRailSL.g:1130:4: (lv_blocks_3_0= ruleBlock )
             	    {
-            	    // InternalRailSL.g:1128:4: (lv_blocks_3_0= ruleBlock )
-            	    // InternalRailSL.g:1129:5: lv_blocks_3_0= ruleBlock
+            	    // InternalRailSL.g:1130:4: (lv_blocks_3_0= ruleBlock )
+            	    // InternalRailSL.g:1131:5: lv_blocks_3_0= ruleBlock
             	    {
 
             	    					newCompositeNode(grammarAccess.getParallelStatementAccess().getBlocksBlockParserRuleCall_2_0());
@@ -3221,12 +3238,12 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt26 >= 1 ) break loop26;
+            	    if ( cnt27 >= 1 ) break loop27;
                         EarlyExitException eee =
-                            new EarlyExitException(26, input);
+                            new EarlyExitException(27, input);
                         throw eee;
                 }
-                cnt26++;
+                cnt27++;
             } while (true);
 
 
@@ -3252,7 +3269,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBlockEnd"
-    // InternalRailSL.g:1150:1: ruleBlockEnd returns [Enumerator current=null] : ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) ) ;
+    // InternalRailSL.g:1152:1: ruleBlockEnd returns [Enumerator current=null] : ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) ) ;
     public final Enumerator ruleBlockEnd() throws RecognitionException {
         Enumerator current = null;
 
@@ -3265,45 +3282,45 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1156:2: ( ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) ) )
-            // InternalRailSL.g:1157:2: ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) )
+            // InternalRailSL.g:1158:2: ( ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) ) )
+            // InternalRailSL.g:1159:2: ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) )
             {
-            // InternalRailSL.g:1157:2: ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) )
-            int alt27=4;
+            // InternalRailSL.g:1159:2: ( (enumLiteral_0= 'End.' ) | (enumLiteral_1= 'end.' ) | (enumLiteral_2= 'Loop.' ) | (enumLiteral_3= 'loop.' ) )
+            int alt28=4;
             switch ( input.LA(1) ) {
             case 43:
                 {
-                alt27=1;
+                alt28=1;
                 }
                 break;
             case 44:
                 {
-                alt27=2;
+                alt28=2;
                 }
                 break;
             case 45:
                 {
-                alt27=3;
+                alt28=3;
                 }
                 break;
             case 46:
                 {
-                alt27=4;
+                alt28=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
-                    // InternalRailSL.g:1158:3: (enumLiteral_0= 'End.' )
+                    // InternalRailSL.g:1160:3: (enumLiteral_0= 'End.' )
                     {
-                    // InternalRailSL.g:1158:3: (enumLiteral_0= 'End.' )
-                    // InternalRailSL.g:1159:4: enumLiteral_0= 'End.'
+                    // InternalRailSL.g:1160:3: (enumLiteral_0= 'End.' )
+                    // InternalRailSL.g:1161:4: enumLiteral_0= 'End.'
                     {
                     enumLiteral_0=(Token)match(input,43,FOLLOW_2); 
 
@@ -3317,10 +3334,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1166:3: (enumLiteral_1= 'end.' )
+                    // InternalRailSL.g:1168:3: (enumLiteral_1= 'end.' )
                     {
-                    // InternalRailSL.g:1166:3: (enumLiteral_1= 'end.' )
-                    // InternalRailSL.g:1167:4: enumLiteral_1= 'end.'
+                    // InternalRailSL.g:1168:3: (enumLiteral_1= 'end.' )
+                    // InternalRailSL.g:1169:4: enumLiteral_1= 'end.'
                     {
                     enumLiteral_1=(Token)match(input,44,FOLLOW_2); 
 
@@ -3334,10 +3351,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRailSL.g:1174:3: (enumLiteral_2= 'Loop.' )
+                    // InternalRailSL.g:1176:3: (enumLiteral_2= 'Loop.' )
                     {
-                    // InternalRailSL.g:1174:3: (enumLiteral_2= 'Loop.' )
-                    // InternalRailSL.g:1175:4: enumLiteral_2= 'Loop.'
+                    // InternalRailSL.g:1176:3: (enumLiteral_2= 'Loop.' )
+                    // InternalRailSL.g:1177:4: enumLiteral_2= 'Loop.'
                     {
                     enumLiteral_2=(Token)match(input,45,FOLLOW_2); 
 
@@ -3351,10 +3368,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRailSL.g:1182:3: (enumLiteral_3= 'loop.' )
+                    // InternalRailSL.g:1184:3: (enumLiteral_3= 'loop.' )
                     {
-                    // InternalRailSL.g:1182:3: (enumLiteral_3= 'loop.' )
-                    // InternalRailSL.g:1183:4: enumLiteral_3= 'loop.'
+                    // InternalRailSL.g:1184:3: (enumLiteral_3= 'loop.' )
+                    // InternalRailSL.g:1185:4: enumLiteral_3= 'loop.'
                     {
                     enumLiteral_3=(Token)match(input,46,FOLLOW_2); 
 
@@ -3390,7 +3407,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrackSpeedStop"
-    // InternalRailSL.g:1193:1: ruleTrackSpeedStop returns [Enumerator current=null] : (enumLiteral_0= 'stop' ) ;
+    // InternalRailSL.g:1195:1: ruleTrackSpeedStop returns [Enumerator current=null] : (enumLiteral_0= 'stop' ) ;
     public final Enumerator ruleTrackSpeedStop() throws RecognitionException {
         Enumerator current = null;
 
@@ -3400,11 +3417,11 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1199:2: ( (enumLiteral_0= 'stop' ) )
-            // InternalRailSL.g:1200:2: (enumLiteral_0= 'stop' )
+            // InternalRailSL.g:1201:2: ( (enumLiteral_0= 'stop' ) )
+            // InternalRailSL.g:1202:2: (enumLiteral_0= 'stop' )
             {
-            // InternalRailSL.g:1200:2: (enumLiteral_0= 'stop' )
-            // InternalRailSL.g:1201:3: enumLiteral_0= 'stop'
+            // InternalRailSL.g:1202:2: (enumLiteral_0= 'stop' )
+            // InternalRailSL.g:1203:3: enumLiteral_0= 'stop'
             {
             enumLiteral_0=(Token)match(input,47,FOLLOW_2); 
 
@@ -3434,7 +3451,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrackSpeedDrive"
-    // InternalRailSL.g:1210:1: ruleTrackSpeedDrive returns [Enumerator current=null] : ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) ) ;
+    // InternalRailSL.g:1212:1: ruleTrackSpeedDrive returns [Enumerator current=null] : ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) ) ;
     public final Enumerator ruleTrackSpeedDrive() throws RecognitionException {
         Enumerator current = null;
 
@@ -3445,31 +3462,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1216:2: ( ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) ) )
-            // InternalRailSL.g:1217:2: ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) )
+            // InternalRailSL.g:1218:2: ( ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) ) )
+            // InternalRailSL.g:1219:2: ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) )
             {
-            // InternalRailSL.g:1217:2: ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalRailSL.g:1219:2: ( (enumLiteral_0= 'full' ) | (enumLiteral_1= 'slow' ) )
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA28_0==48) ) {
-                alt28=1;
+            if ( (LA29_0==48) ) {
+                alt29=1;
             }
-            else if ( (LA28_0==49) ) {
-                alt28=2;
+            else if ( (LA29_0==49) ) {
+                alt29=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
-                    // InternalRailSL.g:1218:3: (enumLiteral_0= 'full' )
+                    // InternalRailSL.g:1220:3: (enumLiteral_0= 'full' )
                     {
-                    // InternalRailSL.g:1218:3: (enumLiteral_0= 'full' )
-                    // InternalRailSL.g:1219:4: enumLiteral_0= 'full'
+                    // InternalRailSL.g:1220:3: (enumLiteral_0= 'full' )
+                    // InternalRailSL.g:1221:4: enumLiteral_0= 'full'
                     {
                     enumLiteral_0=(Token)match(input,48,FOLLOW_2); 
 
@@ -3483,10 +3500,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1226:3: (enumLiteral_1= 'slow' )
+                    // InternalRailSL.g:1228:3: (enumLiteral_1= 'slow' )
                     {
-                    // InternalRailSL.g:1226:3: (enumLiteral_1= 'slow' )
-                    // InternalRailSL.g:1227:4: enumLiteral_1= 'slow'
+                    // InternalRailSL.g:1228:3: (enumLiteral_1= 'slow' )
+                    // InternalRailSL.g:1229:4: enumLiteral_1= 'slow'
                     {
                     enumLiteral_1=(Token)match(input,49,FOLLOW_2); 
 
@@ -3522,7 +3539,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePointOrientation"
-    // InternalRailSL.g:1237:1: rulePointOrientation returns [Enumerator current=null] : ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) ) ;
+    // InternalRailSL.g:1239:1: rulePointOrientation returns [Enumerator current=null] : ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) ) ;
     public final Enumerator rulePointOrientation() throws RecognitionException {
         Enumerator current = null;
 
@@ -3533,31 +3550,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1243:2: ( ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) ) )
-            // InternalRailSL.g:1244:2: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) )
+            // InternalRailSL.g:1245:2: ( ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) ) )
+            // InternalRailSL.g:1246:2: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) )
             {
-            // InternalRailSL.g:1244:2: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalRailSL.g:1246:2: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'branch' ) )
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==50) ) {
-                alt29=1;
+            if ( (LA30_0==50) ) {
+                alt30=1;
             }
-            else if ( (LA29_0==51) ) {
-                alt29=2;
+            else if ( (LA30_0==51) ) {
+                alt30=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
-                    // InternalRailSL.g:1245:3: (enumLiteral_0= 'straight' )
+                    // InternalRailSL.g:1247:3: (enumLiteral_0= 'straight' )
                     {
-                    // InternalRailSL.g:1245:3: (enumLiteral_0= 'straight' )
-                    // InternalRailSL.g:1246:4: enumLiteral_0= 'straight'
+                    // InternalRailSL.g:1247:3: (enumLiteral_0= 'straight' )
+                    // InternalRailSL.g:1248:4: enumLiteral_0= 'straight'
                     {
                     enumLiteral_0=(Token)match(input,50,FOLLOW_2); 
 
@@ -3571,10 +3588,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1253:3: (enumLiteral_1= 'branch' )
+                    // InternalRailSL.g:1255:3: (enumLiteral_1= 'branch' )
                     {
-                    // InternalRailSL.g:1253:3: (enumLiteral_1= 'branch' )
-                    // InternalRailSL.g:1254:4: enumLiteral_1= 'branch'
+                    // InternalRailSL.g:1255:3: (enumLiteral_1= 'branch' )
+                    // InternalRailSL.g:1256:4: enumLiteral_1= 'branch'
                     {
                     enumLiteral_1=(Token)match(input,51,FOLLOW_2); 
 
@@ -3610,7 +3627,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContactEvent"
-    // InternalRailSL.g:1264:1: ruleContactEvent returns [Enumerator current=null] : ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) ) ;
+    // InternalRailSL.g:1266:1: ruleContactEvent returns [Enumerator current=null] : ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) ) ;
     public final Enumerator ruleContactEvent() throws RecognitionException {
         Enumerator current = null;
 
@@ -3623,45 +3640,45 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1270:2: ( ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) ) )
-            // InternalRailSL.g:1271:2: ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) )
+            // InternalRailSL.g:1272:2: ( ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) ) )
+            // InternalRailSL.g:1273:2: ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) )
             {
-            // InternalRailSL.g:1271:2: ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) )
-            int alt30=4;
+            // InternalRailSL.g:1273:2: ( (enumLiteral_0= 'Reach' ) | (enumLiteral_1= 'reach' ) | (enumLiteral_2= 'Pass' ) | (enumLiteral_3= 'pass' ) )
+            int alt31=4;
             switch ( input.LA(1) ) {
             case 52:
                 {
-                alt30=1;
+                alt31=1;
                 }
                 break;
             case 53:
                 {
-                alt30=2;
+                alt31=2;
                 }
                 break;
             case 54:
                 {
-                alt30=3;
+                alt31=3;
                 }
                 break;
             case 55:
                 {
-                alt30=4;
+                alt31=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
-                    // InternalRailSL.g:1272:3: (enumLiteral_0= 'Reach' )
+                    // InternalRailSL.g:1274:3: (enumLiteral_0= 'Reach' )
                     {
-                    // InternalRailSL.g:1272:3: (enumLiteral_0= 'Reach' )
-                    // InternalRailSL.g:1273:4: enumLiteral_0= 'Reach'
+                    // InternalRailSL.g:1274:3: (enumLiteral_0= 'Reach' )
+                    // InternalRailSL.g:1275:4: enumLiteral_0= 'Reach'
                     {
                     enumLiteral_0=(Token)match(input,52,FOLLOW_2); 
 
@@ -3675,10 +3692,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1280:3: (enumLiteral_1= 'reach' )
+                    // InternalRailSL.g:1282:3: (enumLiteral_1= 'reach' )
                     {
-                    // InternalRailSL.g:1280:3: (enumLiteral_1= 'reach' )
-                    // InternalRailSL.g:1281:4: enumLiteral_1= 'reach'
+                    // InternalRailSL.g:1282:3: (enumLiteral_1= 'reach' )
+                    // InternalRailSL.g:1283:4: enumLiteral_1= 'reach'
                     {
                     enumLiteral_1=(Token)match(input,53,FOLLOW_2); 
 
@@ -3692,10 +3709,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRailSL.g:1288:3: (enumLiteral_2= 'Pass' )
+                    // InternalRailSL.g:1290:3: (enumLiteral_2= 'Pass' )
                     {
-                    // InternalRailSL.g:1288:3: (enumLiteral_2= 'Pass' )
-                    // InternalRailSL.g:1289:4: enumLiteral_2= 'Pass'
+                    // InternalRailSL.g:1290:3: (enumLiteral_2= 'Pass' )
+                    // InternalRailSL.g:1291:4: enumLiteral_2= 'Pass'
                     {
                     enumLiteral_2=(Token)match(input,54,FOLLOW_2); 
 
@@ -3709,10 +3726,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRailSL.g:1296:3: (enumLiteral_3= 'pass' )
+                    // InternalRailSL.g:1298:3: (enumLiteral_3= 'pass' )
                     {
-                    // InternalRailSL.g:1296:3: (enumLiteral_3= 'pass' )
-                    // InternalRailSL.g:1297:4: enumLiteral_3= 'pass'
+                    // InternalRailSL.g:1298:3: (enumLiteral_3= 'pass' )
+                    // InternalRailSL.g:1299:4: enumLiteral_3= 'pass'
                     {
                     enumLiteral_3=(Token)match(input,55,FOLLOW_2); 
 
@@ -3748,7 +3765,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContactPosition"
-    // InternalRailSL.g:1307:1: ruleContactPosition returns [Enumerator current=null] : ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) ) ;
+    // InternalRailSL.g:1309:1: ruleContactPosition returns [Enumerator current=null] : ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) ) ;
     public final Enumerator ruleContactPosition() throws RecognitionException {
         Enumerator current = null;
 
@@ -3759,31 +3776,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1313:2: ( ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) ) )
-            // InternalRailSL.g:1314:2: ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) )
+            // InternalRailSL.g:1315:2: ( ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) ) )
+            // InternalRailSL.g:1316:2: ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) )
             {
-            // InternalRailSL.g:1314:2: ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalRailSL.g:1316:2: ( (enumLiteral_0= 'first' ) | (enumLiteral_1= 'second' ) )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA31_0==38) ) {
-                alt31=1;
+            if ( (LA32_0==38) ) {
+                alt32=1;
             }
-            else if ( (LA31_0==56) ) {
-                alt31=2;
+            else if ( (LA32_0==56) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
-                    // InternalRailSL.g:1315:3: (enumLiteral_0= 'first' )
+                    // InternalRailSL.g:1317:3: (enumLiteral_0= 'first' )
                     {
-                    // InternalRailSL.g:1315:3: (enumLiteral_0= 'first' )
-                    // InternalRailSL.g:1316:4: enumLiteral_0= 'first'
+                    // InternalRailSL.g:1317:3: (enumLiteral_0= 'first' )
+                    // InternalRailSL.g:1318:4: enumLiteral_0= 'first'
                     {
                     enumLiteral_0=(Token)match(input,38,FOLLOW_2); 
 
@@ -3797,10 +3814,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1323:3: (enumLiteral_1= 'second' )
+                    // InternalRailSL.g:1325:3: (enumLiteral_1= 'second' )
                     {
-                    // InternalRailSL.g:1323:3: (enumLiteral_1= 'second' )
-                    // InternalRailSL.g:1324:4: enumLiteral_1= 'second'
+                    // InternalRailSL.g:1325:3: (enumLiteral_1= 'second' )
+                    // InternalRailSL.g:1326:4: enumLiteral_1= 'second'
                     {
                     enumLiteral_1=(Token)match(input,56,FOLLOW_2); 
 
@@ -3836,7 +3853,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCrossingMode"
-    // InternalRailSL.g:1334:1: ruleCrossingMode returns [Enumerator current=null] : ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) ) ;
+    // InternalRailSL.g:1336:1: ruleCrossingMode returns [Enumerator current=null] : ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) ) ;
     public final Enumerator ruleCrossingMode() throws RecognitionException {
         Enumerator current = null;
 
@@ -3849,45 +3866,45 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1340:2: ( ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) ) )
-            // InternalRailSL.g:1341:2: ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) )
+            // InternalRailSL.g:1342:2: ( ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) ) )
+            // InternalRailSL.g:1343:2: ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) )
             {
-            // InternalRailSL.g:1341:2: ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) )
-            int alt32=4;
+            // InternalRailSL.g:1343:2: ( (enumLiteral_0= 'Open' ) | (enumLiteral_1= 'open' ) | (enumLiteral_2= 'Close' ) | (enumLiteral_3= 'close' ) )
+            int alt33=4;
             switch ( input.LA(1) ) {
             case 57:
                 {
-                alt32=1;
+                alt33=1;
                 }
                 break;
             case 58:
                 {
-                alt32=2;
+                alt33=2;
                 }
                 break;
             case 59:
                 {
-                alt32=3;
+                alt33=3;
                 }
                 break;
             case 60:
                 {
-                alt32=4;
+                alt33=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
-                    // InternalRailSL.g:1342:3: (enumLiteral_0= 'Open' )
+                    // InternalRailSL.g:1344:3: (enumLiteral_0= 'Open' )
                     {
-                    // InternalRailSL.g:1342:3: (enumLiteral_0= 'Open' )
-                    // InternalRailSL.g:1343:4: enumLiteral_0= 'Open'
+                    // InternalRailSL.g:1344:3: (enumLiteral_0= 'Open' )
+                    // InternalRailSL.g:1345:4: enumLiteral_0= 'Open'
                     {
                     enumLiteral_0=(Token)match(input,57,FOLLOW_2); 
 
@@ -3901,10 +3918,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1350:3: (enumLiteral_1= 'open' )
+                    // InternalRailSL.g:1352:3: (enumLiteral_1= 'open' )
                     {
-                    // InternalRailSL.g:1350:3: (enumLiteral_1= 'open' )
-                    // InternalRailSL.g:1351:4: enumLiteral_1= 'open'
+                    // InternalRailSL.g:1352:3: (enumLiteral_1= 'open' )
+                    // InternalRailSL.g:1353:4: enumLiteral_1= 'open'
                     {
                     enumLiteral_1=(Token)match(input,58,FOLLOW_2); 
 
@@ -3918,10 +3935,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRailSL.g:1358:3: (enumLiteral_2= 'Close' )
+                    // InternalRailSL.g:1360:3: (enumLiteral_2= 'Close' )
                     {
-                    // InternalRailSL.g:1358:3: (enumLiteral_2= 'Close' )
-                    // InternalRailSL.g:1359:4: enumLiteral_2= 'Close'
+                    // InternalRailSL.g:1360:3: (enumLiteral_2= 'Close' )
+                    // InternalRailSL.g:1361:4: enumLiteral_2= 'Close'
                     {
                     enumLiteral_2=(Token)match(input,59,FOLLOW_2); 
 
@@ -3935,10 +3952,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRailSL.g:1366:3: (enumLiteral_3= 'close' )
+                    // InternalRailSL.g:1368:3: (enumLiteral_3= 'close' )
                     {
-                    // InternalRailSL.g:1366:3: (enumLiteral_3= 'close' )
-                    // InternalRailSL.g:1367:4: enumLiteral_3= 'close'
+                    // InternalRailSL.g:1368:3: (enumLiteral_3= 'close' )
+                    // InternalRailSL.g:1369:4: enumLiteral_3= 'close'
                     {
                     enumLiteral_3=(Token)match(input,60,FOLLOW_2); 
 
@@ -3974,7 +3991,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLightMode"
-    // InternalRailSL.g:1377:1: ruleLightMode returns [Enumerator current=null] : ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) ;
+    // InternalRailSL.g:1379:1: ruleLightMode returns [Enumerator current=null] : ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) ;
     public final Enumerator ruleLightMode() throws RecognitionException {
         Enumerator current = null;
 
@@ -3985,31 +4002,31 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1383:2: ( ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) )
-            // InternalRailSL.g:1384:2: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
+            // InternalRailSL.g:1385:2: ( ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) ) )
+            // InternalRailSL.g:1386:2: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
             {
-            // InternalRailSL.g:1384:2: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalRailSL.g:1386:2: ( (enumLiteral_0= 'on' ) | (enumLiteral_1= 'off' ) )
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==61) ) {
-                alt33=1;
+            if ( (LA34_0==61) ) {
+                alt34=1;
             }
-            else if ( (LA33_0==62) ) {
-                alt33=2;
+            else if ( (LA34_0==62) ) {
+                alt34=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
-                    // InternalRailSL.g:1385:3: (enumLiteral_0= 'on' )
+                    // InternalRailSL.g:1387:3: (enumLiteral_0= 'on' )
                     {
-                    // InternalRailSL.g:1385:3: (enumLiteral_0= 'on' )
-                    // InternalRailSL.g:1386:4: enumLiteral_0= 'on'
+                    // InternalRailSL.g:1387:3: (enumLiteral_0= 'on' )
+                    // InternalRailSL.g:1388:4: enumLiteral_0= 'on'
                     {
                     enumLiteral_0=(Token)match(input,61,FOLLOW_2); 
 
@@ -4023,10 +4040,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1393:3: (enumLiteral_1= 'off' )
+                    // InternalRailSL.g:1395:3: (enumLiteral_1= 'off' )
                     {
-                    // InternalRailSL.g:1393:3: (enumLiteral_1= 'off' )
-                    // InternalRailSL.g:1394:4: enumLiteral_1= 'off'
+                    // InternalRailSL.g:1395:3: (enumLiteral_1= 'off' )
+                    // InternalRailSL.g:1396:4: enumLiteral_1= 'off'
                     {
                     enumLiteral_1=(Token)match(input,62,FOLLOW_2); 
 
@@ -4062,7 +4079,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRailSegment"
-    // InternalRailSL.g:1404:1: ruleRailSegment returns [Enumerator current=null] : ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) ) ;
+    // InternalRailSL.g:1406:1: ruleRailSegment returns [Enumerator current=null] : ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) ) ;
     public final Enumerator ruleRailSegment() throws RecognitionException {
         Enumerator current = null;
 
@@ -4119,265 +4136,265 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRailSL.g:1410:2: ( ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) ) )
-            // InternalRailSL.g:1411:2: ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) )
+            // InternalRailSL.g:1412:2: ( ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) ) )
+            // InternalRailSL.g:1413:2: ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) )
             {
-            // InternalRailSL.g:1411:2: ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) )
-            int alt34=48;
+            // InternalRailSL.g:1413:2: ( (enumLiteral_0= 'IC_JCT_0' ) | (enumLiteral_1= 'IC_LN_0' ) | (enumLiteral_2= 'IC_LN_1' ) | (enumLiteral_3= 'IC_LN_2' ) | (enumLiteral_4= 'IC_LN_3' ) | (enumLiteral_5= 'IC_LN_4' ) | (enumLiteral_6= 'IC_LN_5' ) | (enumLiteral_7= 'IC_ST_0' ) | (enumLiteral_8= 'IC_ST_1' ) | (enumLiteral_9= 'IC_ST_2' ) | (enumLiteral_10= 'IC_ST_3' ) | (enumLiteral_11= 'IC_ST_4' ) | (enumLiteral_12= 'IO_LN_0' ) | (enumLiteral_13= 'IO_LN_1' ) | (enumLiteral_14= 'IO_LN_2' ) | (enumLiteral_15= 'KH_LN_0' ) | (enumLiteral_16= 'KH_LN_1' ) | (enumLiteral_17= 'KH_LN_2' ) | (enumLiteral_18= 'KH_LN_3' ) | (enumLiteral_19= 'KH_LN_4' ) | (enumLiteral_20= 'KH_LN_5' ) | (enumLiteral_21= 'KH_LN_6' ) | (enumLiteral_22= 'KH_LN_7' ) | (enumLiteral_23= 'KH_LN_8' ) | (enumLiteral_24= 'KH_ST_0' ) | (enumLiteral_25= 'KH_ST_1' ) | (enumLiteral_26= 'KH_ST_2' ) | (enumLiteral_27= 'KH_ST_3' ) | (enumLiteral_28= 'KH_ST_4' ) | (enumLiteral_29= 'KH_ST_5' ) | (enumLiteral_30= 'KH_ST_6' ) | (enumLiteral_31= 'KIO_LN_0' ) | (enumLiteral_32= 'KIO_LN_1' ) | (enumLiteral_33= 'OC_JCT_0' ) | (enumLiteral_34= 'OC_LN_0' ) | (enumLiteral_35= 'OC_LN_1' ) | (enumLiteral_36= 'OC_LN_2' ) | (enumLiteral_37= 'OC_LN_3' ) | (enumLiteral_38= 'OC_LN_4' ) | (enumLiteral_39= 'OC_LN_5' ) | (enumLiteral_40= 'OC_ST_0' ) | (enumLiteral_41= 'OC_ST_1' ) | (enumLiteral_42= 'OC_ST_2' ) | (enumLiteral_43= 'OC_ST_3' ) | (enumLiteral_44= 'OC_ST_4' ) | (enumLiteral_45= 'OI_LN_0' ) | (enumLiteral_46= 'OI_LN_1' ) | (enumLiteral_47= 'OI_LN_2' ) )
+            int alt35=48;
             switch ( input.LA(1) ) {
             case 63:
                 {
-                alt34=1;
+                alt35=1;
                 }
                 break;
             case 64:
                 {
-                alt34=2;
+                alt35=2;
                 }
                 break;
             case 65:
                 {
-                alt34=3;
+                alt35=3;
                 }
                 break;
             case 66:
                 {
-                alt34=4;
+                alt35=4;
                 }
                 break;
             case 67:
                 {
-                alt34=5;
+                alt35=5;
                 }
                 break;
             case 68:
                 {
-                alt34=6;
+                alt35=6;
                 }
                 break;
             case 69:
                 {
-                alt34=7;
+                alt35=7;
                 }
                 break;
             case 70:
                 {
-                alt34=8;
+                alt35=8;
                 }
                 break;
             case 71:
                 {
-                alt34=9;
+                alt35=9;
                 }
                 break;
             case 72:
                 {
-                alt34=10;
+                alt35=10;
                 }
                 break;
             case 73:
                 {
-                alt34=11;
+                alt35=11;
                 }
                 break;
             case 74:
                 {
-                alt34=12;
+                alt35=12;
                 }
                 break;
             case 75:
                 {
-                alt34=13;
+                alt35=13;
                 }
                 break;
             case 76:
                 {
-                alt34=14;
+                alt35=14;
                 }
                 break;
             case 77:
                 {
-                alt34=15;
+                alt35=15;
                 }
                 break;
             case 78:
                 {
-                alt34=16;
+                alt35=16;
                 }
                 break;
             case 79:
                 {
-                alt34=17;
+                alt35=17;
                 }
                 break;
             case 80:
                 {
-                alt34=18;
+                alt35=18;
                 }
                 break;
             case 81:
                 {
-                alt34=19;
+                alt35=19;
                 }
                 break;
             case 82:
                 {
-                alt34=20;
+                alt35=20;
                 }
                 break;
             case 83:
                 {
-                alt34=21;
+                alt35=21;
                 }
                 break;
             case 84:
                 {
-                alt34=22;
+                alt35=22;
                 }
                 break;
             case 85:
                 {
-                alt34=23;
+                alt35=23;
                 }
                 break;
             case 86:
                 {
-                alt34=24;
+                alt35=24;
                 }
                 break;
             case 87:
                 {
-                alt34=25;
+                alt35=25;
                 }
                 break;
             case 88:
                 {
-                alt34=26;
+                alt35=26;
                 }
                 break;
             case 89:
                 {
-                alt34=27;
+                alt35=27;
                 }
                 break;
             case 90:
                 {
-                alt34=28;
+                alt35=28;
                 }
                 break;
             case 91:
                 {
-                alt34=29;
+                alt35=29;
                 }
                 break;
             case 92:
                 {
-                alt34=30;
+                alt35=30;
                 }
                 break;
             case 93:
                 {
-                alt34=31;
+                alt35=31;
                 }
                 break;
             case 94:
                 {
-                alt34=32;
+                alt35=32;
                 }
                 break;
             case 95:
                 {
-                alt34=33;
+                alt35=33;
                 }
                 break;
             case 96:
                 {
-                alt34=34;
+                alt35=34;
                 }
                 break;
             case 97:
                 {
-                alt34=35;
+                alt35=35;
                 }
                 break;
             case 98:
                 {
-                alt34=36;
+                alt35=36;
                 }
                 break;
             case 99:
                 {
-                alt34=37;
+                alt35=37;
                 }
                 break;
             case 100:
                 {
-                alt34=38;
+                alt35=38;
                 }
                 break;
             case 101:
                 {
-                alt34=39;
+                alt35=39;
                 }
                 break;
             case 102:
                 {
-                alt34=40;
+                alt35=40;
                 }
                 break;
             case 103:
                 {
-                alt34=41;
+                alt35=41;
                 }
                 break;
             case 104:
                 {
-                alt34=42;
+                alt35=42;
                 }
                 break;
             case 105:
                 {
-                alt34=43;
+                alt35=43;
                 }
                 break;
             case 106:
                 {
-                alt34=44;
+                alt35=44;
                 }
                 break;
             case 107:
                 {
-                alt34=45;
+                alt35=45;
                 }
                 break;
             case 108:
                 {
-                alt34=46;
+                alt35=46;
                 }
                 break;
             case 109:
                 {
-                alt34=47;
+                alt35=47;
                 }
                 break;
             case 110:
                 {
-                alt34=48;
+                alt35=48;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt34) {
+            switch (alt35) {
                 case 1 :
-                    // InternalRailSL.g:1412:3: (enumLiteral_0= 'IC_JCT_0' )
+                    // InternalRailSL.g:1414:3: (enumLiteral_0= 'IC_JCT_0' )
                     {
-                    // InternalRailSL.g:1412:3: (enumLiteral_0= 'IC_JCT_0' )
-                    // InternalRailSL.g:1413:4: enumLiteral_0= 'IC_JCT_0'
+                    // InternalRailSL.g:1414:3: (enumLiteral_0= 'IC_JCT_0' )
+                    // InternalRailSL.g:1415:4: enumLiteral_0= 'IC_JCT_0'
                     {
                     enumLiteral_0=(Token)match(input,63,FOLLOW_2); 
 
@@ -4391,10 +4408,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRailSL.g:1420:3: (enumLiteral_1= 'IC_LN_0' )
+                    // InternalRailSL.g:1422:3: (enumLiteral_1= 'IC_LN_0' )
                     {
-                    // InternalRailSL.g:1420:3: (enumLiteral_1= 'IC_LN_0' )
-                    // InternalRailSL.g:1421:4: enumLiteral_1= 'IC_LN_0'
+                    // InternalRailSL.g:1422:3: (enumLiteral_1= 'IC_LN_0' )
+                    // InternalRailSL.g:1423:4: enumLiteral_1= 'IC_LN_0'
                     {
                     enumLiteral_1=(Token)match(input,64,FOLLOW_2); 
 
@@ -4408,10 +4425,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRailSL.g:1428:3: (enumLiteral_2= 'IC_LN_1' )
+                    // InternalRailSL.g:1430:3: (enumLiteral_2= 'IC_LN_1' )
                     {
-                    // InternalRailSL.g:1428:3: (enumLiteral_2= 'IC_LN_1' )
-                    // InternalRailSL.g:1429:4: enumLiteral_2= 'IC_LN_1'
+                    // InternalRailSL.g:1430:3: (enumLiteral_2= 'IC_LN_1' )
+                    // InternalRailSL.g:1431:4: enumLiteral_2= 'IC_LN_1'
                     {
                     enumLiteral_2=(Token)match(input,65,FOLLOW_2); 
 
@@ -4425,10 +4442,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRailSL.g:1436:3: (enumLiteral_3= 'IC_LN_2' )
+                    // InternalRailSL.g:1438:3: (enumLiteral_3= 'IC_LN_2' )
                     {
-                    // InternalRailSL.g:1436:3: (enumLiteral_3= 'IC_LN_2' )
-                    // InternalRailSL.g:1437:4: enumLiteral_3= 'IC_LN_2'
+                    // InternalRailSL.g:1438:3: (enumLiteral_3= 'IC_LN_2' )
+                    // InternalRailSL.g:1439:4: enumLiteral_3= 'IC_LN_2'
                     {
                     enumLiteral_3=(Token)match(input,66,FOLLOW_2); 
 
@@ -4442,10 +4459,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRailSL.g:1444:3: (enumLiteral_4= 'IC_LN_3' )
+                    // InternalRailSL.g:1446:3: (enumLiteral_4= 'IC_LN_3' )
                     {
-                    // InternalRailSL.g:1444:3: (enumLiteral_4= 'IC_LN_3' )
-                    // InternalRailSL.g:1445:4: enumLiteral_4= 'IC_LN_3'
+                    // InternalRailSL.g:1446:3: (enumLiteral_4= 'IC_LN_3' )
+                    // InternalRailSL.g:1447:4: enumLiteral_4= 'IC_LN_3'
                     {
                     enumLiteral_4=(Token)match(input,67,FOLLOW_2); 
 
@@ -4459,10 +4476,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRailSL.g:1452:3: (enumLiteral_5= 'IC_LN_4' )
+                    // InternalRailSL.g:1454:3: (enumLiteral_5= 'IC_LN_4' )
                     {
-                    // InternalRailSL.g:1452:3: (enumLiteral_5= 'IC_LN_4' )
-                    // InternalRailSL.g:1453:4: enumLiteral_5= 'IC_LN_4'
+                    // InternalRailSL.g:1454:3: (enumLiteral_5= 'IC_LN_4' )
+                    // InternalRailSL.g:1455:4: enumLiteral_5= 'IC_LN_4'
                     {
                     enumLiteral_5=(Token)match(input,68,FOLLOW_2); 
 
@@ -4476,10 +4493,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRailSL.g:1460:3: (enumLiteral_6= 'IC_LN_5' )
+                    // InternalRailSL.g:1462:3: (enumLiteral_6= 'IC_LN_5' )
                     {
-                    // InternalRailSL.g:1460:3: (enumLiteral_6= 'IC_LN_5' )
-                    // InternalRailSL.g:1461:4: enumLiteral_6= 'IC_LN_5'
+                    // InternalRailSL.g:1462:3: (enumLiteral_6= 'IC_LN_5' )
+                    // InternalRailSL.g:1463:4: enumLiteral_6= 'IC_LN_5'
                     {
                     enumLiteral_6=(Token)match(input,69,FOLLOW_2); 
 
@@ -4493,10 +4510,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalRailSL.g:1468:3: (enumLiteral_7= 'IC_ST_0' )
+                    // InternalRailSL.g:1470:3: (enumLiteral_7= 'IC_ST_0' )
                     {
-                    // InternalRailSL.g:1468:3: (enumLiteral_7= 'IC_ST_0' )
-                    // InternalRailSL.g:1469:4: enumLiteral_7= 'IC_ST_0'
+                    // InternalRailSL.g:1470:3: (enumLiteral_7= 'IC_ST_0' )
+                    // InternalRailSL.g:1471:4: enumLiteral_7= 'IC_ST_0'
                     {
                     enumLiteral_7=(Token)match(input,70,FOLLOW_2); 
 
@@ -4510,10 +4527,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalRailSL.g:1476:3: (enumLiteral_8= 'IC_ST_1' )
+                    // InternalRailSL.g:1478:3: (enumLiteral_8= 'IC_ST_1' )
                     {
-                    // InternalRailSL.g:1476:3: (enumLiteral_8= 'IC_ST_1' )
-                    // InternalRailSL.g:1477:4: enumLiteral_8= 'IC_ST_1'
+                    // InternalRailSL.g:1478:3: (enumLiteral_8= 'IC_ST_1' )
+                    // InternalRailSL.g:1479:4: enumLiteral_8= 'IC_ST_1'
                     {
                     enumLiteral_8=(Token)match(input,71,FOLLOW_2); 
 
@@ -4527,10 +4544,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalRailSL.g:1484:3: (enumLiteral_9= 'IC_ST_2' )
+                    // InternalRailSL.g:1486:3: (enumLiteral_9= 'IC_ST_2' )
                     {
-                    // InternalRailSL.g:1484:3: (enumLiteral_9= 'IC_ST_2' )
-                    // InternalRailSL.g:1485:4: enumLiteral_9= 'IC_ST_2'
+                    // InternalRailSL.g:1486:3: (enumLiteral_9= 'IC_ST_2' )
+                    // InternalRailSL.g:1487:4: enumLiteral_9= 'IC_ST_2'
                     {
                     enumLiteral_9=(Token)match(input,72,FOLLOW_2); 
 
@@ -4544,10 +4561,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalRailSL.g:1492:3: (enumLiteral_10= 'IC_ST_3' )
+                    // InternalRailSL.g:1494:3: (enumLiteral_10= 'IC_ST_3' )
                     {
-                    // InternalRailSL.g:1492:3: (enumLiteral_10= 'IC_ST_3' )
-                    // InternalRailSL.g:1493:4: enumLiteral_10= 'IC_ST_3'
+                    // InternalRailSL.g:1494:3: (enumLiteral_10= 'IC_ST_3' )
+                    // InternalRailSL.g:1495:4: enumLiteral_10= 'IC_ST_3'
                     {
                     enumLiteral_10=(Token)match(input,73,FOLLOW_2); 
 
@@ -4561,10 +4578,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalRailSL.g:1500:3: (enumLiteral_11= 'IC_ST_4' )
+                    // InternalRailSL.g:1502:3: (enumLiteral_11= 'IC_ST_4' )
                     {
-                    // InternalRailSL.g:1500:3: (enumLiteral_11= 'IC_ST_4' )
-                    // InternalRailSL.g:1501:4: enumLiteral_11= 'IC_ST_4'
+                    // InternalRailSL.g:1502:3: (enumLiteral_11= 'IC_ST_4' )
+                    // InternalRailSL.g:1503:4: enumLiteral_11= 'IC_ST_4'
                     {
                     enumLiteral_11=(Token)match(input,74,FOLLOW_2); 
 
@@ -4578,10 +4595,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalRailSL.g:1508:3: (enumLiteral_12= 'IO_LN_0' )
+                    // InternalRailSL.g:1510:3: (enumLiteral_12= 'IO_LN_0' )
                     {
-                    // InternalRailSL.g:1508:3: (enumLiteral_12= 'IO_LN_0' )
-                    // InternalRailSL.g:1509:4: enumLiteral_12= 'IO_LN_0'
+                    // InternalRailSL.g:1510:3: (enumLiteral_12= 'IO_LN_0' )
+                    // InternalRailSL.g:1511:4: enumLiteral_12= 'IO_LN_0'
                     {
                     enumLiteral_12=(Token)match(input,75,FOLLOW_2); 
 
@@ -4595,10 +4612,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalRailSL.g:1516:3: (enumLiteral_13= 'IO_LN_1' )
+                    // InternalRailSL.g:1518:3: (enumLiteral_13= 'IO_LN_1' )
                     {
-                    // InternalRailSL.g:1516:3: (enumLiteral_13= 'IO_LN_1' )
-                    // InternalRailSL.g:1517:4: enumLiteral_13= 'IO_LN_1'
+                    // InternalRailSL.g:1518:3: (enumLiteral_13= 'IO_LN_1' )
+                    // InternalRailSL.g:1519:4: enumLiteral_13= 'IO_LN_1'
                     {
                     enumLiteral_13=(Token)match(input,76,FOLLOW_2); 
 
@@ -4612,10 +4629,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalRailSL.g:1524:3: (enumLiteral_14= 'IO_LN_2' )
+                    // InternalRailSL.g:1526:3: (enumLiteral_14= 'IO_LN_2' )
                     {
-                    // InternalRailSL.g:1524:3: (enumLiteral_14= 'IO_LN_2' )
-                    // InternalRailSL.g:1525:4: enumLiteral_14= 'IO_LN_2'
+                    // InternalRailSL.g:1526:3: (enumLiteral_14= 'IO_LN_2' )
+                    // InternalRailSL.g:1527:4: enumLiteral_14= 'IO_LN_2'
                     {
                     enumLiteral_14=(Token)match(input,77,FOLLOW_2); 
 
@@ -4629,10 +4646,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalRailSL.g:1532:3: (enumLiteral_15= 'KH_LN_0' )
+                    // InternalRailSL.g:1534:3: (enumLiteral_15= 'KH_LN_0' )
                     {
-                    // InternalRailSL.g:1532:3: (enumLiteral_15= 'KH_LN_0' )
-                    // InternalRailSL.g:1533:4: enumLiteral_15= 'KH_LN_0'
+                    // InternalRailSL.g:1534:3: (enumLiteral_15= 'KH_LN_0' )
+                    // InternalRailSL.g:1535:4: enumLiteral_15= 'KH_LN_0'
                     {
                     enumLiteral_15=(Token)match(input,78,FOLLOW_2); 
 
@@ -4646,10 +4663,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalRailSL.g:1540:3: (enumLiteral_16= 'KH_LN_1' )
+                    // InternalRailSL.g:1542:3: (enumLiteral_16= 'KH_LN_1' )
                     {
-                    // InternalRailSL.g:1540:3: (enumLiteral_16= 'KH_LN_1' )
-                    // InternalRailSL.g:1541:4: enumLiteral_16= 'KH_LN_1'
+                    // InternalRailSL.g:1542:3: (enumLiteral_16= 'KH_LN_1' )
+                    // InternalRailSL.g:1543:4: enumLiteral_16= 'KH_LN_1'
                     {
                     enumLiteral_16=(Token)match(input,79,FOLLOW_2); 
 
@@ -4663,10 +4680,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalRailSL.g:1548:3: (enumLiteral_17= 'KH_LN_2' )
+                    // InternalRailSL.g:1550:3: (enumLiteral_17= 'KH_LN_2' )
                     {
-                    // InternalRailSL.g:1548:3: (enumLiteral_17= 'KH_LN_2' )
-                    // InternalRailSL.g:1549:4: enumLiteral_17= 'KH_LN_2'
+                    // InternalRailSL.g:1550:3: (enumLiteral_17= 'KH_LN_2' )
+                    // InternalRailSL.g:1551:4: enumLiteral_17= 'KH_LN_2'
                     {
                     enumLiteral_17=(Token)match(input,80,FOLLOW_2); 
 
@@ -4680,10 +4697,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalRailSL.g:1556:3: (enumLiteral_18= 'KH_LN_3' )
+                    // InternalRailSL.g:1558:3: (enumLiteral_18= 'KH_LN_3' )
                     {
-                    // InternalRailSL.g:1556:3: (enumLiteral_18= 'KH_LN_3' )
-                    // InternalRailSL.g:1557:4: enumLiteral_18= 'KH_LN_3'
+                    // InternalRailSL.g:1558:3: (enumLiteral_18= 'KH_LN_3' )
+                    // InternalRailSL.g:1559:4: enumLiteral_18= 'KH_LN_3'
                     {
                     enumLiteral_18=(Token)match(input,81,FOLLOW_2); 
 
@@ -4697,10 +4714,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalRailSL.g:1564:3: (enumLiteral_19= 'KH_LN_4' )
+                    // InternalRailSL.g:1566:3: (enumLiteral_19= 'KH_LN_4' )
                     {
-                    // InternalRailSL.g:1564:3: (enumLiteral_19= 'KH_LN_4' )
-                    // InternalRailSL.g:1565:4: enumLiteral_19= 'KH_LN_4'
+                    // InternalRailSL.g:1566:3: (enumLiteral_19= 'KH_LN_4' )
+                    // InternalRailSL.g:1567:4: enumLiteral_19= 'KH_LN_4'
                     {
                     enumLiteral_19=(Token)match(input,82,FOLLOW_2); 
 
@@ -4714,10 +4731,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalRailSL.g:1572:3: (enumLiteral_20= 'KH_LN_5' )
+                    // InternalRailSL.g:1574:3: (enumLiteral_20= 'KH_LN_5' )
                     {
-                    // InternalRailSL.g:1572:3: (enumLiteral_20= 'KH_LN_5' )
-                    // InternalRailSL.g:1573:4: enumLiteral_20= 'KH_LN_5'
+                    // InternalRailSL.g:1574:3: (enumLiteral_20= 'KH_LN_5' )
+                    // InternalRailSL.g:1575:4: enumLiteral_20= 'KH_LN_5'
                     {
                     enumLiteral_20=(Token)match(input,83,FOLLOW_2); 
 
@@ -4731,10 +4748,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalRailSL.g:1580:3: (enumLiteral_21= 'KH_LN_6' )
+                    // InternalRailSL.g:1582:3: (enumLiteral_21= 'KH_LN_6' )
                     {
-                    // InternalRailSL.g:1580:3: (enumLiteral_21= 'KH_LN_6' )
-                    // InternalRailSL.g:1581:4: enumLiteral_21= 'KH_LN_6'
+                    // InternalRailSL.g:1582:3: (enumLiteral_21= 'KH_LN_6' )
+                    // InternalRailSL.g:1583:4: enumLiteral_21= 'KH_LN_6'
                     {
                     enumLiteral_21=(Token)match(input,84,FOLLOW_2); 
 
@@ -4748,10 +4765,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalRailSL.g:1588:3: (enumLiteral_22= 'KH_LN_7' )
+                    // InternalRailSL.g:1590:3: (enumLiteral_22= 'KH_LN_7' )
                     {
-                    // InternalRailSL.g:1588:3: (enumLiteral_22= 'KH_LN_7' )
-                    // InternalRailSL.g:1589:4: enumLiteral_22= 'KH_LN_7'
+                    // InternalRailSL.g:1590:3: (enumLiteral_22= 'KH_LN_7' )
+                    // InternalRailSL.g:1591:4: enumLiteral_22= 'KH_LN_7'
                     {
                     enumLiteral_22=(Token)match(input,85,FOLLOW_2); 
 
@@ -4765,10 +4782,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalRailSL.g:1596:3: (enumLiteral_23= 'KH_LN_8' )
+                    // InternalRailSL.g:1598:3: (enumLiteral_23= 'KH_LN_8' )
                     {
-                    // InternalRailSL.g:1596:3: (enumLiteral_23= 'KH_LN_8' )
-                    // InternalRailSL.g:1597:4: enumLiteral_23= 'KH_LN_8'
+                    // InternalRailSL.g:1598:3: (enumLiteral_23= 'KH_LN_8' )
+                    // InternalRailSL.g:1599:4: enumLiteral_23= 'KH_LN_8'
                     {
                     enumLiteral_23=(Token)match(input,86,FOLLOW_2); 
 
@@ -4782,10 +4799,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalRailSL.g:1604:3: (enumLiteral_24= 'KH_ST_0' )
+                    // InternalRailSL.g:1606:3: (enumLiteral_24= 'KH_ST_0' )
                     {
-                    // InternalRailSL.g:1604:3: (enumLiteral_24= 'KH_ST_0' )
-                    // InternalRailSL.g:1605:4: enumLiteral_24= 'KH_ST_0'
+                    // InternalRailSL.g:1606:3: (enumLiteral_24= 'KH_ST_0' )
+                    // InternalRailSL.g:1607:4: enumLiteral_24= 'KH_ST_0'
                     {
                     enumLiteral_24=(Token)match(input,87,FOLLOW_2); 
 
@@ -4799,10 +4816,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalRailSL.g:1612:3: (enumLiteral_25= 'KH_ST_1' )
+                    // InternalRailSL.g:1614:3: (enumLiteral_25= 'KH_ST_1' )
                     {
-                    // InternalRailSL.g:1612:3: (enumLiteral_25= 'KH_ST_1' )
-                    // InternalRailSL.g:1613:4: enumLiteral_25= 'KH_ST_1'
+                    // InternalRailSL.g:1614:3: (enumLiteral_25= 'KH_ST_1' )
+                    // InternalRailSL.g:1615:4: enumLiteral_25= 'KH_ST_1'
                     {
                     enumLiteral_25=(Token)match(input,88,FOLLOW_2); 
 
@@ -4816,10 +4833,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalRailSL.g:1620:3: (enumLiteral_26= 'KH_ST_2' )
+                    // InternalRailSL.g:1622:3: (enumLiteral_26= 'KH_ST_2' )
                     {
-                    // InternalRailSL.g:1620:3: (enumLiteral_26= 'KH_ST_2' )
-                    // InternalRailSL.g:1621:4: enumLiteral_26= 'KH_ST_2'
+                    // InternalRailSL.g:1622:3: (enumLiteral_26= 'KH_ST_2' )
+                    // InternalRailSL.g:1623:4: enumLiteral_26= 'KH_ST_2'
                     {
                     enumLiteral_26=(Token)match(input,89,FOLLOW_2); 
 
@@ -4833,10 +4850,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalRailSL.g:1628:3: (enumLiteral_27= 'KH_ST_3' )
+                    // InternalRailSL.g:1630:3: (enumLiteral_27= 'KH_ST_3' )
                     {
-                    // InternalRailSL.g:1628:3: (enumLiteral_27= 'KH_ST_3' )
-                    // InternalRailSL.g:1629:4: enumLiteral_27= 'KH_ST_3'
+                    // InternalRailSL.g:1630:3: (enumLiteral_27= 'KH_ST_3' )
+                    // InternalRailSL.g:1631:4: enumLiteral_27= 'KH_ST_3'
                     {
                     enumLiteral_27=(Token)match(input,90,FOLLOW_2); 
 
@@ -4850,10 +4867,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalRailSL.g:1636:3: (enumLiteral_28= 'KH_ST_4' )
+                    // InternalRailSL.g:1638:3: (enumLiteral_28= 'KH_ST_4' )
                     {
-                    // InternalRailSL.g:1636:3: (enumLiteral_28= 'KH_ST_4' )
-                    // InternalRailSL.g:1637:4: enumLiteral_28= 'KH_ST_4'
+                    // InternalRailSL.g:1638:3: (enumLiteral_28= 'KH_ST_4' )
+                    // InternalRailSL.g:1639:4: enumLiteral_28= 'KH_ST_4'
                     {
                     enumLiteral_28=(Token)match(input,91,FOLLOW_2); 
 
@@ -4867,10 +4884,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalRailSL.g:1644:3: (enumLiteral_29= 'KH_ST_5' )
+                    // InternalRailSL.g:1646:3: (enumLiteral_29= 'KH_ST_5' )
                     {
-                    // InternalRailSL.g:1644:3: (enumLiteral_29= 'KH_ST_5' )
-                    // InternalRailSL.g:1645:4: enumLiteral_29= 'KH_ST_5'
+                    // InternalRailSL.g:1646:3: (enumLiteral_29= 'KH_ST_5' )
+                    // InternalRailSL.g:1647:4: enumLiteral_29= 'KH_ST_5'
                     {
                     enumLiteral_29=(Token)match(input,92,FOLLOW_2); 
 
@@ -4884,10 +4901,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalRailSL.g:1652:3: (enumLiteral_30= 'KH_ST_6' )
+                    // InternalRailSL.g:1654:3: (enumLiteral_30= 'KH_ST_6' )
                     {
-                    // InternalRailSL.g:1652:3: (enumLiteral_30= 'KH_ST_6' )
-                    // InternalRailSL.g:1653:4: enumLiteral_30= 'KH_ST_6'
+                    // InternalRailSL.g:1654:3: (enumLiteral_30= 'KH_ST_6' )
+                    // InternalRailSL.g:1655:4: enumLiteral_30= 'KH_ST_6'
                     {
                     enumLiteral_30=(Token)match(input,93,FOLLOW_2); 
 
@@ -4901,10 +4918,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // InternalRailSL.g:1660:3: (enumLiteral_31= 'KIO_LN_0' )
+                    // InternalRailSL.g:1662:3: (enumLiteral_31= 'KIO_LN_0' )
                     {
-                    // InternalRailSL.g:1660:3: (enumLiteral_31= 'KIO_LN_0' )
-                    // InternalRailSL.g:1661:4: enumLiteral_31= 'KIO_LN_0'
+                    // InternalRailSL.g:1662:3: (enumLiteral_31= 'KIO_LN_0' )
+                    // InternalRailSL.g:1663:4: enumLiteral_31= 'KIO_LN_0'
                     {
                     enumLiteral_31=(Token)match(input,94,FOLLOW_2); 
 
@@ -4918,10 +4935,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // InternalRailSL.g:1668:3: (enumLiteral_32= 'KIO_LN_1' )
+                    // InternalRailSL.g:1670:3: (enumLiteral_32= 'KIO_LN_1' )
                     {
-                    // InternalRailSL.g:1668:3: (enumLiteral_32= 'KIO_LN_1' )
-                    // InternalRailSL.g:1669:4: enumLiteral_32= 'KIO_LN_1'
+                    // InternalRailSL.g:1670:3: (enumLiteral_32= 'KIO_LN_1' )
+                    // InternalRailSL.g:1671:4: enumLiteral_32= 'KIO_LN_1'
                     {
                     enumLiteral_32=(Token)match(input,95,FOLLOW_2); 
 
@@ -4935,10 +4952,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // InternalRailSL.g:1676:3: (enumLiteral_33= 'OC_JCT_0' )
+                    // InternalRailSL.g:1678:3: (enumLiteral_33= 'OC_JCT_0' )
                     {
-                    // InternalRailSL.g:1676:3: (enumLiteral_33= 'OC_JCT_0' )
-                    // InternalRailSL.g:1677:4: enumLiteral_33= 'OC_JCT_0'
+                    // InternalRailSL.g:1678:3: (enumLiteral_33= 'OC_JCT_0' )
+                    // InternalRailSL.g:1679:4: enumLiteral_33= 'OC_JCT_0'
                     {
                     enumLiteral_33=(Token)match(input,96,FOLLOW_2); 
 
@@ -4952,10 +4969,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // InternalRailSL.g:1684:3: (enumLiteral_34= 'OC_LN_0' )
+                    // InternalRailSL.g:1686:3: (enumLiteral_34= 'OC_LN_0' )
                     {
-                    // InternalRailSL.g:1684:3: (enumLiteral_34= 'OC_LN_0' )
-                    // InternalRailSL.g:1685:4: enumLiteral_34= 'OC_LN_0'
+                    // InternalRailSL.g:1686:3: (enumLiteral_34= 'OC_LN_0' )
+                    // InternalRailSL.g:1687:4: enumLiteral_34= 'OC_LN_0'
                     {
                     enumLiteral_34=(Token)match(input,97,FOLLOW_2); 
 
@@ -4969,10 +4986,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // InternalRailSL.g:1692:3: (enumLiteral_35= 'OC_LN_1' )
+                    // InternalRailSL.g:1694:3: (enumLiteral_35= 'OC_LN_1' )
                     {
-                    // InternalRailSL.g:1692:3: (enumLiteral_35= 'OC_LN_1' )
-                    // InternalRailSL.g:1693:4: enumLiteral_35= 'OC_LN_1'
+                    // InternalRailSL.g:1694:3: (enumLiteral_35= 'OC_LN_1' )
+                    // InternalRailSL.g:1695:4: enumLiteral_35= 'OC_LN_1'
                     {
                     enumLiteral_35=(Token)match(input,98,FOLLOW_2); 
 
@@ -4986,10 +5003,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // InternalRailSL.g:1700:3: (enumLiteral_36= 'OC_LN_2' )
+                    // InternalRailSL.g:1702:3: (enumLiteral_36= 'OC_LN_2' )
                     {
-                    // InternalRailSL.g:1700:3: (enumLiteral_36= 'OC_LN_2' )
-                    // InternalRailSL.g:1701:4: enumLiteral_36= 'OC_LN_2'
+                    // InternalRailSL.g:1702:3: (enumLiteral_36= 'OC_LN_2' )
+                    // InternalRailSL.g:1703:4: enumLiteral_36= 'OC_LN_2'
                     {
                     enumLiteral_36=(Token)match(input,99,FOLLOW_2); 
 
@@ -5003,10 +5020,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // InternalRailSL.g:1708:3: (enumLiteral_37= 'OC_LN_3' )
+                    // InternalRailSL.g:1710:3: (enumLiteral_37= 'OC_LN_3' )
                     {
-                    // InternalRailSL.g:1708:3: (enumLiteral_37= 'OC_LN_3' )
-                    // InternalRailSL.g:1709:4: enumLiteral_37= 'OC_LN_3'
+                    // InternalRailSL.g:1710:3: (enumLiteral_37= 'OC_LN_3' )
+                    // InternalRailSL.g:1711:4: enumLiteral_37= 'OC_LN_3'
                     {
                     enumLiteral_37=(Token)match(input,100,FOLLOW_2); 
 
@@ -5020,10 +5037,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // InternalRailSL.g:1716:3: (enumLiteral_38= 'OC_LN_4' )
+                    // InternalRailSL.g:1718:3: (enumLiteral_38= 'OC_LN_4' )
                     {
-                    // InternalRailSL.g:1716:3: (enumLiteral_38= 'OC_LN_4' )
-                    // InternalRailSL.g:1717:4: enumLiteral_38= 'OC_LN_4'
+                    // InternalRailSL.g:1718:3: (enumLiteral_38= 'OC_LN_4' )
+                    // InternalRailSL.g:1719:4: enumLiteral_38= 'OC_LN_4'
                     {
                     enumLiteral_38=(Token)match(input,101,FOLLOW_2); 
 
@@ -5037,10 +5054,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // InternalRailSL.g:1724:3: (enumLiteral_39= 'OC_LN_5' )
+                    // InternalRailSL.g:1726:3: (enumLiteral_39= 'OC_LN_5' )
                     {
-                    // InternalRailSL.g:1724:3: (enumLiteral_39= 'OC_LN_5' )
-                    // InternalRailSL.g:1725:4: enumLiteral_39= 'OC_LN_5'
+                    // InternalRailSL.g:1726:3: (enumLiteral_39= 'OC_LN_5' )
+                    // InternalRailSL.g:1727:4: enumLiteral_39= 'OC_LN_5'
                     {
                     enumLiteral_39=(Token)match(input,102,FOLLOW_2); 
 
@@ -5054,10 +5071,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // InternalRailSL.g:1732:3: (enumLiteral_40= 'OC_ST_0' )
+                    // InternalRailSL.g:1734:3: (enumLiteral_40= 'OC_ST_0' )
                     {
-                    // InternalRailSL.g:1732:3: (enumLiteral_40= 'OC_ST_0' )
-                    // InternalRailSL.g:1733:4: enumLiteral_40= 'OC_ST_0'
+                    // InternalRailSL.g:1734:3: (enumLiteral_40= 'OC_ST_0' )
+                    // InternalRailSL.g:1735:4: enumLiteral_40= 'OC_ST_0'
                     {
                     enumLiteral_40=(Token)match(input,103,FOLLOW_2); 
 
@@ -5071,10 +5088,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // InternalRailSL.g:1740:3: (enumLiteral_41= 'OC_ST_1' )
+                    // InternalRailSL.g:1742:3: (enumLiteral_41= 'OC_ST_1' )
                     {
-                    // InternalRailSL.g:1740:3: (enumLiteral_41= 'OC_ST_1' )
-                    // InternalRailSL.g:1741:4: enumLiteral_41= 'OC_ST_1'
+                    // InternalRailSL.g:1742:3: (enumLiteral_41= 'OC_ST_1' )
+                    // InternalRailSL.g:1743:4: enumLiteral_41= 'OC_ST_1'
                     {
                     enumLiteral_41=(Token)match(input,104,FOLLOW_2); 
 
@@ -5088,10 +5105,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // InternalRailSL.g:1748:3: (enumLiteral_42= 'OC_ST_2' )
+                    // InternalRailSL.g:1750:3: (enumLiteral_42= 'OC_ST_2' )
                     {
-                    // InternalRailSL.g:1748:3: (enumLiteral_42= 'OC_ST_2' )
-                    // InternalRailSL.g:1749:4: enumLiteral_42= 'OC_ST_2'
+                    // InternalRailSL.g:1750:3: (enumLiteral_42= 'OC_ST_2' )
+                    // InternalRailSL.g:1751:4: enumLiteral_42= 'OC_ST_2'
                     {
                     enumLiteral_42=(Token)match(input,105,FOLLOW_2); 
 
@@ -5105,10 +5122,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // InternalRailSL.g:1756:3: (enumLiteral_43= 'OC_ST_3' )
+                    // InternalRailSL.g:1758:3: (enumLiteral_43= 'OC_ST_3' )
                     {
-                    // InternalRailSL.g:1756:3: (enumLiteral_43= 'OC_ST_3' )
-                    // InternalRailSL.g:1757:4: enumLiteral_43= 'OC_ST_3'
+                    // InternalRailSL.g:1758:3: (enumLiteral_43= 'OC_ST_3' )
+                    // InternalRailSL.g:1759:4: enumLiteral_43= 'OC_ST_3'
                     {
                     enumLiteral_43=(Token)match(input,106,FOLLOW_2); 
 
@@ -5122,10 +5139,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // InternalRailSL.g:1764:3: (enumLiteral_44= 'OC_ST_4' )
+                    // InternalRailSL.g:1766:3: (enumLiteral_44= 'OC_ST_4' )
                     {
-                    // InternalRailSL.g:1764:3: (enumLiteral_44= 'OC_ST_4' )
-                    // InternalRailSL.g:1765:4: enumLiteral_44= 'OC_ST_4'
+                    // InternalRailSL.g:1766:3: (enumLiteral_44= 'OC_ST_4' )
+                    // InternalRailSL.g:1767:4: enumLiteral_44= 'OC_ST_4'
                     {
                     enumLiteral_44=(Token)match(input,107,FOLLOW_2); 
 
@@ -5139,10 +5156,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 46 :
-                    // InternalRailSL.g:1772:3: (enumLiteral_45= 'OI_LN_0' )
+                    // InternalRailSL.g:1774:3: (enumLiteral_45= 'OI_LN_0' )
                     {
-                    // InternalRailSL.g:1772:3: (enumLiteral_45= 'OI_LN_0' )
-                    // InternalRailSL.g:1773:4: enumLiteral_45= 'OI_LN_0'
+                    // InternalRailSL.g:1774:3: (enumLiteral_45= 'OI_LN_0' )
+                    // InternalRailSL.g:1775:4: enumLiteral_45= 'OI_LN_0'
                     {
                     enumLiteral_45=(Token)match(input,108,FOLLOW_2); 
 
@@ -5156,10 +5173,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 47 :
-                    // InternalRailSL.g:1780:3: (enumLiteral_46= 'OI_LN_1' )
+                    // InternalRailSL.g:1782:3: (enumLiteral_46= 'OI_LN_1' )
                     {
-                    // InternalRailSL.g:1780:3: (enumLiteral_46= 'OI_LN_1' )
-                    // InternalRailSL.g:1781:4: enumLiteral_46= 'OI_LN_1'
+                    // InternalRailSL.g:1782:3: (enumLiteral_46= 'OI_LN_1' )
+                    // InternalRailSL.g:1783:4: enumLiteral_46= 'OI_LN_1'
                     {
                     enumLiteral_46=(Token)match(input,109,FOLLOW_2); 
 
@@ -5173,10 +5190,10 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 48 :
-                    // InternalRailSL.g:1788:3: (enumLiteral_47= 'OI_LN_2' )
+                    // InternalRailSL.g:1790:3: (enumLiteral_47= 'OI_LN_2' )
                     {
-                    // InternalRailSL.g:1788:3: (enumLiteral_47= 'OI_LN_2' )
-                    // InternalRailSL.g:1789:4: enumLiteral_47= 'OI_LN_2'
+                    // InternalRailSL.g:1790:3: (enumLiteral_47= 'OI_LN_2' )
+                    // InternalRailSL.g:1791:4: enumLiteral_47= 'OI_LN_2'
                     {
                     enumLiteral_47=(Token)match(input,110,FOLLOW_2); 
 
@@ -5228,7 +5245,7 @@ public class InternalRailSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000C000000000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000010L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0100004000000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});

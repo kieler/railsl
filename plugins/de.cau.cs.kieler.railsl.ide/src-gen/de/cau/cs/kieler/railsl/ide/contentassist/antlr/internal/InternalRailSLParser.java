@@ -7198,7 +7198,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             // InternalRailSL.g:2085:1: ( rule__TimeWaitStatement__Group__1__Impl rule__TimeWaitStatement__Group__2 )
             // InternalRailSL.g:2086:2: rule__TimeWaitStatement__Group__1__Impl rule__TimeWaitStatement__Group__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__TimeWaitStatement__Group__1__Impl();
 
             state._fsp--;
@@ -7227,20 +7227,37 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeWaitStatement__Group__1__Impl"
-    // InternalRailSL.g:2093:1: rule__TimeWaitStatement__Group__1__Impl : ( 'for' ) ;
+    // InternalRailSL.g:2093:1: rule__TimeWaitStatement__Group__1__Impl : ( ( 'for' )? ) ;
     public final void rule__TimeWaitStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRailSL.g:2097:1: ( ( 'for' ) )
-            // InternalRailSL.g:2098:1: ( 'for' )
+            // InternalRailSL.g:2097:1: ( ( ( 'for' )? ) )
+            // InternalRailSL.g:2098:1: ( ( 'for' )? )
             {
-            // InternalRailSL.g:2098:1: ( 'for' )
-            // InternalRailSL.g:2099:2: 'for'
+            // InternalRailSL.g:2098:1: ( ( 'for' )? )
+            // InternalRailSL.g:2099:2: ( 'for' )?
             {
              before(grammarAccess.getTimeWaitStatementAccess().getForKeyword_1()); 
-            match(input,101,FOLLOW_2); 
+            // InternalRailSL.g:2100:2: ( 'for' )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
+
+            if ( (LA30_0==101) ) {
+                alt30=1;
+            }
+            switch (alt30) {
+                case 1 :
+                    // InternalRailSL.g:2100:3: 'for'
+                    {
+                    match(input,101,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
              after(grammarAccess.getTimeWaitStatementAccess().getForKeyword_1()); 
 
             }
@@ -7716,13 +7733,13 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getContactWaitStatementAccess().getOfKeyword_3()); 
             // InternalRailSL.g:2262:2: ( 'of' )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==104) ) {
-                alt30=1;
+            if ( (LA31_0==104) ) {
+                alt31=1;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
                     // InternalRailSL.g:2262:3: 'of'
                     {
@@ -8363,17 +8380,17 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getLightStatementAccess().getGroup_3()); 
             // InternalRailSL.g:2478:2: ( rule__LightStatement__Group_3__0 )*
-            loop31:
+            loop32:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( ((LA31_0>=16 && LA31_0<=17)) ) {
-                    alt31=1;
+                if ( ((LA32_0>=16 && LA32_0<=17)) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt32) {
             	case 1 :
             	    // InternalRailSL.g:2478:3: rule__LightStatement__Group_3__0
             	    {
@@ -8387,7 +8404,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop32;
                 }
             } while (true);
 
@@ -8973,17 +8990,17 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getConditionalStatementAccess().getLinesAssignment_2()); 
             // InternalRailSL.g:2672:3: ( rule__ConditionalStatement__LinesAssignment_2 )*
-            loop32:
+            loop33:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( ((LA32_0>=24 && LA32_0<=25)) ) {
-                    alt32=1;
+                if ( ((LA33_0>=24 && LA33_0<=25)) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt33) {
             	case 1 :
             	    // InternalRailSL.g:2672:4: rule__ConditionalStatement__LinesAssignment_2
             	    {
@@ -8997,7 +9014,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop33;
                 }
             } while (true);
 
@@ -9324,13 +9341,13 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getConditionalLineAccess().getOfKeyword_3()); 
             // InternalRailSL.g:2782:2: ( 'of' )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==104) ) {
-                alt33=1;
+            if ( (LA34_0==104) ) {
+                alt34=1;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
                     // InternalRailSL.g:2782:3: 'of'
                     {
@@ -10078,17 +10095,17 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getParallelStatementAccess().getBlocksAssignment_2()); 
             // InternalRailSL.g:3030:3: ( rule__ParallelStatement__BlocksAssignment_2 )*
-            loop34:
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( ((LA34_0>=12 && LA34_0<=13)) ) {
-                    alt34=1;
+                if ( ((LA35_0>=12 && LA35_0<=13)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
             	    // InternalRailSL.g:3030:4: rule__ParallelStatement__BlocksAssignment_2
             	    {
@@ -10102,7 +10119,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop35;
                 }
             } while (true);
 
@@ -11200,7 +11217,7 @@ public class InternalRailSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000000L,0x0000001000000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000003000000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000010L,0x0000002000000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x0000004000000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000040004000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});

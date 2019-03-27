@@ -45,7 +45,7 @@ WaitStatement:
     TimeWaitStatement | ContactWaitStatement;
 
 TimeWaitStatement:
-    ('Wait' | 'wait') 'for'
+    ('Wait' | 'wait') 'for'?
     time=INT
     'seconds.';
 

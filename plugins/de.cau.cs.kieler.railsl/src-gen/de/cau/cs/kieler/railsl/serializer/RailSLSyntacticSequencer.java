@@ -32,6 +32,7 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ParallelStatement_ParallelKeyword_0_0_or_ParallelKeyword_0_1;
 	protected AbstractElementAlias match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0;
 	protected AbstractElementAlias match_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1;
+	protected AbstractElementAlias match_TimeWaitStatement_ForKeyword_1_q;
 	protected AbstractElementAlias match_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1;
 	protected AbstractElementAlias match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0;
 	protected AbstractElementAlias match_TrackStatement_SetKeyword_0_0_or_SetKeyword_0_1;
@@ -50,6 +51,7 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ParallelStatement_ParallelKeyword_0_0_or_ParallelKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getParallelStatementAccess().getParallelKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getParallelStatementAccess().getParallelKeyword_0_1()));
 		match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getCommaKeyword_3_0_0()));
 		match_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getSetKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getSetKeyword_0_1()));
+		match_TimeWaitStatement_ForKeyword_1_q = new TokenAlias(false, true, grammarAccess.getTimeWaitStatementAccess().getForKeyword_1());
 		match_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeWaitStatementAccess().getWaitKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getTimeWaitStatementAccess().getWaitKeyword_0_1()));
 		match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getCommaKeyword_3_0_0()));
 		match_TrackStatement_SetKeyword_0_0_or_SetKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getSetKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getSetKeyword_0_1()));
@@ -89,6 +91,8 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1.equals(syntax))
 				emit_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeWaitStatement_ForKeyword_1_q.equals(syntax))
+				emit_TimeWaitStatement_ForKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1.equals(syntax))
 				emit_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0.equals(syntax))
@@ -222,10 +226,21 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     'for'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('Wait' | 'wait') (ambiguity) time=INT
+	 */
+	protected void emit_TimeWaitStatement_ForKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     'Wait' | 'wait'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'for' time=INT
+	 *     (rule start) (ambiguity) 'for'? time=INT
 	 */
 	protected void emit_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

@@ -587,10 +587,12 @@ ruleTimeWaitStatement returns [EObject current=null]
 				newLeafNode(otherlv_1, grammarAccess.getTimeWaitStatementAccess().getWaitKeyword_0_1());
 			}
 		)
-		otherlv_2='for'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTimeWaitStatementAccess().getForKeyword_1());
-		}
+		(
+			otherlv_2='for'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTimeWaitStatementAccess().getForKeyword_1());
+			}
+		)?
 		(
 			(
 				lv_time_3_0=RULE_INT
