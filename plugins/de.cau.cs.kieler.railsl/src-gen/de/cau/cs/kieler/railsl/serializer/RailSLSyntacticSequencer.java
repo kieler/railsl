@@ -12,7 +12,6 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -27,13 +26,13 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1;
 	protected AbstractElementAlias match_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1;
 	protected AbstractElementAlias match_ContactWaitStatement_OfKeyword_3_q;
-	protected AbstractElementAlias match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__;
+	protected AbstractElementAlias match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0;
 	protected AbstractElementAlias match_LightStatement_TurnKeyword_0_0_or_TurnKeyword_0_1;
 	protected AbstractElementAlias match_ParallelStatement_ParallelKeyword_0_0_or_ParallelKeyword_0_1;
-	protected AbstractElementAlias match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__;
+	protected AbstractElementAlias match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0;
 	protected AbstractElementAlias match_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1;
 	protected AbstractElementAlias match_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1;
-	protected AbstractElementAlias match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__;
+	protected AbstractElementAlias match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0;
 	protected AbstractElementAlias match_TrackStatement_SetKeyword_0_0_or_SetKeyword_0_1;
 	
 	@Inject
@@ -44,13 +43,13 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ConditionalLine_IfKeyword_0_0_or_IfKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalLineAccess().getIfKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getConditionalLineAccess().getIfKeyword_0_1()));
 		match_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalStatementAccess().getBranchKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getConditionalStatementAccess().getBranchKeyword_0_1()));
 		match_ContactWaitStatement_OfKeyword_3_q = new TokenAlias(false, true, grammarAccess.getContactWaitStatementAccess().getOfKeyword_3());
-		match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getCommaKeyword_3_0_2_0()), new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getAndKeyword_3_0_2_1())), new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getCommaKeyword_3_0_0()));
+		match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getCommaKeyword_3_0_0()));
 		match_LightStatement_TurnKeyword_0_0_or_TurnKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getTurnKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getLightStatementAccess().getTurnKeyword_0_1()));
 		match_ParallelStatement_ParallelKeyword_0_0_or_ParallelKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getParallelStatementAccess().getParallelKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getParallelStatementAccess().getParallelKeyword_0_1()));
-		match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getCommaKeyword_3_0_2_0()), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getAndKeyword_3_0_2_1())), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getCommaKeyword_3_0_0()));
+		match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getCommaKeyword_3_0_0()));
 		match_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getSetKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPointStatementAccess().getSetKeyword_0_1()));
 		match_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeWaitStatementAccess().getWaitKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getTimeWaitStatementAccess().getWaitKeyword_0_1()));
-		match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getCommaKeyword_3_0_2_0()), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getAndKeyword_3_0_2_1())), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getCommaKeyword_3_0_0()));
+		match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getAndKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getCommaKeyword_3_0_0()));
 		match_TrackStatement_SetKeyword_0_0_or_SetKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getSetKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getTrackStatementAccess().getSetKeyword_0_1()));
 	}
 	
@@ -76,20 +75,20 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ConditionalStatement_BranchKeyword_0_0_or_BranchKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ContactWaitStatement_OfKeyword_3_q.equals(syntax))
 				emit_ContactWaitStatement_OfKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__.equals(syntax))
-				emit_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0.equals(syntax))
+				emit_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_LightStatement_TurnKeyword_0_0_or_TurnKeyword_0_1.equals(syntax))
 				emit_LightStatement_TurnKeyword_0_0_or_TurnKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ParallelStatement_ParallelKeyword_0_0_or_ParallelKeyword_0_1.equals(syntax))
 				emit_ParallelStatement_ParallelKeyword_0_0_or_ParallelKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__.equals(syntax))
-				emit_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0.equals(syntax))
+				emit_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1.equals(syntax))
 				emit_PointStatement_SetKeyword_0_0_or_SetKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1.equals(syntax))
 				emit_TimeWaitStatement_WaitKeyword_0_0_or_WaitKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__.equals(syntax))
-				emit_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0.equals(syntax))
+				emit_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TrackStatement_SetKeyword_0_0_or_SetKeyword_0_1.equals(syntax))
 				emit_TrackStatement_SetKeyword_0_0_or_SetKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -153,12 +152,12 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ',' | 'and' | (',' 'and')
+	 *     ',' | 'and'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     lights+=INT (ambiguity) lights+=INT
 	 */
-	protected void emit_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_LightStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -186,12 +185,12 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ',' | 'and' | (',' 'and')
+	 *     ',' | 'and'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     points+=INT (ambiguity) points+=INT
 	 */
-	protected void emit_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PointStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -219,12 +218,12 @@ public class RailSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ',' | 'and' | (',' 'and')
+	 *     ',' | 'and'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     segments+=RailSegment (ambiguity) segments+=RailSegment
 	 */
-	protected void emit_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0_or___CommaKeyword_3_0_2_0_AndKeyword_3_0_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TrackStatement_AndKeyword_3_0_1_or_CommaKeyword_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -143,9 +143,6 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
 		private final Keyword cCommaKeyword_3_0_0 = (Keyword)cAlternatives_3_0.eContents().get(0);
 		private final Keyword cAndKeyword_3_0_1 = (Keyword)cAlternatives_3_0.eContents().get(1);
-		private final Group cGroup_3_0_2 = (Group)cAlternatives_3_0.eContents().get(2);
-		private final Keyword cCommaKeyword_3_0_2_0 = (Keyword)cGroup_3_0_2.eContents().get(0);
-		private final Keyword cAndKeyword_3_0_2_1 = (Keyword)cGroup_3_0_2.eContents().get(1);
 		private final Assignment cSegmentsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cSegmentsRailSegmentEnumRuleCall_3_1_0 = (RuleCall)cSegmentsAssignment_3_1.eContents().get(0);
 		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -161,12 +158,12 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//TrackStatement:
 		//	('Set' | 'set') 'track'
-		//	segments+=RailSegment ((',' | 'and' | ',' 'and') segments+=RailSegment)*
+		//	segments+=RailSegment ((',' | 'and') segments+=RailSegment)*
 		//	'to' (speed=TrackSpeedStop | speed=TrackSpeedDrive reverse?='reverse'?) '.';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Set' | 'set') 'track' segments+=RailSegment ((',' | 'and' | ',' 'and') segments+=RailSegment)* 'to'
-		//(speed=TrackSpeedStop | speed=TrackSpeedDrive reverse?='reverse'?) '.'
+		//('Set' | 'set') 'track' segments+=RailSegment ((',' | 'and') segments+=RailSegment)* 'to' (speed=TrackSpeedStop |
+		//speed=TrackSpeedDrive reverse?='reverse'?) '.'
 		public Group getGroup() { return cGroup; }
 		
 		//'Set' | 'set'
@@ -187,10 +184,10 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//RailSegment
 		public RuleCall getSegmentsRailSegmentEnumRuleCall_2_0() { return cSegmentsRailSegmentEnumRuleCall_2_0; }
 		
-		//((',' | 'and' | ',' 'and') segments+=RailSegment)*
+		//((',' | 'and') segments+=RailSegment)*
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//',' | 'and' | ',' 'and'
+		//',' | 'and'
 		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
 		
 		//','
@@ -198,15 +195,6 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'and'
 		public Keyword getAndKeyword_3_0_1() { return cAndKeyword_3_0_1; }
-		
-		//',' 'and'
-		public Group getGroup_3_0_2() { return cGroup_3_0_2; }
-		
-		//','
-		public Keyword getCommaKeyword_3_0_2_0() { return cCommaKeyword_3_0_2_0; }
-		
-		//'and'
-		public Keyword getAndKeyword_3_0_2_1() { return cAndKeyword_3_0_2_1; }
 		
 		//segments+=RailSegment
 		public Assignment getSegmentsAssignment_3_1() { return cSegmentsAssignment_3_1; }
@@ -257,9 +245,6 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
 		private final Keyword cCommaKeyword_3_0_0 = (Keyword)cAlternatives_3_0.eContents().get(0);
 		private final Keyword cAndKeyword_3_0_1 = (Keyword)cAlternatives_3_0.eContents().get(1);
-		private final Group cGroup_3_0_2 = (Group)cAlternatives_3_0.eContents().get(2);
-		private final Keyword cCommaKeyword_3_0_2_0 = (Keyword)cGroup_3_0_2.eContents().get(0);
-		private final Keyword cAndKeyword_3_0_2_1 = (Keyword)cGroup_3_0_2.eContents().get(1);
 		private final Assignment cPointsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cPointsINTTerminalRuleCall_3_1_0 = (RuleCall)cPointsAssignment_3_1.eContents().get(0);
 		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -269,11 +254,11 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PointStatement:
 		//	('Set' | 'set') 'point'
-		//	points+=INT ((',' | 'and' | ',' 'and') points+=INT)*
+		//	points+=INT ((',' | 'and') points+=INT)*
 		//	'to' orientation=PointOrientation '.';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Set' | 'set') 'point' points+=INT ((',' | 'and' | ',' 'and') points+=INT)* 'to' orientation=PointOrientation '.'
+		//('Set' | 'set') 'point' points+=INT ((',' | 'and') points+=INT)* 'to' orientation=PointOrientation '.'
 		public Group getGroup() { return cGroup; }
 		
 		//'Set' | 'set'
@@ -294,10 +279,10 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getPointsINTTerminalRuleCall_2_0() { return cPointsINTTerminalRuleCall_2_0; }
 		
-		//((',' | 'and' | ',' 'and') points+=INT)*
+		//((',' | 'and') points+=INT)*
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//',' | 'and' | ',' 'and'
+		//',' | 'and'
 		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
 		
 		//','
@@ -305,15 +290,6 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'and'
 		public Keyword getAndKeyword_3_0_1() { return cAndKeyword_3_0_1; }
-		
-		//',' 'and'
-		public Group getGroup_3_0_2() { return cGroup_3_0_2; }
-		
-		//','
-		public Keyword getCommaKeyword_3_0_2_0() { return cCommaKeyword_3_0_2_0; }
-		
-		//'and'
-		public Keyword getAndKeyword_3_0_2_1() { return cAndKeyword_3_0_2_1; }
 		
 		//points+=INT
 		public Assignment getPointsAssignment_3_1() { return cPointsAssignment_3_1; }
@@ -498,9 +474,6 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
 		private final Keyword cCommaKeyword_3_0_0 = (Keyword)cAlternatives_3_0.eContents().get(0);
 		private final Keyword cAndKeyword_3_0_1 = (Keyword)cAlternatives_3_0.eContents().get(1);
-		private final Group cGroup_3_0_2 = (Group)cAlternatives_3_0.eContents().get(2);
-		private final Keyword cCommaKeyword_3_0_2_0 = (Keyword)cGroup_3_0_2.eContents().get(0);
-		private final Keyword cAndKeyword_3_0_2_1 = (Keyword)cGroup_3_0_2.eContents().get(1);
 		private final Assignment cLightsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cLightsINTTerminalRuleCall_3_1_0 = (RuleCall)cLightsAssignment_3_1.eContents().get(0);
 		private final Assignment cStateAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -509,12 +482,12 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//LightStatement:
 		//	('Turn' | 'turn') 'light'
-		//	lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)*
+		//	lights+=INT ((',' | 'and') lights+=INT)*
 		//	state=LightMode
 		//	'.';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Turn' | 'turn') 'light' lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)* state=LightMode '.'
+		//('Turn' | 'turn') 'light' lights+=INT ((',' | 'and') lights+=INT)* state=LightMode '.'
 		public Group getGroup() { return cGroup; }
 		
 		//'Turn' | 'turn'
@@ -535,10 +508,10 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getLightsINTTerminalRuleCall_2_0() { return cLightsINTTerminalRuleCall_2_0; }
 		
-		//((',' | 'and' | ',' 'and') lights+=INT)*
+		//((',' | 'and') lights+=INT)*
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//',' | 'and' | ',' 'and'
+		//',' | 'and'
 		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
 		
 		//','
@@ -546,15 +519,6 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'and'
 		public Keyword getAndKeyword_3_0_1() { return cAndKeyword_3_0_1; }
-		
-		//',' 'and'
-		public Group getGroup_3_0_2() { return cGroup_3_0_2; }
-		
-		//','
-		public Keyword getCommaKeyword_3_0_2_0() { return cCommaKeyword_3_0_2_0; }
-		
-		//'and'
-		public Keyword getAndKeyword_3_0_2_1() { return cAndKeyword_3_0_2_1; }
 		
 		//lights+=INT
 		public Assignment getLightsAssignment_3_1() { return cLightsAssignment_3_1; }
@@ -1577,7 +1541,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//TrackStatement:
 	//	('Set' | 'set') 'track'
-	//	segments+=RailSegment ((',' | 'and' | ',' 'and') segments+=RailSegment)*
+	//	segments+=RailSegment ((',' | 'and') segments+=RailSegment)*
 	//	'to' (speed=TrackSpeedStop | speed=TrackSpeedDrive reverse?='reverse'?) '.';
 	public TrackStatementElements getTrackStatementAccess() {
 		return pTrackStatement;
@@ -1609,7 +1573,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//PointStatement:
 	//	('Set' | 'set') 'point'
-	//	points+=INT ((',' | 'and' | ',' 'and') points+=INT)*
+	//	points+=INT ((',' | 'and') points+=INT)*
 	//	'to' orientation=PointOrientation '.';
 	public PointStatementElements getPointStatementAccess() {
 		return pPointStatement;
@@ -1718,7 +1682,7 @@ public class RailSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//LightStatement:
 	//	('Turn' | 'turn') 'light'
-	//	lights+=INT ((',' | 'and' | ',' 'and') lights+=INT)*
+	//	lights+=INT ((',' | 'and') lights+=INT)*
 	//	state=LightMode
 	//	'.';
 	public LightStatementElements getLightStatementAccess() {

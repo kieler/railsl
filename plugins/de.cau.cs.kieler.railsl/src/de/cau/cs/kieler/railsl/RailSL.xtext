@@ -23,7 +23,7 @@ SetStatement:
 TrackStatement:
     ('Set' | 'set') 'track'
     (segments+=RailSegment)
-    ((',' | 'and' | ',' 'and') segments+=RailSegment)*
+    ((',' | 'and') segments+=RailSegment)*
     'to' (speed=TrackSpeedStop | speed=TrackSpeedDrive (reverse?='reverse')?) '.';
 
 enum TrackSpeedStop returns TrackSpeed:
@@ -35,7 +35,7 @@ enum TrackSpeedDrive returns TrackSpeed:
 PointStatement:
     ('Set' | 'set') 'point'
     (points+=INT)
-    ((',' | 'and' | ',' 'and') points+=INT)*
+    ((',' | 'and') points+=INT)*
     'to' orientation=PointOrientation '.';
 
 enum PointOrientation:
@@ -75,7 +75,7 @@ enum CrossingMode:
 LightStatement:
     ('Turn' | 'turn') 'light'
     (lights+=INT)
-    ((',' | 'and' | ',' 'and') lights+=INT)*
+    ((',' | 'and') lights+=INT)*
     state=LightMode
     '.';
 

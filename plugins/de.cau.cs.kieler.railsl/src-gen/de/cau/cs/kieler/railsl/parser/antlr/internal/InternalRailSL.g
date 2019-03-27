@@ -325,24 +325,13 @@ ruleTrackStatement returns [EObject current=null]
 				{
 					newLeafNode(otherlv_5, grammarAccess.getTrackStatementAccess().getAndKeyword_3_0_1());
 				}
-				    |
-				(
-					otherlv_6=','
-					{
-						newLeafNode(otherlv_6, grammarAccess.getTrackStatementAccess().getCommaKeyword_3_0_2_0());
-					}
-					otherlv_7='and'
-					{
-						newLeafNode(otherlv_7, grammarAccess.getTrackStatementAccess().getAndKeyword_3_0_2_1());
-					}
-				)
 			)
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getTrackStatementAccess().getSegmentsRailSegmentEnumRuleCall_3_1_0());
 					}
-					lv_segments_8_0=ruleRailSegment
+					lv_segments_6_0=ruleRailSegment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTrackStatementRule());
@@ -350,16 +339,16 @@ ruleTrackStatement returns [EObject current=null]
 						add(
 							$current,
 							"segments",
-							lv_segments_8_0,
+							lv_segments_6_0,
 							"de.cau.cs.kieler.railsl.RailSL.RailSegment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_9='to'
+		otherlv_7='to'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getTrackStatementAccess().getToKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getTrackStatementAccess().getToKeyword_4());
 		}
 		(
 			(
@@ -367,7 +356,7 @@ ruleTrackStatement returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getTrackStatementAccess().getSpeedTrackSpeedStopEnumRuleCall_5_0_0());
 					}
-					lv_speed_10_0=ruleTrackSpeedStop
+					lv_speed_8_0=ruleTrackSpeedStop
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTrackStatementRule());
@@ -375,7 +364,7 @@ ruleTrackStatement returns [EObject current=null]
 						set(
 							$current,
 							"speed",
-							lv_speed_10_0,
+							lv_speed_8_0,
 							"de.cau.cs.kieler.railsl.RailSL.TrackSpeedStop");
 						afterParserOrEnumRuleCall();
 					}
@@ -388,7 +377,7 @@ ruleTrackStatement returns [EObject current=null]
 						{
 							newCompositeNode(grammarAccess.getTrackStatementAccess().getSpeedTrackSpeedDriveEnumRuleCall_5_1_0_0());
 						}
-						lv_speed_11_0=ruleTrackSpeedDrive
+						lv_speed_9_0=ruleTrackSpeedDrive
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getTrackStatementRule());
@@ -396,7 +385,7 @@ ruleTrackStatement returns [EObject current=null]
 							set(
 								$current,
 								"speed",
-								lv_speed_11_0,
+								lv_speed_9_0,
 								"de.cau.cs.kieler.railsl.RailSL.TrackSpeedDrive");
 							afterParserOrEnumRuleCall();
 						}
@@ -404,9 +393,9 @@ ruleTrackStatement returns [EObject current=null]
 				)
 				(
 					(
-						lv_reverse_12_0='reverse'
+						lv_reverse_10_0='reverse'
 						{
-							newLeafNode(lv_reverse_12_0, grammarAccess.getTrackStatementAccess().getReverseReverseKeyword_5_1_1_0());
+							newLeafNode(lv_reverse_10_0, grammarAccess.getTrackStatementAccess().getReverseReverseKeyword_5_1_1_0());
 						}
 						{
 							if ($current==null) {
@@ -418,9 +407,9 @@ ruleTrackStatement returns [EObject current=null]
 				)?
 			)
 		)
-		otherlv_13='.'
+		otherlv_11='.'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getTrackStatementAccess().getFullStopKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getTrackStatementAccess().getFullStopKeyword_6());
 		}
 	)
 ;
@@ -485,23 +474,12 @@ rulePointStatement returns [EObject current=null]
 				{
 					newLeafNode(otherlv_5, grammarAccess.getPointStatementAccess().getAndKeyword_3_0_1());
 				}
-				    |
-				(
-					otherlv_6=','
-					{
-						newLeafNode(otherlv_6, grammarAccess.getPointStatementAccess().getCommaKeyword_3_0_2_0());
-					}
-					otherlv_7='and'
-					{
-						newLeafNode(otherlv_7, grammarAccess.getPointStatementAccess().getAndKeyword_3_0_2_1());
-					}
-				)
 			)
 			(
 				(
-					lv_points_8_0=RULE_INT
+					lv_points_6_0=RULE_INT
 					{
-						newLeafNode(lv_points_8_0, grammarAccess.getPointStatementAccess().getPointsINTTerminalRuleCall_3_1_0());
+						newLeafNode(lv_points_6_0, grammarAccess.getPointStatementAccess().getPointsINTTerminalRuleCall_3_1_0());
 					}
 					{
 						if ($current==null) {
@@ -510,22 +488,22 @@ rulePointStatement returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"points",
-							lv_points_8_0,
+							lv_points_6_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
 			)
 		)*
-		otherlv_9='to'
+		otherlv_7='to'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getPointStatementAccess().getToKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getPointStatementAccess().getToKeyword_4());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getPointStatementAccess().getOrientationPointOrientationEnumRuleCall_5_0());
 				}
-				lv_orientation_10_0=rulePointOrientation
+				lv_orientation_8_0=rulePointOrientation
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPointStatementRule());
@@ -533,15 +511,15 @@ rulePointStatement returns [EObject current=null]
 					set(
 						$current,
 						"orientation",
-						lv_orientation_10_0,
+						lv_orientation_8_0,
 						"de.cau.cs.kieler.railsl.RailSL.PointOrientation");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_11='.'
+		otherlv_9='.'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getPointStatementAccess().getFullStopKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getPointStatementAccess().getFullStopKeyword_6());
 		}
 	)
 ;
@@ -866,23 +844,12 @@ ruleLightStatement returns [EObject current=null]
 				{
 					newLeafNode(otherlv_5, grammarAccess.getLightStatementAccess().getAndKeyword_3_0_1());
 				}
-				    |
-				(
-					otherlv_6=','
-					{
-						newLeafNode(otherlv_6, grammarAccess.getLightStatementAccess().getCommaKeyword_3_0_2_0());
-					}
-					otherlv_7='and'
-					{
-						newLeafNode(otherlv_7, grammarAccess.getLightStatementAccess().getAndKeyword_3_0_2_1());
-					}
-				)
 			)
 			(
 				(
-					lv_lights_8_0=RULE_INT
+					lv_lights_6_0=RULE_INT
 					{
-						newLeafNode(lv_lights_8_0, grammarAccess.getLightStatementAccess().getLightsINTTerminalRuleCall_3_1_0());
+						newLeafNode(lv_lights_6_0, grammarAccess.getLightStatementAccess().getLightsINTTerminalRuleCall_3_1_0());
 					}
 					{
 						if ($current==null) {
@@ -891,7 +858,7 @@ ruleLightStatement returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"lights",
-							lv_lights_8_0,
+							lv_lights_6_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
@@ -902,7 +869,7 @@ ruleLightStatement returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getLightStatementAccess().getStateLightModeEnumRuleCall_4_0());
 				}
-				lv_state_9_0=ruleLightMode
+				lv_state_7_0=ruleLightMode
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLightStatementRule());
@@ -910,15 +877,15 @@ ruleLightStatement returns [EObject current=null]
 					set(
 						$current,
 						"state",
-						lv_state_9_0,
+						lv_state_7_0,
 						"de.cau.cs.kieler.railsl.RailSL.LightMode");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_10='.'
+		otherlv_8='.'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getLightStatementAccess().getFullStopKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getLightStatementAccess().getFullStopKeyword_5());
 		}
 	)
 ;

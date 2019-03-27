@@ -59,17 +59,14 @@ public class RailSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
 			builder.put(grammarAccess.getTrackStatementAccess().getGroup(), "rule__TrackStatement__Group__0");
 			builder.put(grammarAccess.getTrackStatementAccess().getGroup_3(), "rule__TrackStatement__Group_3__0");
-			builder.put(grammarAccess.getTrackStatementAccess().getGroup_3_0_2(), "rule__TrackStatement__Group_3_0_2__0");
 			builder.put(grammarAccess.getTrackStatementAccess().getGroup_5_1(), "rule__TrackStatement__Group_5_1__0");
 			builder.put(grammarAccess.getPointStatementAccess().getGroup(), "rule__PointStatement__Group__0");
 			builder.put(grammarAccess.getPointStatementAccess().getGroup_3(), "rule__PointStatement__Group_3__0");
-			builder.put(grammarAccess.getPointStatementAccess().getGroup_3_0_2(), "rule__PointStatement__Group_3_0_2__0");
 			builder.put(grammarAccess.getTimeWaitStatementAccess().getGroup(), "rule__TimeWaitStatement__Group__0");
 			builder.put(grammarAccess.getContactWaitStatementAccess().getGroup(), "rule__ContactWaitStatement__Group__0");
 			builder.put(grammarAccess.getCrossingStatementAccess().getGroup(), "rule__CrossingStatement__Group__0");
 			builder.put(grammarAccess.getLightStatementAccess().getGroup(), "rule__LightStatement__Group__0");
 			builder.put(grammarAccess.getLightStatementAccess().getGroup_3(), "rule__LightStatement__Group_3__0");
-			builder.put(grammarAccess.getLightStatementAccess().getGroup_3_0_2(), "rule__LightStatement__Group_3_0_2__0");
 			builder.put(grammarAccess.getConditionalStatementAccess().getGroup(), "rule__ConditionalStatement__Group__0");
 			builder.put(grammarAccess.getConditionalLineAccess().getGroup(), "rule__ConditionalLine__Group__0");
 			builder.put(grammarAccess.getParallelStatementAccess().getGroup(), "rule__ParallelStatement__Group__0");
