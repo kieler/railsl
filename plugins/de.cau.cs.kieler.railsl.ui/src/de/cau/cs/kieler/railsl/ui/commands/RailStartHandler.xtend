@@ -51,10 +51,12 @@ abstract class RailStartHandler extends AbstractHandler {
             if (context.hasErrors) {
                 val status = new Status(IStatus.ERROR, "de.cau.cs.kieler.railsl", "Error(s) in railway compilation", new Throwable(context.allErrors.map[message].toSet.join("\n")))
                 StatusManager.getManager().handle(status, StatusManager.SHOW.bitwiseOr(StatusManager.LOG))
+                return null
             }
         } catch(Exception e) {
             val status = new Status(IStatus.ERROR, "de.cau.cs.kieler.railsl", "Exception in railway compilation", e)
             StatusManager.getManager().handle(status, StatusManager.SHOW.bitwiseOr(StatusManager.LOG))
+            return null
         }
         
         return result.model as ExecutableContainer
