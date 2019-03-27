@@ -52,33 +52,35 @@ class RaillsSimulationhandler extends RailStartHandler {
             }
     
             val exe = compile(systemId)
-            val exeFolder = exe.file.parentFile
-            val exeConfPath = new File(exeFolder, "railway.cnf").toPath
-            val guiFolder = new File(exeFolder.parentFile, "GUI")
-            val guiConfPath = new File(guiFolder, "modelgui.preferences").toPath
-            
-            // Set config
-            val port = switch(System.getProperty("user.name")) {
-                case "railway1": 2223
-                case "railway2": 2224
-                case "railway3": 2225
-                case "railway4": 2226
-                default: 2222
+            if (exe !== null) {
+                val exeFolder = exe.file.parentFile
+                val exeConfPath = new File(exeFolder, "railway.cnf").toPath
+                val guiFolder = new File(exeFolder.parentFile, "GUI")
+                val guiConfPath = new File(guiFolder, "modelgui.preferences").toPath
+                
+                // Set config
+                val port = switch(System.getProperty("user.name")) {
+                    case "railway1": 2223
+                    case "railway2": 2224
+                    case "railway3": 2225
+                    case "railway4": 2226
+                    default: 2222
+                }
+    
+                // exe conf
+                var content = new String(Files.readAllBytes(exeConfPath), charset)
+                content = content.replaceAll("GUIPORT = 2222", "GUIPORT = " + port)
+                Files.write(exeConfPath, content.getBytes(charset))
+                
+                // gui conf
+                content = new String(Files.readAllBytes(guiConfPath), charset)
+                content = content.replaceAll("<entry key=\"port\">2222", "<entry key=\"port\">" + port)
+                Files.write(guiConfPath, content.getBytes(charset))
+                
+                // start
+                gui = (exe as RailScadeSiumlationExecutable).GUIProcessBuilder.start()
+                controller = Runtime.getRuntime().exec("./" + exe.file.name, null, exe.file.parentFile)
             }
-
-            // exe conf
-            var content = new String(Files.readAllBytes(exeConfPath), charset)
-            content = content.replaceAll("GUIPORT = 2222", "GUIPORT = " + port)
-            Files.write(exeConfPath, content.getBytes(charset))
-            
-            // gui conf
-            content = new String(Files.readAllBytes(guiConfPath), charset)
-            content = content.replaceAll("<entry key=\"port\">2222", "<entry key=\"port\">" + port)
-            Files.write(guiConfPath, content.getBytes(charset))
-            
-            // start
-            gui = (exe as RailScadeSiumlationExecutable).GUIProcessBuilder.start()
-            controller = Runtime.getRuntime().exec("./" + exe.file.name, null, exe.file.parentFile)
         }
         obeserver.schedule()
         return null;

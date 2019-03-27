@@ -35,10 +35,9 @@ class RailslDeployHandler extends RailStartHandler {
         var confirmation = MessageDialog.openConfirm(shell, "Ausführen auf der Modellbahn", "Soll das Programm wirklich auf der realen Modellbahn ausgeführt werden?");
         if (confirmation) {
             val exe = compile(systemId)
-//            val processBuilder = exe.processBuilder
-//            processBuilder.redirectInput(Redirect.INHERIT)
-//            process = processBuilder.start
-            launch(exe)
+            if (exe !== null) {
+                launch(exe)
+            }
         }
         return null;
     }
