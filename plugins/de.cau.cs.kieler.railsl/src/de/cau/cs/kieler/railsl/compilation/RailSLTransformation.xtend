@@ -633,11 +633,11 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
             // Set the signals accordingly
             transition.addEffect(signals.createAssignment(valObjects.get(signalString).reference) => [
                 indices += valObjects.get(segment.toString()).reference
-                indices += createIntValue(if(direction != 0) 0 else 1)
+                indices += createIntValue(if(direction == 1) 0 else 1)
             ])
             transition.addEffect(signals.createAssignment(valObjects.get("red").reference) => [
                 indices += valObjects.get(segment.toString()).reference
-                indices += createIntValue(if(direction == 0) 0 else 1)
+                indices += createIntValue(if(direction == 1) 1 else 0)
             ])
             currentState = nextState
             i++
