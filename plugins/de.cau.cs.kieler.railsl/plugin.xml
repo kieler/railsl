@@ -7,28 +7,4 @@
 			class = "de.cau.cs.kieler.railsl.railSL.RailSLPackage"
 			genModel = "model/generated/RailSL.genmodel" />
 	</extension>
- <extension
-       point="de.cau.cs.kieler.kicool.processor">
-    <Processor
-          class="de.cau.cs.kieler.railsl.processor.RailwayAPIProcessor">
-    </Processor>
-    <Processor
-          class="de.cau.cs.kieler.railsl.processor.ScadeSimulationProcessor">
-    </Processor>
-    <Processor
-          class="de.cau.cs.kieler.railsl.compilation.RailSLTransformation">
-    </Processor>
- </extension>
- <extension
-       point="de.cau.cs.kieler.kicool.system">
-    <TransformationSystem
-          system="system/de.cau.cs.kieler.railsl.netlist.c.kico">
-    </TransformationSystem>
-    <TransformationSystem
-          system="system/de.cau.cs.kieler.railsl.netlist.deploy.kico">
-    </TransformationSystem>
-    <TransformationSystem
-          system="system/de.cau.cs.kieler.railsl.netlist.sim.scade.kico">
-    </TransformationSystem>
- </extension>
 </plugin>
