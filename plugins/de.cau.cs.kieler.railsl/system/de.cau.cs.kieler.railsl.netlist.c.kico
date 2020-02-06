@@ -1,5 +1,9 @@
 system de.cau.cs.kieler.railsl.netlist.c
     label "RailSL Code Generation"  
+    config {
+      "de.cau.cs.kieler.sccharts.countDelay.structurebased" : true
+    }
+    
     
 de.cau.cs.kieler.railsl.railsl
 system de.cau.cs.kieler.sccharts.netlist
