@@ -49,6 +49,7 @@ import de.cau.cs.kieler.sccharts.extensions.SCChartsStateExtensions
 import de.cau.cs.kieler.sccharts.extensions.SCChartsTransitionExtensions
 import java.util.ArrayList
 import java.util.HashMap
+import de.cau.cs.kieler.sccharts.Region
 
 /**
  * Transforms a RailSL model to an SCChart.
@@ -391,7 +392,7 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
      * <p>
      * After each statement, one tick passes with no actions taken.
      */
-    def void compile(Block block, State chart) {
+    def Region compile(Block block, State chart) {
 
         var region = chart.createControlflowRegion("Thread_" + getRegionID)
         var currentState = region.createInitialState("init")
@@ -428,6 +429,8 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
             currentState.createTransitionTo(helperState).setTypeTermination
             helperState.createTransitionTo(region.initialState).setNotImmediate
         }
+        
+        return region
     }
 
     /**
@@ -704,9 +707,14 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
     def void makeParallelStatement(State state, ParallelStatement pStatement) {
         state.label = "_" + getStateID + "_Parallel"
         state.name = state.label
+        val sdd = createScheduleDeclaration
+        state.declarations += sdd
+        val sd = createValuedObject(state.name)
+        sdd.valuedObjects += sd
         
-        for (block : pStatement.blocks) {
-            block.compile(state)
+        for (blockIdx : pStatement.blocks.indexed) {
+            val region = blockIdx.value.compile(state)
+            region.schedule += createScheduleReference(sd, blockIdx.key)
         }
     }
 
