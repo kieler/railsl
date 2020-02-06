@@ -49,7 +49,6 @@ int main(int argn, char *argv[]) {
 
     // Create TickData struct and initialize values
     TickData *data = (TickData*) malloc(sizeof(TickData));
-    reset(data);
 
     for (int i = 0; i < NUM_OF_TRACKS; i++) {
         data->tracks[i][0] = 0;
@@ -80,6 +79,7 @@ int main(int argn, char *argv[]) {
     int secure_contact_check = 0;
     
     printf("Start...\n");
+    reset(data);
 
     sleep(5);
 
