@@ -274,6 +274,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.security.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jdt"/>
       <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
