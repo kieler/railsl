@@ -3,10 +3,6 @@
  */
 package de.cau.cs.kieler.railsl.ide;
 
-import com.google.inject.Binder;
-import com.google.inject.name.Names;
-import de.cau.cs.kieler.railsl.ide.contentassist.antlr.RailSLParser;
-import de.cau.cs.kieler.railsl.ide.contentassist.antlr.internal.InternalRailSLLexer;
 import org.eclipse.xtext.ide.DefaultIdeModule;
 import org.eclipse.xtext.ide.LexerIdeBindings;
 import org.eclipse.xtext.ide.editor.contentassist.FQNPrefixMatcher;
@@ -16,8 +12,14 @@ import org.eclipse.xtext.ide.editor.contentassist.antlr.AntlrProposalConflictHel
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.ide.refactoring.IRenameStrategy2;
-import org.eclipse.xtext.ide.server.rename.IRenameService;
-import org.eclipse.xtext.ide.server.rename.RenameService;
+import org.eclipse.xtext.ide.server.rename.IRenameService2;
+import org.eclipse.xtext.ide.server.rename.RenameService2;
+
+import com.google.inject.Binder;
+import com.google.inject.name.Names;
+
+import de.cau.cs.kieler.railsl.ide.contentassist.antlr.RailSLParser;
+import de.cau.cs.kieler.railsl.ide.contentassist.antlr.internal.InternalRailSLLexer;
 
 /**
  * Manual modifications go to {@link RailSLIdeModule}.
@@ -48,8 +50,8 @@ public abstract class AbstractRailSLIdeModule extends DefaultIdeModule {
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
-	public Class<? extends IRenameService> bindIRenameService() {
-		return RenameService.class;
+	public Class<? extends IRenameService2> bindIRenameService() {
+		return RenameService2.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2

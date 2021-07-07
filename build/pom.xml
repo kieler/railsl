@@ -9,9 +9,8 @@
 
   <!-- Define a few properties used throughout all build profiles. -->
   <properties>
-    <tycho-version>1.5.1</tycho-version>
-    <xtend-version>2.19.0</xtend-version>
-    <targetJdk>1.8</targetJdk>
+    <tycho-version>2.3.0</tycho-version>
+    <xtend-version>2.25.0</xtend-version>
   
     <!-- Non-breakable space, as normal spaces are trimmed. -->
     <sourceFeatureLabelSuffix>&#xA0;(Sources)</sourceFeatureLabelSuffix>
@@ -149,7 +148,7 @@
           </dependencies>
           <configuration>
             <outputDirectory>${basedir}/xtend-gen</outputDirectory>
-            <javaSourceVersion>1.8</javaSourceVersion>
+            <javaSourceVersion>11</javaSourceVersion>
           </configuration>
         </plugin>
         <!-- add src-gen and xtend-gen to source-directories -->
