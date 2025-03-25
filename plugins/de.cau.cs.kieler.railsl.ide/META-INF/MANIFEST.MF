@@ -10,8 +10,8 @@ Require-Bundle: de.cau.cs.kieler.railsl,
  org.eclipse.xtext.xbase.ide,
  org.eclipse.ui,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- de.cau.cs.kieler.klighd;bundle-version="0.44.1",
- org.eclipse.elk.core;bundle-version="0.4.0",
+ de.cau.cs.kieler.klighd,
+ org.eclipse.elk.core,
  de.cau.cs.kieler.kicool,
  de.cau.cs.kieler.sccharts
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -51,7 +51,7 @@
           </formats>
           <products>
             <product>
-              <id>de.cau.cs.kieler.railsl.product.defnition</id>
+              <id>de.cau.cs.kieler.railsl.product.definition</id>
               <rootFolder>RailwayRCA</rootFolder>
               <archiveFileName>railway_rca_${buildQualifier}</archiveFileName>
             </product>

@@ -24,7 +24,7 @@ SIMUFILESO = $(patsubst %.c,%.o, $(SIMUFILES))
 ### compiler options for gcc
 CC = gcc
 # removed -O2
-COPTS = -IInclude
+COPTS = -IInclude -fcommon
 SIMUOPTS = -I$(FOLDERSIMU)
 LIBS = -pthread -fPIC
 ### !!! use -mno-cygwin for older cygwin installations !!! ### i686-pc-cygwin
