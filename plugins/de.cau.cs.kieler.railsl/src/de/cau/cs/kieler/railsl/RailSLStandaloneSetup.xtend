@@ -3,12 +3,41 @@
  */
 package de.cau.cs.kieler.railsl
 
+import com.google.inject.Injector
+import de.cau.cs.kieler.core.services.KielerLanguage
+import de.cau.cs.kieler.railsl.railSL.RailProgram
+import de.cau.cs.kieler.railsl.railSL.RailSLPackage
+
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
-class RailSLStandaloneSetup extends de.cau.cs.kieler.railsl.RailSLStandaloneSetupGenerated {
+class RailSLStandaloneSetup extends RailSLStandaloneSetupGenerated implements KielerLanguage {
 
-	def static void doSetup() {
-		new RailSLStandaloneSetup().createInjectorAndDoEMFRegistration()
-	}
+    protected static Injector injector
+
+    def static doSetup() {
+        if (injector === null) {
+            injector = new RailSLStandaloneSetup().createInjectorAndDoEMFRegistration()
+        }
+        return injector
+    }
+
+    override register(Injector injector) {
+        super.register(injector)
+        // Ensure package is registered
+        RailSLPackage.eINSTANCE.eClass()
+    }
+    
+    override getInjector() {
+        return doSetup()
+    }
+
+    override getSupportedModels() {
+        #[RailProgram]
+    }
+
+    override getSupportedResourceExtensions() {
+        #["railsl"]
+    }
+
 }
