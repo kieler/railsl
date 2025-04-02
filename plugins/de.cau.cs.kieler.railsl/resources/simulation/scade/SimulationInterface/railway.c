@@ -702,8 +702,16 @@ void* SimulationServer(void* port)
 
 		   //do a cycle
 		   if (strstr(tcpcommand,"SsmProxy::Step") != NULL) {
-			  //if (DEBUG) DEBUGTEXT1("(making a step)");  
-           Simulation_simulation(&SIM_commands,&SIM_c);         //SCADE//
+			  //if (DEBUG) DEBUGTEXT1("(making a step)");
+			  /*
+			  struct inC_Simulation_simulation {
+              controllerCommands_simulation in_controllerCommands
+              } inC;
+              inC.in_controllerCommands = SIM_commands;
+              Simulation_simulation((inC_Simulation_simulation*) &SIM_commands), &SIM_c);         //SCADE//
+              */
+              inC_Simulation_simulation inC = { SIM_commands };
+              Simulation_simulation(&inC, &SIM_c);         //SCADE//
 	  
 
     	       for (c = 0; c < 48; c++) {
@@ -794,7 +802,7 @@ void* SimulationServer(void* port)
 
   if (DEBUG) DEBUGTEXT1("!SIMULATION ABORTED!");
   DEBUGTEXT1("\n");
-  return;
+  return NULL;
 }
 
 //----------------------------------------------------------------------------
