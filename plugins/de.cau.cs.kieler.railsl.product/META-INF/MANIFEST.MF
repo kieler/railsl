@@ -13,4 +13,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide.application;bundle-version="1.2.100",
  org.eclipse.rcp;bundle-version="4.8.0"
 Automatic-Module-Name: de.cau.cs.kieler.railsl.product
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21

@@ -5,14 +5,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block">
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//BlockEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BlockEnd">
-    <eLiterals name="END" literal="End."/>
-    <eLiterals name="LOOP" value="1" literal="Loop."/>
+    <eLiterals name="END" literal="End"/>
+    <eLiterals name="LOOP" value="1" literal="Loop"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SetStatement" eSuperTypes="#//Statement"/>

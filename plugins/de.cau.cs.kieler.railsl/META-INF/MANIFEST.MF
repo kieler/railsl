@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.xtext,
  de.cau.cs.kieler.sccharts;bundle-version="0.12.0",
  de.cau.cs.kieler.kicool,
  de.cau.cs.kieler.simulation;bundle-version="0.1.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: de.cau.cs.kieler.railsl,
  de.cau.cs.kieler.railsl.compilation,
  de.cau.cs.kieler.railsl.extensions,

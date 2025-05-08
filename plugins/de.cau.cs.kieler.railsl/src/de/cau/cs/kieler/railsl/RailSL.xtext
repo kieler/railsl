@@ -6,16 +6,16 @@ RailProgram:
     block=Block;
 
 Block:
-    ('Start:' | 'start:')
+    ('Start' | 'start') ':'
     (statements+=Statement)+
-    end=BlockEnd;
+    end=BlockEnd '.';
 
 enum BlockEnd:
-    END='End.' | END='end.' |
-    LOOP='Loop.' | LOOP='loop.';
+    END='End' | END='end' |
+    LOOP='Loop' | LOOP='loop';
 
 Statement:
-    SetStatement | WaitStatement | OpStatement | ConditionalStatement | ParallelStatement;
+    SetStatement | WaitStatement | OpStatement | ConditionalStatement | ParallelStatement | Block;
 
 SetStatement:
     TrackStatement | PointStatement;
@@ -47,7 +47,7 @@ WaitStatement:
 TimeWaitStatement:
     ('Wait' | 'wait') 'for'?
     time=INT
-    'seconds.';
+    ('seconds' | 'second') '.';
 
 ContactWaitStatement:
     event=ContactEvent
@@ -66,7 +66,7 @@ OpStatement:
     CrossingStatement | LightStatement;
 
 CrossingStatement:
-    mode=CrossingMode 'crossing.';
+    mode=CrossingMode 'crossing' '.';
 
 enum CrossingMode:
     OPEN='Open' | OPEN='open' |
@@ -83,7 +83,7 @@ enum LightMode:
     ON='on' | OFF='off';
 
 ConditionalStatement:
-    ('Branch:' | 'branch:')
+    ('Branch' | 'branch' | ('wait' | 'Wait') 'any') ':'
     lines+=ConditionalLine
     (lines+=ConditionalLine)+;
 
@@ -91,12 +91,13 @@ ConditionalLine:
     ('If' | 'if')
     contact=ContactPosition
     'contact' 'of'? segment=RailSegment
-    'is' 'reached' ('first' | 'first,') 'do' block=Block;
+    'is' 'reached' 'first' ','? 'do' block=Block;
 
 ParallelStatement:
-    ('Parallel:' | 'parallel:')
+    ('Parallel' | 'parallel') ':'
     blocks+=Block
-    (blocks+=Block)+;
+    (blocks+=Block)+
+    ('Join' | 'join') '.';
 
 enum RailSegment:
     IC_JCT_0 |

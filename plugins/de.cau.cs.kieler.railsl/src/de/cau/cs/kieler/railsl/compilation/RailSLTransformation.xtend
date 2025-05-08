@@ -457,8 +457,12 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
             state.makeConditionalStatement(statement as ConditionalStatement)
         } else if (statement instanceof ParallelStatement) {
             state.makeParallelStatement(statement as ParallelStatement)  
-        } else {
+        } else if (statement instanceof CrossingStatement) {
             state.makeCrossingStatement(statement as CrossingStatement)
+        } else if (statement instanceof Block) {
+            compile(statement as Block, state)
+        } else {
+            throw new IllegalArgumentException("Statement needs to be one of the legal options, but is " + statement)
         }
 
         return state
