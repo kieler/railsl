@@ -16,6 +16,7 @@ package de.cau.cs.kieler.railsl.compilation
 import com.google.inject.Inject
 import de.cau.cs.kieler.annotations.extensions.AnnotationsExtensions
 import de.cau.cs.kieler.kexpressions.Expression
+import de.cau.cs.kieler.kexpressions.PriorityProtocol
 import de.cau.cs.kieler.kexpressions.ValuedObject
 import de.cau.cs.kieler.kexpressions.extensions.KExpressionsCreateExtensions
 import de.cau.cs.kieler.kexpressions.extensions.KExpressionsDeclarationExtensions
@@ -40,6 +41,7 @@ import de.cau.cs.kieler.railsl.railSL.Statement
 import de.cau.cs.kieler.railsl.railSL.TimeWaitStatement
 import de.cau.cs.kieler.railsl.railSL.TrackStatement
 import de.cau.cs.kieler.sccharts.ControlflowRegion
+import de.cau.cs.kieler.sccharts.Region
 import de.cau.cs.kieler.sccharts.SCCharts
 import de.cau.cs.kieler.sccharts.SCChartsFactory
 import de.cau.cs.kieler.sccharts.State
@@ -49,7 +51,6 @@ import de.cau.cs.kieler.sccharts.extensions.SCChartsStateExtensions
 import de.cau.cs.kieler.sccharts.extensions.SCChartsTransitionExtensions
 import java.util.ArrayList
 import java.util.HashMap
-import de.cau.cs.kieler.sccharts.Region
 
 /**
  * Transforms a RailSL model to an SCChart.
@@ -711,7 +712,11 @@ class RailSLTransformation extends Processor<RailProgram, SCCharts> implements T
     def void makeParallelStatement(State state, ParallelStatement pStatement) {
         state.label = "_" + getStateID + "_Parallel"
         state.name = state.label
-        val sdd = createScheduleDeclaration
+        val sdd = createScheduleDeclaration => [ declaration |
+            for (block : pStatement.blocks) {
+                declaration.priorities.add(PriorityProtocol.CONFLUENT)
+            }
+        ]
         state.declarations += sdd
         val sd = createValuedObject(state.name)
         sdd.valuedObjects += sd
