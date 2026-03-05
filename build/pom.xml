@@ -9,8 +9,8 @@
 
   <!-- Define a few properties used throughout all build profiles. -->
   <properties>
-    <tycho-version>2.7.5</tycho-version>
-    <xtend-version>2.36.0</xtend-version>
+    <tycho-version>4.0.12</tycho-version>
+    <xtend-version>2.37.0</xtend-version>
   
     <!-- Non-breakable space, as normal spaces are trimmed. -->
     <sourceFeatureLabelSuffix>&#xA0;(Sources)</sourceFeatureLabelSuffix>
@@ -20,8 +20,8 @@
     <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
     <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     
-    <!-- Updatesite for product build -->
-    <kieler.semantics.updatesite>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly/semantics/</kieler.semantics.updatesite>
+    <!-- Updatesite for product build. Expect the semantics repository to be built locally next to this repository. -->
+     <kieler.semantics.updatesite>file:///${project.basedir}/../../../semantics/build/de.cau.cs.kieler.semantics.repository/target/repository/</kieler.semantics.updatesite>
   </properties>
 
 
@@ -46,6 +46,7 @@
         <module>../plugins</module>
         <module>product</module>
         <module>targetplatform</module>
+        <module>de.cau.cs.kieler.kicool.railsl.cli</module>
       </modules>
     </profile>  
   </profiles>
@@ -115,6 +116,11 @@
               <ws>gtk</ws>
               <arch>x86_64</arch>
             </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>aarch64</arch>
+            </environment>
 <!--             <environment>
               <os>win32</os>
               <ws>win32</ws>
@@ -155,7 +161,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.3</version>
+          <version>3.5.0</version>
           <executions>
             <execution>
               <id>add-source</id>
