@@ -46,7 +46,7 @@
         <module>../plugins</module>
         <module>product</module>
         <module>targetplatform</module>
-        <module>de.cau.cs.kieler.kicool.railsl.cli</module>
+        <module>cli</module>
       </modules>
     </profile>  
   </profiles>
