@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
-
-<product name="Railway RCA" uid="de.cau.cs.kieler.railsl.product.definition" id="de.cau.cs.kieler.railsl.product.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Railway RCA" uid="de.cau.cs.kieler.railsl.product.definition" id="de.cau.cs.kieler.railsl.product.product" application="org.eclipse.ui.ide.workbench" version="0.1.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
 
    <configIni use="default">
@@ -16,11 +15,7 @@
 
    <windowImages i16="/de.cau.cs.kieler.railsl.product/icons/foerde-logo-16.gif" i32="/de.cau.cs.kieler.railsl.product/icons/foerde-logo-32.gif" i48="/de.cau.cs.kieler.railsl.product/icons/foerde-logo-48.gif" i64="/de.cau.cs.kieler.railsl.product/icons/foerde-logo-64.gif" i128="/de.cau.cs.kieler.railsl.product/icons/foerde-logo-128.gif"/>
 
-   <splash
-      location="de.cau.cs.kieler.railsl.product"
-      startupProgressRect="19,301,207,15"
-      startupMessageRect="10,200,0,0"
-      startupForegroundColor="BABDB6" />
+   <splash location="de.cau.cs.kieler.railsl.product" startupProgressRect="19,301,207,15" startupMessageRect="10,200,0,0" startupForegroundColor="BABDB6"/>
    <launcher name="railway">
       <win useIco="false">
          <bmp/>
@@ -146,11 +141,11 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </plugins>
 
    <configurations>
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2"/>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0"/>
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2"/>
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2"/>
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1"/>
    </configurations>
 
    <preferencesInfo>
