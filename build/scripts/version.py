@@ -53,6 +53,15 @@ def main(args):
         setPomVersion(join(args.path, 'build'), 'product', args)
         setReleaseVersion(join(args.path, 'build'), 'product', args)
 
+    print('\n- Updating product plugin.xml -')
+    # check product file
+    plugin = join(args.path, 'plugins/de.cau.cs.kieler.railsl.product/plugin.xml')
+    if not isfile(plugin):
+        print('plugin.xml does not exist: ' + plugin)
+        pause(args)
+    else:
+        updateProductPlugin(plugin, args)
+
     print('\n- Updating CLI products -')
     # check pom files
     pom = join(args.path, 'build', 'cli', 'pom.xml')
@@ -123,6 +132,18 @@ def setReleaseVersion(directory, project, args):
         print('-- pom.xml file is missing!')
         pause(args)
 
+def updateProductPlugin(product, args):
+    """Set version property of product runtime plugin"""
+    xml = etree.parse(product, parser = etree.XMLParser(remove_comments=False))
+    version = xml.find("./extension/product/property[@name='version']")
+    if version is not None:
+        version.attrib['value'] = args.version
+        print('Set version in product plugin')
+    else:
+        print('Cannot find version property element in %s' % version)
+        pause(args)
+
+    writeXML(xml, product)
 
 def updateProduct(product, args):
     """Set version in product definition"""
