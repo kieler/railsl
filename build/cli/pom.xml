@@ -18,7 +18,7 @@
     <category.file>${basedir}/category.xml</category.file>
     <update.site.jars>${project.build.directory}/repository/plugins</update.site.jars>
     <python.script>${basedir}/../../../semantics/build/scripts/uberjar.py</python.script>
-    <executableName>kico</executableName>
+    <executableName>kico-railsl</executableName>
     <mainClass>de.cau.cs.kieler.kicool.cli.KielerCompilerCLI</mainClass>
     <python.script.output>${project.build.directory}/exe</python.script.output>
   </properties>
