@@ -81,10 +81,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          working-directory: railsl
           fail_on_unmatched_files: true
           overwrite_files: true
           files: |
-            build/product/target/products/railway_rca_*-linux.gtk.x86_64.tar.gz
-            build/product/target/products/railway_rca_*-linux.gtk.aarch64.tar.gz
-            build/cli/target/exe/kico-railsl.jar
+            railsl/build/product/target/products/railway_rca_*-linux.gtk.x86_64.tar.gz
+            railsl/build/product/target/products/railway_rca_*-linux.gtk.aarch64.tar.gz
+            railsl/build/cli/target/exe/kico-railsl.jar
