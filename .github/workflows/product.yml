@@ -60,24 +60,21 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: RailSL Linux
-          working-directory: railsl
-          path: build/product/target/products/railway_rca_*-linux.gtk.x86_64.tar.gz
+          path: railsl/build/product/target/products/railway_rca_*-linux.gtk.x86_64.tar.gz
           if-no-files-found: error
 
       - name: Archive RailSL RCA Linux Arm64
         uses: actions/upload-artifact@v4
         with:
           name: RailSL Linux ARM64
-          working-directory: railsl
-          path: build/product/target/products/railway_rca_*-linux.gtk.aarch64.tar.gz
+          path: railsl/build/product/target/products/railway_rca_*-linux.gtk.aarch64.tar.gz
           if-no-files-found: error
 
       - name: Archive RailSL Compiler CLI Jar
         uses: actions/upload-artifact@v4
         with:
           name: RailSL Compiler CLI Jar
-          working-directory: railsl
-          path: build/cli/target/exe/kico-railsl.jar
+          path: railsl/build/cli/target/exe/kico-railsl.jar
           if-no-files-found: error
 
       - name: Attach Release Artifacts
