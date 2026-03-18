@@ -85,6 +85,8 @@ int main(int argn, char *argv[]) {
 
     gettimeofday(&last, NULL);
 
+    struct timespec loop_wait = { .tv_sec = 0, .tv_nsec = 100000 };
+
     while(!data->_TERM) {
         
         // Scan the contacts at the beginning of each tick
@@ -163,7 +165,7 @@ int main(int argn, char *argv[]) {
             _lights_pre[i] = data->lights[i];
         }
 
-        usleep(100);
+        nanosleep(&loop_wait, NULL);
     } // End while
     
     // Shut down the connection to the railway
