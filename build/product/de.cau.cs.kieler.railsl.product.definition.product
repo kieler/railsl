@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
-<product name="Railway RCA" uid="de.cau.cs.kieler.railsl.product.definition" id="de.cau.cs.kieler.railsl.product.product" application="org.eclipse.ui.ide.workbench" version="0.1.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Railway RCA" uid="de.cau.cs.kieler.railsl.product.definition" id="de.cau.cs.kieler.railsl.product.product" application="org.eclipse.ui.ide.workbench" version="0.1.1.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
 
    <configIni use="default">
