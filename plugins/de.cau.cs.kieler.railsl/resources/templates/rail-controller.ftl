@@ -44,7 +44,7 @@ int main(int argn, char *argv[]) {
 
     // Setup connection to the railway
     railway = railway_initsystem(&kicking);
-    railway_openlinks_udp(railway,"node%02i","/dev/ttyS0");
+    railway_openlinks(railway,"railPi%i","10000");
     railway_startcontrol(railway,0,0);
 
     // Create TickData struct and initialize values
