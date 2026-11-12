@@ -162,10 +162,6 @@ int railway_openlinks(railway_t *railway, char *hostformat, char *portformat) {
 
   return 0;
 }
-// TODO: Legacy openlinks_udp function added for girlsday tool
-int railway_openlinks_udp(railway_t *railway, char *nodeName, char *device) {
-  return railway_openlinks(railway, "railway.rtsys.informatik.uni-kiel.de", "2001%i");
-}
 
 /**
  * Start the system (and the control thread) after all railPis
