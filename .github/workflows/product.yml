@@ -18,12 +18,12 @@ jobs:
 
     steps:
       - name: Checkout RailSL
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: railsl
 
       - name: Checkout Kieler Semantics
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: kieler/semantics
           path: semantics
@@ -33,9 +33,17 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+
+      - name: Install Maven
+        run: |
+          MAVEN_VERSION=3.9.16
+          curl -fsSLO "https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz"
+          tar -xzf "apache-maven-${MAVEN_VERSION}-bin.tar.gz"
+          echo "$PWD/apache-maven-${MAVEN_VERSION}/bin" >> "$GITHUB_PATH"
+          rm "apache-maven-${MAVEN_VERSION}-bin.tar.gz"
       
       - name: Cache local Maven repository
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('.github/workflows/*.*', '**/pom.xml', '**/META-INF/MANIFEST.MF', 'build/de.cau.cs.kieler.semantics.targetplatform/de.cau.cs.kieler.semantics.targetplatform.target') }}
@@ -57,21 +65,21 @@ jobs:
           MAVEN_OPTS: '-Xmx2048M'
 
       - name: Archive RailSL RCA Linux
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: RailSL Linux
           path: railsl/build/product/target/products/railway_rca_*-linux.gtk.x86_64.tar.gz
           if-no-files-found: error
 
       - name: Archive RailSL RCA Linux Arm64
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: RailSL Linux ARM64
           path: railsl/build/product/target/products/railway_rca_*-linux.gtk.aarch64.tar.gz
           if-no-files-found: error
 
       - name: Archive RailSL Compiler CLI Jar
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: RailSL Compiler CLI Jar
           path: railsl/build/cli/target/exe/kico-railsl.jar
